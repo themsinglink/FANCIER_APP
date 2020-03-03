@@ -5,9 +5,13 @@ class ArticlesController < ApplicationController
 
   # GET /restaurants
   # GET /restaurants.json
-  def index
 
+    
+  def index
+    @articles = policy_scope(Article).order(created_at: :desc)
   end
+
+ 
 
   # GET /articles/1
   # GET /restaurants/1.json
@@ -77,4 +81,5 @@ class ArticlesController < ApplicationController
     def article_params
       params.require(:article).permit(:name, :category_id, :color, :size, :material, :shipping_cost, :user_id, :photo, :state, :price_cents)
     end
+
 end
