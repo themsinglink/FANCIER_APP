@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   def create
-  article = Article.find(params[:teddy_id])
-  order  = Order.create!(article: teddy, amount: article.price, state: :pending, user: current_user)
+  article = Article.find(params[:article_id])
+  order  = Order.create!(article: article, amount: article.price, state: :pending, user: current_user)
 
   session = Stripe::Checkout::Session.create(
     payment_method_types: ['card'],
