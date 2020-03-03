@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   resources :payments, only: :new
 end
 
+  get :autocomplete, to: 'pages#autocomplete'
+
 end
