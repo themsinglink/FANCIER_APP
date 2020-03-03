@@ -15,6 +15,7 @@ gem 'money-rails'
 gem 'stripe'
 gem 'stripe_event'
 gem 'pundit'
+gem 'dotenv-rails', groups: [:development, :test]
 
 #
 
