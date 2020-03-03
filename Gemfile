@@ -16,6 +16,8 @@ gem 'stripe'
 gem 'stripe_event'
 gem 'faker'
 gem 'pundit'
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary', '~> 1.12.0'
 
 #
 
