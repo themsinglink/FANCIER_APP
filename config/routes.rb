@@ -8,4 +8,6 @@ Rails.application.routes.draw do
 
   resources :articles, only: [:index]
 
+  get :autocomplete, to: 'pages#autocomplete'
+
 end

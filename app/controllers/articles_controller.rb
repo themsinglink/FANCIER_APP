@@ -1,9 +1,14 @@
 class ArticlesController < ApplicationController
 
-
   def index
-    @articles = policy_scope(Article).order(created_at: :desc)
+    if params[:q].present?
+      @articles = Article.search_by_name_and_color_and_material_and_category_id(params[:q])
+    else
+      @articles = Article.all
+    end
+    @articles = policy_scope(@articles).order(created_at: :desc)
   end
+
 
 
 
