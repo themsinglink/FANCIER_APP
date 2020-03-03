@@ -1,0 +1,15 @@
+<h2>Upload an article</h2>
+
+<%= simple_form_for(article) do |f| %>
+
+<%= f.input :name, label: "Title", placeholder: 'Cute top' %>
+<%= f.input :size, label: "Size ", placeholder: 'S/M/L'  %>
+<%= f.input :material, label: "Fabric ", placeholder: 'Fabric' %>
+<%= f.input :state, label: "State", placeholder: 'Lightly worn' %>
+<%= f.input :price_cents, label: "Listing Price", placeholder: '$75.00' %>
+<%= f.association :category %>
+<%= f.input :photo, as: :file %>
+<%= f.input :shipping_costs, label: "Shipping Cost ", placeholder: '$10.00' %>
+<%= f.input :state, label: "State", placeholder: 'Lightly worn' %>
+<%= f.button :submit,  "List"%>
+<% end %>
