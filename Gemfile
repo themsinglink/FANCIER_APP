@@ -18,7 +18,11 @@ gem 'faker'
 gem 'pundit'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.12.0'
+
+
+
 gem 'pg_search', '~> 2.3.0'
+
 
 #
 
