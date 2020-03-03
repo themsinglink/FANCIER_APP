@@ -5,4 +5,7 @@ Rails.application.routes.draw do
 
   mount StripeEvent::Engine, at: '/stripe-webhooks'
 
+
+  resources :articles, only: [:index]
+
 end
