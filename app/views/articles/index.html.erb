@@ -1,11 +1,24 @@
 <h1>Welcome to Fancier</h1>
-<ul>
-  <% @articles.each do |article| %>
-    <li>
+
+<p>your #1 address to find the coolest festival outfits.</p>
+
+
+<%= form_tag(articles_path, method: 'get', class: "form-inline") do %>
+  <div id= "search-data" class="form-search search-data" data-articles="<%= @articles.to_json %>">
+    <%= text_field_tag :q, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Search for fancy outfit..." %>
+    <%= submit_tag "Search", class: "btn btn-primary button-home" %>
+  </div>
+<% end %>
+
+
+<div class="container">
+  <div class="card">
+  <h2><% @articles.each do |article| %></h2>
       <%= article.name %>
-    </li>
+      <img src="https://source.unsplash.com/random?sig=#{rand(1..1000)}&?jet" alt="">
   <% end %>
-</ul>
+  </div>
+</div>
 
 <%= link_to "list an article", new_article_path%>
 
