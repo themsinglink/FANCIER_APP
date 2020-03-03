@@ -4,9 +4,8 @@ require "open-uri"
 
 puts 'Cleaning database...'
 
-
-User.destroy_all
 Article.destroy_all
+User.destroy_all
 Category.destroy_all
 
 user_1 = User.create!(name: "Laura", email: "laura@gmail.com", password: "123456")

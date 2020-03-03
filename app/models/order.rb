@@ -4,6 +4,6 @@ class Order < ApplicationRecord
 
   monetize :amount_cents
 
-  enum status: %i[pending paid delivered refunded]
+  enum state: %i[pending paid delivered refunded]
 
 end

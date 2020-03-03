@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
 
   resources :articles, only: [:index, :new, :create, :show]
+  resources :orders, only: [:show, :create] do
+  resources :payments, only: :new
+end
 
   get :autocomplete, to: 'pages#autocomplete'
 
