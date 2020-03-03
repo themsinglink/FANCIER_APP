@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   mount StripeEvent::Engine, at: '/stripe-webhooks'
 
 
-  resources :articles, only: [:index]
+  resources :articles, only: [:index, :new, :create, :show]
 
   get :autocomplete, to: 'pages#autocomplete'
 
