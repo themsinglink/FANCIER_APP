@@ -10,3 +10,22 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.nav-toggle{
+  height: 20px;
+  width: 20px;
+  background-color: black;
+}
+
+.nav{
+  position: absolute;
+  width: 50%;
+  background-color: red;
+  height: 100%;
+  transform: translate(0, 0);
+  transition: transform 0.5s;
+}
+
+.nav-hidden{
+  transform: translate(-100vw, 0);
+}

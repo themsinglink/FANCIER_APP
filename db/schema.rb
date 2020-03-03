@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2020_03_03_165549) do
   end
 
   create_table "articles", force: :cascade do |t|
+    t.string "name"
     t.bigint "category_id"
     t.string "color"
     t.string "size"
@@ -55,9 +56,8 @@ ActiveRecord::Schema.define(version: 2020_03_03_165549) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "price_cents", default: 0, null: false
-    t.string "state"
+    t.integer "state", default: 0, null: false
     t.text "description"
-    t.string "name"
     t.index ["category_id"], name: "index_articles_on_category_id"
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
@@ -104,7 +104,7 @@ ActiveRecord::Schema.define(version: 2020_03_03_165549) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "name"
+    t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
