@@ -4,10 +4,8 @@ class ApplicationController < ActionController::Base
     include Pundit
 
 
-
   after_action :verify_authorized, except: [:index, :home], unless: :skip_pundit?
   after_action :verify_policy_scoped, only: [:index, :home], unless: :skip_pundit?
-
 
   # Uncomment when you *really understand* Pundit!
   # rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
