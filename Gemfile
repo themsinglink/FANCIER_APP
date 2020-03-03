@@ -15,6 +15,8 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+#added gem
+gem 'pundit'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
