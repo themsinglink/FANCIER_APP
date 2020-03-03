@@ -6,12 +6,12 @@ class ArticlesController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
 
-    
+
   def index
     @articles = policy_scope(Article).order(created_at: :desc)
   end
 
- 
+
 
   # GET /articles/1
   # GET /restaurants/1.json
@@ -69,7 +69,7 @@ class ArticlesController < ApplicationController
      # format.html { redirect_to articles_url, notice: 'Restaurant was successfully destroyed.' }
       #format.json { head :no_content }
     end
-  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
