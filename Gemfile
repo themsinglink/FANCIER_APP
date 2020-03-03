@@ -15,6 +15,7 @@ gem 'money-rails'
 gem 'stripe'
 gem 'stripe_event'
 gem 'faker'
+gem 'pundit'
 
 #
 
