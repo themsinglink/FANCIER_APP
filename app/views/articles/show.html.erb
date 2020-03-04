@@ -2,7 +2,12 @@
 <%= cl_image_tag @article.photo.key %>
 <%= @article.category.name %>
 
+<%= link_to "current_user_show", current_user %>
+
 <%= form_tag orders_path do %>
   <%= hidden_field_tag 'article_id', @article.id %>
   <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
 <% end %>
+
+
+
