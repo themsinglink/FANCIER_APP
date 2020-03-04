@@ -2,7 +2,8 @@
 <%= cl_image_tag @article.photo.key %>
 <%= @article.category.name %>
 
-<%= link_to "current_user_show", current_user %>
+<%= link_to "my profile", user_path(current_user) %>
+<%= link_to "seller profile", user_path(@article.user) %>
 
 <%= form_tag orders_path do %>
   <%= hidden_field_tag 'article_id', @article.id %>

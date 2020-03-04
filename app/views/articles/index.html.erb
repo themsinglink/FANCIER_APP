@@ -1,5 +1,9 @@
 <div class="banner">
 
+<%= link_to "my profile", user_path(current_user)%>
+<%= link_to "my dashboard", dashboard_path%>
+<%= link_to "list an article", new_article_path%>
+
 <h1>Welcome to Fancier</h1>
 
 <div class="container">
@@ -42,5 +46,4 @@
 
 
 
-<%= link_to "list an article", new_article_path%>
 
