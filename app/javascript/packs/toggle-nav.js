@@ -1,5 +1,3 @@
-
-
 const toggleNav = () => {
   const toggler = document.querySelector(".nav-toggle")
   if (toggler) {
