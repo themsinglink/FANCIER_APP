@@ -10,7 +10,7 @@
   margin-top: 20px;
 }
 
-.mainbutton a{
+.mainbutton {
 
   text-align: center;
 }
@@ -24,13 +24,9 @@
 }
 
 
-.main-text h1, p{
+.main-text{
   color: white;
   font-family: Montserrat;
   font-style: normal;
-
-
-}
-.main-text h1{
   font-weight: bold;
 }
