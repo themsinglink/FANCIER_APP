@@ -30,6 +30,10 @@
     <div class= "d-flex justify-content-between">
     <div>
 
+<%= link_to "my profile", user_path(current_user) %>
+<%= link_to "seller profile", user_path(@article.user) %>
+
+
     <%= @article.name %>
     <%= @article.category.name %>
     </div>
