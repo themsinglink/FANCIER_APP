@@ -1,12 +1,34 @@
-<h2>MY ORDERS</h2>
+<div class="background-profile">
 
-<%= current_user.name %>
-<ul>
-<% current_user.orders.each do |order| %>
-  <li><%= order.amount_currency %></li>
-  <li><%= order.amount_cents %></li>
-  <li><%= order.article.name %></li>
-  <li><%= order.article.price_cents %></li>
-  <li><%= order.created_at %></li>
+</div>
+<div class="backround-user">
+  <div class="profile-info">
+  <%= image_tag "profilephoto.png", class: "", alt: "alttext" %>
+  <h2><%=  current_user.name%></h2>
+  <p>london, england</p>
+  </div>
+<div class="profile-links">
+  <div class="clothes">
+    <a href="#">my orders</a>
+  </div>
+  <div class="likes">
+    <a href="#">sold items</a>
+  </div>
+</div>
+</div>
+<div class="orders">
+  <% current_user.orders.each do |order| %>
+
+  <div class="order-photo" style="background-image: url(<%= image_path ('article4.jpg') %>);"></div>
+  <div class="order-info">
+
+    <h2><%= order.article.name %></h2>
+    <h3>SIZE: <%= order.article.size %></h3>
+    <h4>$<%= order.article.price_cents%>.00</h4>
+    <p>in transit</p>
+  </div>
+
+</div>
 <% end %>
-</ul>
+
+
