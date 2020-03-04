@@ -1,7 +1,10 @@
+<div class="banner">
+
 <h1>Welcome to Fancier</h1>
 
 <p>your #1 address to find the coolest festival outfits.</p>
 
+</div>
 
 <%= form_tag(articles_path, method: 'get', class: "form-inline") do %>
   <div id= "search-data" class="form-search search-data" data-articles="<%= @articles.to_json %>">
@@ -11,14 +14,20 @@
 <% end %>
 
 
+
 <div class="container">
-  <div class="card">
+  <div class="card" style="width= 18rem;">
   <h2><% @articles.each do |article| %></h2>
       <%= article.name %>
       <img src="https://source.unsplash.com/random?sig=#{rand(1..1000)}&?jet" alt="">
   <% end %>
   </div>
 </div>
+
+
+
+
+
 
 <%= link_to "list an article", new_article_path%>
 

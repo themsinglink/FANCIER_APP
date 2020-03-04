@@ -50,13 +50,16 @@ ActiveRecord::Schema.define(version: 2020_03_03_165549) do
     t.bigint "category_id"
     t.string "color"
     t.string "size"
+    t.string "state"
     t.string "material"
     t.integer "shipping_costs"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "price_cents", default: 0, null: false
+
     t.integer "state", default: 0, null: false
+    
     t.text "description"
     t.index ["category_id"], name: "index_articles_on_category_id"
     t.index ["user_id"], name: "index_articles_on_user_id"
