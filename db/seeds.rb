@@ -2,6 +2,7 @@ require "open-uri"
 
 puts 'Cleaning database...'
 
+ArticleTag.destroy_all
 Article.destroy_all
 User.destroy_all
 Category.destroy_all
@@ -23,9 +24,10 @@ user_3 = User.new(name: "Meghan", email: "meghan@gmail.com", password: "123456")
 user_3.save!
 
 # userphoto_4 = URI.open('https://www.biography.com/.image/t_share/MTU0OTkwNDUxOTQ5MDUzNDQ3/kanye-west-attends-the-christian-dior-show-as-part-of-the-paris-fashion-week-womenswear-fall-winter-2015-2016-on-march-6-2015-in-paris-france-photo-by-dominique-charriau-wireimage-square.jpg')
-user_4 = User.new(name: "Kendrikc", email: "kendrick@gmail.com", password: "123456")
+user_4 = User.new(name: "Kendrikc", email: "kendrikc@gmail.com", password: "123456")
 # user_4.photo.attach(io: userphoto_4, filename: 'userphoto_4.jpg', content_type: 'image/jpg')
 user_4.save!
+
 
 puts "#{User.count} users created!"
 
