@@ -1,9 +1,9 @@
 <div class="main-container">
- <div class="main-text">
-   <h1>share the glitter, not the litter</h1>
-   <p>#1 destination to find your unique festival outfit</p>
- </div>
-  <%= link_to " Explore", articles_path, class: 'mainbutton' %>
+  <div class="main-text">
+    <h1>share the glitter, not the litter</h1>
+    <p>#1 destination to find your unique festival outfit</p>
+    <%= link_to " Explore", articles_path, class: 'mainbutton' %>
+  </div>
 </div>
 
 
@@ -11,8 +11,24 @@
 
 <div class="tag-container">
 <% @tags.each do |tag| %>
-  <%= link_to tag_path(tag) do %>
-    <%= tag.name %>
+  <div class="tag-image">
+<%= link_to tag_path(tag) do %>
+   <p><%= tag.name %></p>
   <% end %>
+  </div>
 <% end %>
+</div>
+
+<div class="aboutus-container">
+
+<h1>Who are we?</h1>
+<p>A global community of free spirits</p>
+<p>Home to the most unique festival outfits from all over the world</p>
+<a href="#" class="readmore-button">Read more</a>
+</div>
+
+
+<div class="sell-container">
+<%= link_to " Sell on Fancier", new_article_path, class: 'mainbutton' %>
+<p>Register now</p>
 </div>

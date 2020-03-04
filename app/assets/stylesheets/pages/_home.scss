@@ -10,14 +10,25 @@
   margin-top: 20px;
 }
 
-.mainbutton {
 
+.mainbutton:hover {
+  box-shadow:0px 0px 20px ;
+  transition: all 0.2s ease-in;
+  transition-property: box-shadow;
+  text-decoration: none;
+}
+
+.mainbutton a{
   text-align: center;
 }
 
 
 .main-container{
+  height: 70vh;
   text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
   display: flex;
   background-size: cover;
   background-image: url('background.png');
@@ -29,4 +40,54 @@
   font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
+}
+
+.tag-image{
+  background-image: url('article1.jpg');
+  position:relative;
+  height: 165px;
+  padding: 10px;
+  margin-bottom: 24px;
+}
+
+.tag-container{
+  padding: 10px;
+  padding-left: 10px;
+}
+
+.aboutus-container h1{
+  color: black;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 27px;
+  font-family: Montserrat;
+}
+
+.aboutus-container p{
+  color:black;
+  font-family: Montserrat;
+  font-style: normal;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 24px;
+}
+
+.readmore-button{
+  background-color: #C97F6A;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 25px;
+  opacity: 0.9;
+  margin-bottom: 20px;
+  margin-top: 20px;
+
+}
+.sell-container{
+  display: flex;
+  background-image: url('ilustration1.jpeg');
+  width: 500px;
+  height: 165px;
+  padding: 10px;
+  margin-bottom: 24px;
 }
