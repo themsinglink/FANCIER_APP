@@ -8,11 +8,16 @@ Rails.application.routes.draw do
 
   resources :articles, only: [:index, :new, :create, :show]
   resources :orders, only: [:show, :create] do
-  resources :payments, only: :new
 
-end
+    resources :payments, only: :new
+  end
+
+  resources :tags, only: [:show]
+
+
 
   get :autocomplete, to: 'pages#autocomplete'
   get "dashboard", to: 'pages#dashboard'
+  get "listings", to: 'pages#listings'
 
 end

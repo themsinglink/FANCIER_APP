@@ -1,14 +1,96 @@
-<%= @article.name %>
-<%= cl_image_tag @article.photo.key %>
-<%= @article.category.name %>
 
-<%= link_to "my profile", user_path(current_user) %>
-<%= link_to "seller profile", user_path(@article.user) %>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval= "false" data-touch= "true">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+    <%= cl_image_tag @article.photo.key, style:"width: 100%;"%>
+    </div>
+    <div class="carousel-item">
+    <%= cl_image_tag @article.photo.key, style:"width: 100%;" %>
 
-<%= form_tag orders_path do %>
-  <%= hidden_field_tag 'article_id', @article.id %>
-  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-<% end %>
+    </div>
+    <div class="carousel-item">
+    <%= cl_image_tag @article.photo.key, style:"width: 100%;" %>
 
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<div class=" info">
+  <div>
+    <div class="d-flex justify-content-start" style="margin: 10px">
+    <%= image_tag "profilephoto", class: "avatar" %>
+    <div class="profile-tag">
+      <p><strong>katy link</strong></p>
+      <p>london, england</p>
+    </div>
+    </div>
+    <div class= "d-flex justify-content-between">
+    <div>
+    <h5 style= "font-weight: bold"> <%= @article.name %>
+      <%= @article.category.name %></h5>
+    </div>
+    <p style= "font-weight: bold">$70</p>
+  </div>
+  <p>SIZE: M</p>
+  <p>I wore this top to last burning
+man and it’s here for its revival.
+The top is good as new!</p>
+    <button type="button" class="btn coral-button btn-lg" data-toggle="modal" data-target="#myModal2">
+      add to cart
+    </button>
+  </div>
+  <!-- Modal -->
+  <div class="modal right fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+
+        <div class="modal-header">
+           <h4 class="modal-title" id="myModalLabel2">BAG</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+
+        <div class="modal-body">
+        <div class="d-flex">
+        <%= cl_image_tag @article.photo.key, style:"width: 30%;" %>
+
+        <div class= "side-info">
+        <h5 style= "font-weight: bold"><%= @article.name %>
+        <%= @article.category.name %></h5>
+        <p>SIZE: M</p>
+        <p>$70</p>
+        </div>
+        </div>
+
+        <hr>
+        <div class="d-flex justify-content-between">
+          <p>SUBTOTAL</p>
+          <p>$70</p>
+        </div>
+
+        <%= form_tag orders_path do %>
+        <%= hidden_field_tag 'article_id', @article.id %>
+        <%= submit_tag 'checkout', class: 'btn coral-button btn-lg' %>
+        <% end %>
+
+        </div>
+
+      </div><!-- modal-content -->
+    </div><!-- modal-dialog -->
+  </div><!-- modal -->
+
+
+</div><!-- container -->
 
 

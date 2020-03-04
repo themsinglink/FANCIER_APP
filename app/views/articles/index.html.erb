@@ -42,6 +42,9 @@
       </div>
     <% end %>
   </div>
+
+  <% end %>
+
 </div>
 
 
@@ -54,6 +57,17 @@
   <% if params[:query] %>
   <%= link_to "Back to Overview", articles_path, class: 'btn btn-primary' %>
   <% end %>
+
+          <%= link_to article_path(article) do %>
+            <% if article.photo.attached? %>
+              <%= cl_image_tag article.photo.key %>
+            <% else %>
+              <img src="https://source.unsplash.com/random?sig=#{rand(1..1000)}&?jet" alt="">
+            <% end %>
+          <% end %>
+        <% end %>
+
+  </div>
 
 </div>
 

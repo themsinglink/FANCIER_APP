@@ -1,1 +1,32 @@
 // Specific CSS for your home-page
+.mainbutton{
+  position: center;
+  background-color: #D1B8B8;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 25px;
+  opacity: 0.9;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.mainbutton {
+
+  text-align: center;
+}
+
+
+.main-container{
+  text-align: center;
+  display: flex;
+  background-size: cover;
+  background-image: url('background.png');
+}
+
+
+.main-text{
+  color: white;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+}
