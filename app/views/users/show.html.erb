@@ -1,8 +1,37 @@
-<h2>ARTICLES I AM SELLING</h2>
+<div class="background-profile">
 
-<%  @user.articles.each do |article| %>
-  <%= article.name %>
-  <%= article.description %>
-  <%= article.material %>
-  <%= article.price_cents %>
-<% end %>
+</div>
+<div class="backround-user">
+  <div class="profile-info">
+  <%= image_tag "profilephoto.png", class: "", alt: "alttext" %>
+  <h2><%=  @user.name%></h2>
+  <p>london, england</p>
+  </div>
+<div class="profile-links">
+  <div class="clothes">
+    <a href="#">clothes</a>
+  </div>
+  <div class="likes">
+    <a href="#">likes</a>
+  </div>
+</div>
+</div>
+<div class="clothing-grid">
+  <%# @user.articles.each do |article| %>
+  <div class="article-photo" style="background-image: url(<%= image_path ('article1.jpg') %>);"></div>
+  <div class="article-photo" style="background-image: url(<%= image_path ('article2.jpg') %>);"></div>
+  <div class="article-photo" style="background-image: url(<%= image_path ('article3.jpg') %>);"></div>
+  <div class="article-photo" style="background-image: url(<%= image_path ('article4.jpg') %>);"></div>
+  <div class="article-photo" style="background-image: url(<%= image_path ('article3.jpg') %>);"></div>
+  <div class="article-photo" style="background-image: url(<%= image_path ('article2.jpg') %>);"></div>
+  <div class="article-photo" style="background-image: url(<%= image_path ('article1.jpg') %>);"></div>
+  <div class="article-photo" style="background-image: url(<%= image_path ('article4.jpg') %>);"></div>
+  <div class="article-photo" style="background-image: url(<%= image_path ('article2.jpg') %>);"></div>
+  <%#= cl_image_path article.photo.key %>
+</div>
+<%# end %>
+</div>
+
+
+
+
