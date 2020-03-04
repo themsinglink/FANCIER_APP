@@ -11,12 +11,15 @@ class Article < ApplicationRecord
   validates :price_cents, presence: true
 
   include PgSearch::Model
-  pg_search_scope :search_by_name_and_color_and_material_and_category_id_and_tag_name,
+  pg_search_scope :search_by_name_and_color_and_material_and_category,
   # <-- I am not sure if it is OK to put category_id as it refers to another table
 
-    against: [ :name, :color, :material, :category_id, tags: [:name]],
+    against: [ :name, :color, :material, :category_id],
     using: {
-      tsearch: { prefix: true }     }
+      tsearch: { prefix: true }     },
+    associated_against: {
+      tags: [:name]
+    }
 
 end
 
