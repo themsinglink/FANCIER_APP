@@ -16,17 +16,20 @@
 
 
 <div class="container">
-  <div class="card" style="width= 18rem;">
+  <div class="card" style="width=50%">
   <h2><% @articles.each do |article| %></h2>
-      <%= article.name %>
-     <%= link_to article_path(article) do %>
-      <% if article.photo.attached? %>
-        <%= cl_image_tag article.photo.key %>
-        <% else %>
-      <img src="https://source.unsplash.com/random?sig=#{rand(1..1000)}&?jet" alt="">
+        <%= article.name %>
+        <%= article.description %>
+        <%= article.price %>
+
+        <%= link_to article_path(article) do %>
+          <% if article.photo.attached? %>
+            <%= cl_image_tag article.photo.key %>
+          <% else %>
+            <img src="https://source.unsplash.com/random?sig=#{rand(1..1000)}&?jet" alt="">
+          <% end %>
         <% end %>
-  <% end %>
-  <% end %>
+      <% end %>
   </div>
 </div>
 
