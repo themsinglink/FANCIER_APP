@@ -1,6 +1,9 @@
 // Import page-specific CSS files here.
 @import "home";
-
+@import "usershow";
+@import "dashboard";
+@import "articles"
+@import "articleshow";
 
 .card-container {
   display: grid;

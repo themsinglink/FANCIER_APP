@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home]
+  skip_before_action :authenticate_user!, only: [:home, :about]
 
   def home
 
@@ -11,6 +11,9 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+  end
+
+  def listings
   end
 
 end

@@ -7,13 +7,15 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="..." class="d-block w-100" alt="...">
+    <%= cl_image_tag @article.photo.key, style:"width: 100%;"%>
     </div>
     <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
+    <%= cl_image_tag @article.photo.key, style:"width: 100%;" %>
+
     </div>
     <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
+    <%= cl_image_tag @article.photo.key, style:"width: 100%;" %>
+
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -25,25 +27,27 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-<div class="container demo">
+<div class=" info">
   <div>
+    <div class="d-flex justify-content-start" style="margin: 10px">
+    <%= image_tag "profilephoto", class: "avatar" %>
+    <div class="profile-tag">
+      <p><strong>katy link</strong></p>
+      <p>london, england</p>
+    </div>
+    </div>
     <div class= "d-flex justify-content-between">
     <div>
-
-<%= link_to "my profile", user_path(current_user) %>
-<%= link_to "seller profile", user_path(@article.user) %>
-
-
-    <%= @article.name %>
-    <%= @article.category.name %>
+    <h5 style= "font-weight: bold"> <%= @article.name %>
+      <%= @article.category.name %></h5>
     </div>
-    <p>$70</p>
+    <p style= "font-weight: bold">$70</p>
   </div>
   <p>SIZE: M</p>
   <p>I wore this top to last burning
 man and it’s here for its revival.
 The top is good as new!</p>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">
+    <button type="button" class="btn coral-button btn-lg" data-toggle="modal" data-target="#myModal2">
       add to cart
     </button>
   </div>
@@ -59,9 +63,11 @@ The top is good as new!</p>
 
         <div class="modal-body">
         <div class="d-flex">
-          <div>
-        <%= @article.name %>
-        <%= @article.category.name %>
+        <%= cl_image_tag @article.photo.key, style:"width: 30%;" %>
+
+        <div class= "side-info">
+        <h5 style= "font-weight: bold"><%= @article.name %>
+        <%= @article.category.name %></h5>
         <p>SIZE: M</p>
         <p>$70</p>
         </div>

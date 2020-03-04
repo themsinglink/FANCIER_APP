@@ -44,6 +44,23 @@
   color: white;
 }
 
+.listing-clothes {
+  background: rgba(201, 127, 106, 0.6);
+}
+
+.listing-likes {
+  background: $main;
+  padding: 10px 25px;
+  border-radius: 3px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.listing-likes:hover {
+  opacity: .8;
+  transition: all 0.3s ease-in;
+}
+
 .likes {
   background: rgba(201, 127, 106, 0.6);
   padding: 10px 25px;

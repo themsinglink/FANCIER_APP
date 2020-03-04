@@ -1,3 +1,89 @@
 .orders {
-  display: flex;
+  // display: flex;
+  margin: 0 auto;
 }
+
+.background-profile h1 {
+  color: white;
+  background: #C97F6A;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  position: relative;
+  text-align: center;
+  font-weight: 200;
+  font-size: 50px;
+  left: 800px;
+}
+
+.order-info {
+  color: $black;
+  margin-top: 12px;
+  margin-left: 17px;
+}
+
+.border-order {
+  padding-top: 30px;
+  padding-top: 30px;
+  border-top: 0.5px solid #C4C4C4;
+}
+
+.order-photo {
+  height: 130px;
+  width: 130px;
+  background: no-repeat;
+  background-size: cover;
+  padding: 40px;
+  padding-right: 30px;
+}
+
+.order-info h2 {
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.order-info h3 {
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  margin-top: 9px;
+  margin-bottom: 9px
+}
+
+.order-info h4 {
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+}
+
+.order-info p {
+  font-weight: 600;
+  font-size: 12px;
+  text-align: center;
+  background-color: $main;
+  padding: 8px 15px;
+  color: white;
+  border-radius: 3px;
+}
+
+.total-section {
+  display: flex;
+  padding-top: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 20px;
+}
+
+.order-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .total-section {
+    font-size: 18px;
+  }
+}
+
+

@@ -1,13 +1,61 @@
 .article-card {
-  overflow: hidden;
+  border-radius: 1px;
   display: flex;
-  background: red;
-  transition: all .3s ease 0s;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin: 32px;
+  // box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  align-items: center;
+  justify-content: space-around;
+  font-size: 22px;
+  color: black;
+  font-weight: bolder;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
 
+.article-pic i.far.fa-star {
+  position: absolute;
+  right: 45px;
+  top: 24px;
 }
 
 .article-card > img {
-  width: 80%;
+  width: 100%;
+}
+
+.article-card .article-card-infos {
+  padding: 16px;
+}
+
+
+/*Media Queries*/
+
+/*Smallest device*/
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  #map {
+    display: none;
+  }
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+  #map {
+    display: none;
+  }
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  #map {
+    display: block;
+  }
 }

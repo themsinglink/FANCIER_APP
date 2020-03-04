@@ -1,37 +1,62 @@
-<div class="banner">
-
-<%= link_to "my profile", user_path(current_user)%>
-<%= link_to "my dashboard", dashboard_path%>
-<%= link_to "list an article", new_article_path%>
-
-<h1>Welcome to Fancier</h1>
+<div class="banner d-flex flex-column justify-content-around align-items-center">
+  <h1>Welcome to Fancier</h1>
+  <p>your #1 address to find the coolest festival outfits.</p>
+</div>
 
 <div class="container">
 
-<p>your #1 address to find the coolest festival outfits.</p>
+<div class="search-index">
+  <%= form_tag(articles_path, method: 'get', class: "form-inline") do %>
+    <div id= "search-data" class="form-search search-data" data-articles="<%= @articles.to_json %>">
+      <%= text_field_tag :q, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Search for fancy outfit... 🔎" %>
+    </div>
+  <% end %>
+</div>
 
-<%= form_tag(articles_path, method: 'get', class: "form-inline") do %>
-  <div id= "search-data" class="form-search search-data" data-articles="<%= @articles.to_json %>">
-    <%= text_field_tag :q, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Search for fancy outfit..." %>
-    <%= submit_tag "Search", class: "btn btn-primary button-home" %>
+<div class="article-cards-container mt-2">
+  <div class="row">
+    <% @articles.each do |article| %>
+      <div class="col-6">
+        <div class="article-card my-3">
+          <%= link_to article_path(article) do %>
+            <div class="article-pic">
+              <% if current_user %>
+                <% if current_user.favorites.include?(Favorite.select(article: article, user: current_user).first) %> <i class="fas fa-star"></i> <% else %> <i class="far fa-star"></i> <% end %>
+              <% else %>
+                <i class="far fa-star"></i>
+              <% end %>
+              <% if article.photo.attached? %>
+                <%= cl_image_tag article.photo.key, transformation: {height: 200, width: 150, crop: "fill"} %>
+              <% else %>
+                <img src="https://source.unsplash.com/random?sig=#{rand(1..1000)}&?jet" alt="">
+              <% end %>
+            </div>
+            <div class="article-card-infos">
+              <div>
+                <h4 class="text-center"><%= article.name%></h4>
+              </div>
+              <p class="text-center article-card-pricing"> $<%= article.price %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
   </div>
+
   <% end %>
 
-
-</div>
-
 </div>
 
 
 
-<div class="container">
 
-  <div class="article-card">
+<!-- After executed search back to index -->
 
-      <h2><% @articles.each do |article| %></h2>
-          <%= article.name %>
-          <%= article.description %>
-          <%= article.price %>
+<div class=search-footer>
+
+  <% if params[:query] %>
+  <%= link_to "Back to Overview", articles_path, class: 'btn btn-primary' %>
+  <% end %>
 
           <%= link_to article_path(article) do %>
             <% if article.photo.attached? %>
@@ -40,12 +65,10 @@
               <img src="https://source.unsplash.com/random?sig=#{rand(1..1000)}&?jet" alt="">
             <% end %>
           <% end %>
-        <% end %>
-
 
   </div>
-</div>
 
+</div>
 
 
 
