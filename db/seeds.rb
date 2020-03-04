@@ -3,10 +3,12 @@ require "open-uri"
 puts 'Cleaning database...'
 
 ArticleTag.destroy_all
+Tag.destroy_all
+Order.destroy_all
 Article.destroy_all
 User.destroy_all
 Category.destroy_all
-Tag.destroy_all
+
 
 # userphoto_1 = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1578927204/z37gkiugtzu0smpt6jpf.jpg')
 user_1 = User.new(name: "Katy", email: "katy@gmail.com", password: "123456")
