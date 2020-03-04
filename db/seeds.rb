@@ -11,7 +11,7 @@ Category.destroy_all
 user_1 = User.create!(name: "Laura", email: "laura@gmail.com", password: "123456")
 user_2 = User.create!(name: "Katy", email: "katy@gmail.com", password: "123456")
 user_3 = User.create!(name: "Meghan", email: "meghan@gmail.com", password: "123456")
-user_4 = User.create!(name: "Kendrikc", email: "kendrick@gmail.com", password: "123456")
+user_4 = User.create!(name: "Kendrikc", email: "kendrikc@gmail.com", password: "123456")
 
 puts "#{User.count} users created!"
 
