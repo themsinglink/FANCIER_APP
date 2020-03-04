@@ -1,2 +1,11 @@
 // Import page-specific CSS files here.
 @import "home";
+
+
+.card-container {
+  display: grid;
+}
+
+
+@import "usershow";
+@import "dashboard";

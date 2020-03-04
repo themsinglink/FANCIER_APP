@@ -1,0 +1,13 @@
+.article-card {
+  overflow: hidden;
+  display: flex;
+  background: red;
+  transition: all .3s ease 0s;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 32px;
+
+}
+
+.article-card > img {
+  width: 80%;
+}

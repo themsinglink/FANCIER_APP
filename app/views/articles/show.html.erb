@@ -2,6 +2,10 @@
 <%= @article.category.name %>
 
 
+<%= link_to "my profile", user_path(current_user) %>
+<%= link_to "seller profile", user_path(@article.user) %>
+
+
 <div class="menu-icon open" id="menu-icon" onclick="toggleNav()">
   <div class="icon-wrapper">
         <button>click</button>
