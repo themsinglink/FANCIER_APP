@@ -1,4 +1,18 @@
+<div class="main-container">
+ <div class="main-text">
+   <h1>share the glitter, not the litter</h1>
+   <p>#1 destination to find your unique festival outfit</p>
+ </div>
+  <%= link_to " Explore", articles_path, class: 'mainbutton' %>
+</div>
 
 
-<h1>share the glitter, not the litter</h1>
-<p>#1 destination to find your unique festival outfit</p>
+
+
+<div class="tag-container">
+<% @tags.each do |tag| %>
+  <%= link_to tag_path(tag) do %>
+    <%= tag.name %>
+  <% end %>
+<% end %>
+</div>
