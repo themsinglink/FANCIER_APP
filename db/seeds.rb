@@ -2,6 +2,7 @@ require "open-uri"
 
 puts 'Cleaning database...'
 
+ArticleTag.destroy_all
 Article.destroy_all
 User.destroy_all
 Category.destroy_all
