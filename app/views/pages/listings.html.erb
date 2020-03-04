@@ -8,10 +8,10 @@
     <p>london, england</p>
   </div>
   <div class="profile-links">
-    <div class="clothes">
+    <div class="clothes listing-clothes">
       <a href="/dashboard">my orders</a>
     </div>
-    <div class="likes">
+    <div class="listing-likes">
       <a href="/listings">listings</a>
     </div>
   </div>
@@ -21,20 +21,20 @@
 
   <div class="order-section">
     <div class="orders">
-      <% current_user.orders.each do |order| %>
+      <% current_user.articles.each do |article| %>
         <div class="d-flex border-order">
           <div class="order-photo" style="background-image: url(<%= image_path ('article4.jpg') %>);"></div>
           <div class="order-info">
 
-            <h2><%= order.article.name.capitalize %></h2>
-            <h3>SIZE: M <%= order.article.size %></h3>
-            <h4>$<%= order.article.price_cents%>.00</h4>
-            <p>in transit</p>
+            <h2><%= article.name.capitalize %></h2>
+            <h3>SIZE: <%= article.size %></h3>
+            <h4>$<%= article.price_cents%>.00</h4>
+            <p>sold</p>
           </div>
         </div>
         <div class="total-section justify-content-between">
           <div class="subtotal">SUBTOTAL</div>
-          <div class="price">$<%= order.article.price_cents%>.00</div>
+          <div class="price">$<%= article.price_cents%>.00</div>
         </div>
       <% end %>
     </div>
