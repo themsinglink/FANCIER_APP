@@ -1,0 +1,12 @@
+<h2>MY ORDERS</h2>
+
+<%= current_user.name %>
+<ul>
+<% current_user.orders.each do |order| %>
+  <li><%= order.amount_currency %></li>
+  <li><%= order.amount_cents %></li>
+  <li><%= order.article.name %></li>
+  <li><%= order.article.price_cents %></li>
+  <li><%= order.created_at %></li>
+<% end %>
+</ul>

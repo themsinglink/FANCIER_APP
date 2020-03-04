@@ -1,1 +1,8 @@
-<%= @user.email %>
+<h2>ARTICLES I AM SELLING</h2>
+
+<%  @user.articles.each do |article| %>
+  <%= article.name %>
+  <%= article.description %>
+  <%= article.material %>
+  <%= article.price_cents %>
+<% end %>

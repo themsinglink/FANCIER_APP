@@ -1,5 +1,9 @@
 <div class="banner">
 
+<%= link_to "my profile", user_path(current_user)%>
+<%= link_to "my dashboard", dashboard_path%>
+<%= link_to "list an article", new_article_path%>
+
 <h1>Welcome to Fancier</h1>
 
 <p>your #1 address to find the coolest festival outfits.</p>
@@ -29,5 +33,5 @@
 
 
 
-<%= link_to "list an article", new_article_path%>
+
 
