@@ -1,1 +1,14 @@
-<%= @tag.name %>
+
+<div class="collection-background">
+  <h2><%= @tag.name %></h2>
+</div>
+
+<div>
+  <% @categories.each do |category| %>
+    <% next if category.articles_by_tag(@tag.name).empty? %>
+    <h5><%= category.name %></h5>
+    <% category.articles_by_tag(@tag.name).each do |article| %>
+      <p><%= article.name %></p>
+    <% end %>
+  <% end %>
+</div>
