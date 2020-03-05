@@ -8,11 +8,14 @@ Rails.application.routes.draw do
 
   resources :articles, only: [:index, :new, :create, :show]
   resources :orders, only: [:show, :create] do
+    resources :reviews, only: [:new, :create]
 
     resources :payments, only: :new
   end
 
   resources :tags, only: [:show]
+
+
 
 
 
