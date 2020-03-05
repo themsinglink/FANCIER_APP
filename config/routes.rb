@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
 
   resources :articles, only: [:index, :new, :create, :show]
-  resources :orders, only: [:show, :create, :edit, :update] do
+  resources :orders, only: [:show, :create] do
+    resources :reviews, only: [:new, :create]
 
     resources :payments, only: :new
   end
@@ -21,6 +22,8 @@ Rails.application.routes.draw do
   namespace :buyers do
     resources :orders, only: :update
   end
+
+
 
 
 

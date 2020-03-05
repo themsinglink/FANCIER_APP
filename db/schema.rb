@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2020_03_04_153111) do
-
+ActiveRecord::Schema.define(version: 2020_03_05_114555) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -99,6 +97,17 @@ ActiveRecord::Schema.define(version: 2020_03_04_153111) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.integer "rating"
+    t.bigint "user_id"
+    t.bigint "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_reviews_on_order_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "tags", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -127,4 +136,6 @@ ActiveRecord::Schema.define(version: 2020_03_04_153111) do
   add_foreign_key "favorites", "users"
   add_foreign_key "orders", "articles"
   add_foreign_key "orders", "users"
+  add_foreign_key "reviews", "orders"
+  add_foreign_key "reviews", "users"
 end
