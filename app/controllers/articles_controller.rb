@@ -11,9 +11,9 @@ class ArticlesController < ApplicationController
     else
       @articles = Article.all
     end
-    @articles = policy_scope(@articles).order(created_at: :desc)
-
-    @favorite = Favorite.new
+      @articles = policy_scope(@articles).order(created_at: :desc)
+      @favorite = Favorite.new
+    end
 
 
 
@@ -57,9 +57,10 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article.destroy
-    end
+  end
 
   private
+
     def set_article
       @article = Article.find(params[:id])
     end
@@ -70,3 +71,4 @@ class ArticlesController < ApplicationController
 
 
 end
+
