@@ -10,6 +10,9 @@ class Article < ApplicationRecord
   validates :name, presence: true
   validates :name, presence: true
   validates :price_cents, presence: true
+  has_many :favorites, dependent: :destroy
+
+scope :favorited_by, -> (username) { joins(:favorites).where(favorites: { user: User.where(username: username) }) }
 
   include PgSearch::Model
   pg_search_scope :search_by_name_and_color_and_material_and_category,
