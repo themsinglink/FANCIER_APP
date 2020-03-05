@@ -79,9 +79,16 @@ The top is good as new!</p>
           <p>$70</p>
         </div>
 
-        <%= form_tag orders_path do %>
-        <%= hidden_field_tag 'article_id', @article.id %>
-        <%= submit_tag 'checkout', class: 'btn coral-button btn-lg' %>
+        <%= simple_form_for @order do |f|%>
+          <%= f.input :name %>
+          <%= f.input :street_address %>
+          <%= f.input :apartment_number %>
+          <%= f.input :city %>
+          <%= f.input :state_address %>
+          <%#= f.input :country %>
+          <%= f.input :postal_code %>
+          <%= f.input :article_id, :as => :hidden, :input_html => { :value => @article.id } %>
+          <%= f.submit 'checkout', class: 'btn coral-button btn-lg' %>
         <% end %>
 
         </div>
