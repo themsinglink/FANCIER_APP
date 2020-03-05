@@ -9,18 +9,16 @@ Rails.application.routes.draw do
   resources :articles, only: [:index, :new, :create, :show, :edit, :update]
   resources :orders, only: [:show, :create, :edit, :update] do
 
+  end
+
+
+  resources :orders, only: [:show, :create] do
     resources :payments, only: :new
   end
 
   resources :tags, only: [:show]
 
-  namespace :sellers do
-    resources :orders, only: :update
-  end
-
-  namespace :buyers do
-    resources :orders, only: :update
-  end
+  resources :favorites, only: :index
 
 
 
