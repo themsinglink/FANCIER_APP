@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   def home
 
     @tags = Tag.all
-  
+
   end
 
   def about
@@ -14,6 +14,10 @@ class PagesController < ApplicationController
   end
 
   def listings
-  end
+    @listings = current_user.articles
 
+    if params[:state].present?
+      @listings = @listings.send("with_#{params[:state]}_orders".to_sym)
+    end
+  end
 end

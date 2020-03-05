@@ -18,6 +18,7 @@
   </div>
 </div>
 
+
 <div class="order-container">
 
   <div class="order-section">
@@ -30,7 +31,7 @@
             <h2><%= order.article.name.capitalize %></h2>
             <h3>SIZE: M <%= order.article.size %></h3>
             <h4>$<%= order.article.price_cents%>.00</h4>
-            <p>in transit</p>
+            <p><%= order.state%></p>
           </div>
         </div>
         <div class="total-section justify-content-between">

@@ -25,4 +25,27 @@ class OrdersController < ApplicationController
     @order = current_user.orders.find(params[:id])
     authorize @order
   end
+
+  def edit
+     @order = current_user.orders.find(params[:id])
+     authorize @order
+  end
+
+  def update
+    @order = Order.find(params[:id])
+    authorize @order
+    if @order.update(order_params)
+      redirect_to listings_path
+    else
+      render :edit
+    end
+  end
+
+private
+
+  def order_params
+    params.require(:order).permit(:state)
+  end
 end
+
+
