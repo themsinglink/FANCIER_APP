@@ -1,4 +1,4 @@
-.article-card {
+.article-card-old {
   border-radius: 1px;
   display: flex;
   // box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -19,11 +19,11 @@
   top: 24px;
 }
 
-.article-card > img {
+.article-card-old > img {
   width: 100%;
 }
 
-.article-card .article-card-infos {
+.article-card-old .article-card-infos {
   padding: 16px;
 }
 
