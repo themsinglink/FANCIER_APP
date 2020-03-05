@@ -1,0 +1,15 @@
+.logo {
+  text-align: center;
+  letter-spacing: 4px;
+  margin: 0;
+  font-family: montserrat;
+  :visited {
+    color: $main;
+    text-decoration: none;
+  }
+  :hover {
+    color: $main;
+    text-decoration: none;
+  }
+}
+

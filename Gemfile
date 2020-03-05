@@ -10,13 +10,11 @@ gem 'rails', '5.2.4.1'
 gem 'redis'
 
 # added gems
-
 gem 'money-rails'
 gem 'stripe'
 gem 'stripe_event'
 gem 'faker'
 gem 'pundit'
-gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.12.0'
 
 gem 'country_select', '~> 4.0'
@@ -24,16 +22,12 @@ gem 'country_select', '~> 4.0'
 gem 'pg_search', '~> 2.3.0'
 gem 'bullet'
 
-
-#
-
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
-#added gem
 
 
 group :development do
