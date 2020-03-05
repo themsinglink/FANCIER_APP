@@ -1,5 +1,5 @@
 class TagPolicy < ApplicationPolicy
-  class Scope < Scope
+  class Scope
     def resolve
       scope.all
     end
