@@ -1,10 +1,9 @@
-class Sellers::OrdersController < ApplicationController
+class Buyers::OrdersController < ApplicationController
   def update
     order = Order.find(params[:id])
     authorize order
-    order.update(state: :shipped)
+    order.update(state: :delivered)
     redirect_to request.referrer
   end
 end
-
 

@@ -18,6 +18,10 @@ Rails.application.routes.draw do
     resources :orders, only: :update
   end
 
+  namespace :buyers do
+    resources :orders, only: :update
+  end
+
 
 
   get :autocomplete, to: 'pages#autocomplete'
