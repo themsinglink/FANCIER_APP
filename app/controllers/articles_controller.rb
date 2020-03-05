@@ -14,6 +14,7 @@ class ArticlesController < ApplicationController
     @articles = policy_scope(@articles).order(created_at: :desc)
 
     @favorite = Favorite.new
+  end
 
 
 
