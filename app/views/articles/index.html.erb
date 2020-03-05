@@ -27,6 +27,15 @@
    <%= link_to article_path(article) do %>
    <div class="article-index">
   <div class="article-card" style="background-image:url(<%= cl_image_path article.photo.key %>);">
+    <% if Favorite.where(user: current_user, article: article).size != 0 %>
+      <%= link_to article_favorite_path(article, Favorite.where(user: current_user, article: article)), method: :delete do %>
+        <i class="fas fa-star"></i>
+      <% end %>
+    <% elsif policy(Favorite).create? %>
+      <%= link_to article_favorites_path(article, @favorite), method: :post do %>
+        <i class="far fa-star"></i>
+      <% end %>
+    <% end %>
   </div>
       <div class="article-card-infos">
         <h3><%= article.name%></h3>

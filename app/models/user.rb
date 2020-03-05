@@ -10,4 +10,18 @@ class User < ApplicationRecord
 
   has_many :favorites
   has_many :favorites, dependent: :destroy
+
+def favorite(article)
+ favorites.find_or_create_by(article: article)
 end
+
+def unfavorite(article)
+ favorites.where(article: article).destroy_all
+
+ article.reload
+end
+
+
+end
+
+

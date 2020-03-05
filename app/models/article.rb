@@ -16,6 +16,9 @@ class Article < ApplicationRecord
   validates :name, presence: true
   validates :name, presence: true
   validates :price_cents, presence: true
+  has_many :favorites, dependent: :destroy
+
+scope :favorited_by, -> (username) { joins(:favorites).where(favorites: { user: User.where(username: username) }) }
 
   scope :with_pending_orders, -> do
     joins(:orders).where(orders: { state: 'pending' }).distinct
