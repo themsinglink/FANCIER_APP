@@ -2,6 +2,8 @@ class Order < ApplicationRecord
   belongs_to :article
   belongs_to :user
 
+  has_many :reviews
+
   monetize :amount_cents
 
   enum state: %i[pending paid shipped delivered cancelled refunded]
