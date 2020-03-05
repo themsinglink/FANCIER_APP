@@ -21,15 +21,17 @@ class ArticlePolicy < ApplicationPolicy
     true
   end
 
-  def edit?
-    (record.user == user) || user.admin
-  end
-
   def update?
-   edit?
+    user_is_seller?
   end
 
   def destroy?
+    user_is_seller?
+  end
+
+  private
+
+  def user_is_seller?
     record.user == user
   end
 end
