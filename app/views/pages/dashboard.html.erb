@@ -18,6 +18,7 @@
   </div>
 </div>
 
+
 <div class="order-container">
 
   <div class="order-section">
@@ -28,9 +29,12 @@
           <div class="order-info">
 
             <h2><%= order.article.name.capitalize %></h2>
-            <h3>SIZE: M <%= order.article.size %></h3>
+            <h3>SIZE:<%= order.article.size %></h3>
             <h4>$<%= order.article.price_cents%>.00</h4>
-            <p>in transit</p>
+            <p><%= order.state%></p>
+             <% if order.state == 'shipped' %>
+              <%= link_to " Mark as received", buyers_order_path(order), method: :patch, class: 'mainbutton' %>
+            <% end %>
           </div>
         </div>
         <div class="total-section justify-content-between">

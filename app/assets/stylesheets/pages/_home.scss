@@ -86,8 +86,66 @@
 .sell-container{
   display: flex;
   background-image: url('ilustration1.jpeg');
-  width: 500px;
+  width: 100vw;
   height: 165px;
-  padding: 10px;
   margin-bottom: 24px;
+}
+
+.sell-photo{
+  width: 100%;
+  height: 200px;
+  text-align: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+
+
+.sell-button {
+  width: 100%;
+  text-align: center;
+}
+
+.text-sell {
+  background-color: white;
+  color: black;
+  padding: 20px;
+  width: 80%;
+  background-color: white;
+  margin: auto;
+  h2{
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 27px;
+
+  }
+  p{
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: 0.05em;
+    }
+}
+
+
+.button-section h2 {
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: 0.1em;
+
+  color: #1F2023;
+
+}
+
+.button-section p {
+  font-weight: 500;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: rgba(105, 97, 97, 0.76);
 }

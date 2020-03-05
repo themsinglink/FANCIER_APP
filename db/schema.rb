@@ -86,6 +86,13 @@ ActiveRecord::Schema.define(version: 2020_03_05_114555) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "state", default: 0, null: false
+    t.string "name"
+    t.string "street_address"
+    t.string "apartment_number"
+    t.string "city"
+    t.string "state_address"
+    t.string "country"
+    t.string "postal_code"
     t.index ["article_id"], name: "index_orders_on_article_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
