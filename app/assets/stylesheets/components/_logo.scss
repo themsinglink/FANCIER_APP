@@ -1,14 +1,14 @@
 .logo {
   text-align: center;
-  font-weight:bold;
+  letter-spacing: 4px;
   margin: 0;
   font-family: montserrat;
   :visited {
-    color: black;
+    color: $main;
     text-decoration: none;
   }
   :hover {
-    color: black;
+    color: $main;
     text-decoration: none;
   }
 }
