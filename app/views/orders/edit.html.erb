@@ -1,0 +1,7 @@
+<h2>Update Order Status</h2>
+
+<%= simple_form_for(@order) do |f| %>
+
+<%= f.input :state, collection: %i[pending paid delivered refunded], label: "Order status", placeholder: 'Shipped' %>
+<%= f.button :submit,  "Update"%>
+<% end %>
