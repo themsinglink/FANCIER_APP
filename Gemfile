@@ -19,7 +19,7 @@ gem 'pundit'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.12.0'
 
-
+gem 'country_select', '~> 4.0'
 
 gem 'pg_search', '~> 2.3.0'
 gem 'bullet'
@@ -34,7 +34,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 #added gem
-gem 'pundit'
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
