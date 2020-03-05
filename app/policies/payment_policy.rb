@@ -1,5 +1,5 @@
 class OrderPolicy < ApplicationPolicy
-  class Scope
+  class Scope < Scope
     def resolve
       scope.all
     end
