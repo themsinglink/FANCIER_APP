@@ -6,6 +6,9 @@ class User < ApplicationRecord
 
   has_many :orders
   has_many :articles
+  has_many :reviews
+
+  has_many :favorites
   has_many :favorites, dependent: :destroy
 
 def favorite(article)
