@@ -1,9 +1,25 @@
+.article-container {
+  position: relative;
+}
+
+.article-card-link {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  cursor: pointer;
+  z-index: 1;
+}
 
 .article-cards-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
   margin: 10px 30px 10px 30px;
+}
+
+.article-star {
+  position: absolute;
+  top: 10px; left: 10px;
+  z-index: 10;
 }
 
 .article-card {

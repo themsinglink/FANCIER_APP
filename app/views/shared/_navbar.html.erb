@@ -1,21 +1,36 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="nav-toggle">
-<i class="fas fa-bars"></i>
+    <i class="fas fa-bars"></i>
   </div>
 
   <h3 class="logo"> <%= link_to "FANCIER", root_path %> </h3>
   <%= link_to articles_path do %>
-  <i class="fas fa-shopping-bag"></i>
+    <i class="fas fa-shopping-bag"></i>
   <% end %>
 </div>
 <nav class="nav style-nav nav-hidden">
   <ul>
     <li><%= link_to "About", about_path %></li>
-    <li><%= link_to "Profile", user_path(current_user) %></li>
+
+    <% if user_signed_in? %>
+      <li><%= link_to "Profile", user_path(current_user) %></li>
+
+    <% end %>
     <li><%= link_to "Sell", new_article_path %></li>
     <li><%= link_to "Shop", articles_path %></li>
     <li><a href="#">Blog</a></li>
     <li><a href="#">FAQ</a></li>
+    <hr>
+    <% if user_signed_in? %>
+      <li>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to "Login", new_user_session_path %>
+      </li>
+
+    <% end %>
   </ul>
 </nav>
 

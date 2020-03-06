@@ -15,7 +15,8 @@ class ReviewPolicy < ApplicationPolicy
   end
 
   def create?
-    user_is_buyer? && order_delivered?
+    user_is_buyer?
+    #&& order_delivered?
   end
 
   private

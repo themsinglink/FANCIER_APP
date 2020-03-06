@@ -11,9 +11,10 @@ class ArticlesController < ApplicationController
     else
       @articles = Article.all
     end
-      @articles = policy_scope(@articles).order(created_at: :desc)
-      @favorite = Favorite.new
-    end
+    @articles = policy_scope(@articles).order(created_at: :desc)
+                                       .with_attached_photo
+    @favorite = Favorite.new
+  end
 
 
 

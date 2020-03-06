@@ -8,20 +8,20 @@
   <p>london, england</p>
   </div>
 <div class="profile-links">
- <!--  <div class="clothes">
-    <a href="#">clothes</a>
+
+  <div class="clothes">
+    <%= link_to "clothes", user_path(@user), class: 'clothes' %>
   </div>
   <div class="likes">
     <a href="#">likes</a>
-  </div> -->
- <ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active clothes" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Clothes</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link likes" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Likes</a>
-  </li>
-</ul>
+  </div>
+  <% if  @user.articles%>
+  <div class="likes">
+    <%= link_to "reviews", user_reviews_path(@user)%>
+  </div>
+  <% end %>
+</div>
+
 </div>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"><div class="clothing-grid">

@@ -1,0 +1,53 @@
+<div class="background-profile">
+
+</div>
+<div class="backround-user">
+  <div class="profile-info">
+  <%= image_tag "profilephoto.png", class: "", alt: "alttext" %>
+  <h2><%=  @user.name%></h2>
+  <p>london, england</p>
+  </div>
+<div class="profile-links">
+  <div class="clothes clothes-color">
+    <%= link_to "clothes", user_path(@user)%>
+  </div>
+  <div class="likes">
+    <a href="#">likes</a>
+  </div>
+  <% if  @user.articles%>
+  <div class="likes-color">
+    <%= link_to "reviews", user_reviews_path(@user)%>
+  </div>
+  <% end %>
+</div>
+</div>
+
+<div class="container mt-10 review-stars">
+<% articles = Article.where user: @user %>
+<% reviews = [] %>
+<% articles.each do |article| %>
+  <% if article.orders.size == 1 %>
+    <% if article.orders.first.review %>
+      <% reviews << article.orders.first.review %>
+    <% end %>
+  <% end %>
+<% end %>
+<% reviews.each do |review| %>
+    <h4><%=review.user.name%></h4>
+   <p>⭐⭐⭐⭐⭐ </p>
+  <p> <%= review.content %> </p>
+
+
+<% end %>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
