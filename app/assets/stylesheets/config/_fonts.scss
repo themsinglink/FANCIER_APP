@@ -3,13 +3,15 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,500,600,700&display=swap');
 
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+//$headers-font: "Montserrat";
 
 h1, h2, h3, p, a, {
   font-family: Montserrat;
 }
 
+label {
+  font-family: Montserrat;
+}
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {

@@ -1,6 +1,8 @@
 
+<div class="form-container">
 <%= simple_form_for(article) do |f| %>
 
+<div class="form-inputs">
 <%= f.input :name, label: "Title", placeholder: 'Cute top' %>
 <%= f.input :size, label: "Size ", placeholder: 'S/M/L'  %>
 <%= f.input :material, label: "Fabric ", placeholder: 'Fabric' %>
@@ -9,6 +11,17 @@
 <%= f.association :category %>
 <%= f.input :photo, as: :file %>
 <%= f.input :shipping_costs, label: "Shipping Cost ", placeholder: '$10.00' %>
-<%= f.input :state, label: "State", placeholder: 'Lightly worn' %>
-<%= f.button :submit,  "List"%>
+<%= f.button :submit,  "List", class: "mainbutton"%>
 <% end %>
+
+</div>
+
+<%= f.button :submit,  "List", style:'width: 100%;
+    padding: 15px;
+    background-color: #C97F6A;
+    border-radius: 4px;
+    color: white;
+    margin-top: 10px;' %>
+<% end %>
+</div>
+
