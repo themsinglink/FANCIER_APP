@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     resources :reviews, only: [:index, :new, :create]
   end
 
-  resources :articles, only: [:index, :new, :create, :show, :edit, :update]
+  resources :articles, only: [:index, :new, :create, :show, :edit, :update] do
+    resources :favorites, only: [:create, :destroy]
+  end
   resources :orders, only: [:show, :create, :edit, :update] do
 
   end
@@ -16,6 +18,7 @@ Rails.application.routes.draw do
 
   resources :orders, only: [:show, :create] do
     resources :payments, only: :new
+    resources :reviews, only: [:new, :create]
   end
 
   resources :tags, only: [:show]

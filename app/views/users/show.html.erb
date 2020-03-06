@@ -8,6 +8,7 @@
   <p>london, england</p>
   </div>
 <div class="profile-links">
+
   <div class="clothes">
     <%= link_to "clothes", user_path(@user), class: 'clothes' %>
   </div>
@@ -20,8 +21,10 @@
   </div>
   <% end %>
 </div>
+
 </div>
-<div class="clothing-grid">
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"><div class="clothing-grid">
   <%# @user.articles.each do |article| %>
   <div class="article-photo" style="background-image: url(<%= image_path ('article1.jpg') %>);"></div>
   <div class="article-photo" style="background-image: url(<%= image_path ('article2.jpg') %>);"></div>
@@ -33,7 +36,16 @@
   <div class="article-photo" style="background-image: url(<%= image_path ('article4.jpg') %>);"></div>
   <div class="article-photo" style="background-image: url(<%= image_path ('article2.jpg') %>);"></div>
   <%#= cl_image_path article.photo.key %>
+</div></div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <div class="clothing-grid">
+    <% @favorites.each do |f| %>
+       <div class="article-photo" style="background-image: url(<%= image_path ('article1.jpg') %>);"></div>
+    <% end %>
+  </div>
 </div>
+</div>
+
 <%# end %>
 </div>
 

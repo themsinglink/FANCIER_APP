@@ -12,9 +12,10 @@ class ArticlesController < ApplicationController
       @articles = Article.all
     end
     @articles = policy_scope(@articles).order(created_at: :desc)
-
+                                       .with_attached_photo
     @favorite = Favorite.new
   end
+
 
 
 
@@ -58,9 +59,10 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article.destroy
-    end
+  end
 
   private
+
     def set_article
       @article = Article.find(params[:id])
     end
@@ -71,3 +73,4 @@ class ArticlesController < ApplicationController
 
 
 end
+
