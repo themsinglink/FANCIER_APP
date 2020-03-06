@@ -2,6 +2,7 @@ require "open-uri"
 
 puts 'Cleaning database...'
 
+Review.destroy_all
 ArticleTag.destroy_all
 Tag.destroy_all
 Order.destroy_all
@@ -91,10 +92,10 @@ order_4 = Order.create!(amount_cents: 9000, article: article_5, user: user_3)
 
 puts "#{Order.count} orders created!"
 
-review_1 = Review.create!(content: "Really reliable seller, I would recommend to anyone! I can't wait to wear this to my next festival", rating: 5, order: order_1, user: user_1)
-review_2 = Review.create!(content: "Everything good, no complaints", rating: 4, order: order_2, user: user_2)
-review_3 = Review.create!(content: "Really reliable seller, I would recommend to anyone! I can't wait to wear this to my next festival", rating: 5, order: order_3, user: user_3)
-review_3 = Review.create!(content: "I love it!!! Thank you so much!", rating: 5, order: order_4, user: user_4)
+review_1 = Review.create!(content: "Really reliable seller, I would recommend to anyone! I can't wait to wear this to my next festival", rating: 5, order: order_1, user: order_1.user)
+review_2 = Review.create!(content: "Everything good, no complaints", rating: 4, order: order_2, user: order_2.user)
+review_3 = Review.create!(content: "Really reliable seller, I would recommend to anyone! I can't wait to wear this to my next festival", rating: 5, order: order_3, user: order_3.user)
+review_3 = Review.create!(content: "I love it!!! Thank you so much!", rating: 5, order: order_4, user: order_4.user)
 
 puts "#{Review.count} reviews created!"
 
