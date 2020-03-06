@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   mount StripeEvent::Engine, at: '/stripe-webhooks'
   resources :users, only: [:show]
 
+  resources :articles, only: [:index, :new, :create, :show, :edit, :update]
+  resources :orders, only: [:show, :create, :edit, :update] do
 
-  resources :articles, only: [:index, :new, :create, :show] do
-    resources :favorites, only: [:create, :destroy]
   end
 
 

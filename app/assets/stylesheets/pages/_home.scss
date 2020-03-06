@@ -1,13 +1,38 @@
 // Specific CSS for your home-page
-.mainbutton{
+.mainbutton {
   position: center;
-  background-color: #D1B8B8;
+  background-color: $main;
   color: white;
-  border-radius: 5px;
-  padding: 10px 25px;
-  opacity: 0.9;
+  font-weight: lighter;
+  border-radius: 3px;
+  padding: 16px 50px;
   margin-bottom: 20px;
   margin-top: 20px;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.page-container {
+  background-color: white;
+}
+
+.video-overlay {
+  z-index: -3;
+  background: linear-gradient(180deg, rgba(255, 242, 239, 0.29) 0%, rgba(250, 227, 209, 0.37) 100%);
+  height: 75vh;
+  width: 100%;
+  margin-top: -590px;
+}
+.sparkle_video {
+ width: 100vw;
+ height: 80vh;
+ position: absolute;
+ display: flex;
+ justify-content: center;
+ object-fit: cover;
+ top: 0;
+ z-index: -2;
+ opacity: .8;
 }
 
 
@@ -18,10 +43,13 @@
   text-decoration: none;
 }
 
-.mainbutton a{
+.mainbutton a {
   text-align: center;
 }
 
+.mainbutton a:hover {
+  text-decoration: none;
+}
 
 .main-container{
   height: 70vh;
@@ -31,59 +59,152 @@
   justify-content: space-around;
   display: flex;
   background-size: cover;
-  background-image: url('background.png');
+  background-image: asset-url('video.mp4');
+  margin-bottom: 65px
 }
 
-
+.shop-festival p {
+  font-size: 18px;
+}
 .main-text{
   color: white;
-  font-family: Montserrat;
-  font-style: normal;
   font-weight: bold;
+  margin: 30px;
+  margin-top: 100px
 }
 
-.tag-image{
-  background-image: url('article1.jpg');
-  position:relative;
-  height: 165px;
-  padding: 10px;
-  margin-bottom: 24px;
+.main-text a:hover {
+  text-decoration: none;
 }
 
-.tag-container{
-  padding: 10px;
-  padding-left: 10px;
+.mainbutton a:hover {
+  text-decoration: none;
 }
-
-.aboutus-container h1{
-  color: black;
-  font-size: 22px;
+.main-text h1 {
+  font-size: 34.2969px;
   font-weight: bold;
-  line-height: 27px;
   font-family: Montserrat;
 }
 
-.aboutus-container p{
-  color:black;
-  font-family: Montserrat;
-  font-style: normal;
+.main-text p {
   font-style: normal;
   font-weight: 600;
+  font-size: 20px;
+  font-family: Montserrat;
+  margin-top: 15px;
+  margin-bottom: 25px
+}
+
+.tag-image {
+  background-image: asset-url('article1.jpg');
+  position:relative;
+  height: 300px;
+  padding: 10px;
+  margin-bottom: 24px;
+  margin-top: 20px
+}
+
+.tag-image a:hover {
+  text-decoration: none;
+}
+
+.tags-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 15px;
+  margin-bottom: 20px;
+}
+
+.tags-grid h3 {
+  font-weight: 200;
+  font-size: 14px;
+  color: black;
+  background: white;
+  padding: 10px 30px;
+  font-family: Montserrat;
+  letter-spacing: 0.05em;
+}
+
+.tag-grid-image {
+  width: 100%;
+  height: 150px;
+  background-image: asset-url('article2.jpg');
+  display: flex;
+  text-decoration: none;
+  color: white;
+  background-repeat: none;
+  background-size: cover;
+  justify-content: center;
+  align-items: flex-end;
+  border-radius: 3px;
+}
+
+.tag-grid-image a {
+  color: white;
+}
+
+.tag-grid-image a:hover {
+  text-decoration: none;
+}
+.tags-container {
+  margin: 0px 20px;
+}
+
+.tag-image h3 {
+  text-decoration: none;
+  color: black;
+  background: white;
+  padding: 30px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 150px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 25px;
+  letter-spacing: 0.1em;
+  color: #1F2023;
+}
+
+.aboutus-container {
+  font-family: Montserrat;
+  padding: 20px;
+}
+.aboutus-container h1{
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.aboutus-container a:hover {
+  text-decoration: none;
+}
+
+.aboutus-container h2 {
+  font-size: 18px;
+  color: #707070;
+  letter-spacing: 0.07em;
+  margin-top: 10px
+}
+
+.aboutus-container p {
+  font-weight: 600;
   font-size: 17px;
-  line-height: 24px;
+  color: #4A4A4A;
+  margin-bottom: 25px;
 }
 
 .readmore-button{
   background-color: #C97F6A;
   color: white;
-  border-radius: 5px;
+  background: #B23716;
+  border-radius: 3px;
   padding: 10px 25px;
-  opacity: 0.9;
   margin-bottom: 20px;
   margin-top: 20px;
-
+  letter-spacing: 0.07em;
 }
-.sell-container{
+
+.sell-container {
   display: flex;
   background-image: url('ilustration1.jpeg');
   width: 100vw;
@@ -99,7 +220,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  }
+}
 
 
 .sell-button {

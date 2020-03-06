@@ -28,9 +28,14 @@
   </a>
 </div>
 <div class=" info">
+   <%= link_to edit_article_path do %>
+    <i class="far fa-edit edit"></i>
+    <% end %>
   <div>
     <div class="d-flex justify-content-start" style="margin: 10px">
+      <%= link_to user_path(current_user) do %>
     <%= image_tag "profilephoto", class: "avatar" %>
+    <% end %>
     <div class="profile-tag">
       <p><strong>katy link</strong></p>
       <p>london, england</p>

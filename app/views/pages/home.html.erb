@@ -2,32 +2,45 @@
   <div class="main-text">
     <h1>share the glitter, not the litter</h1>
     <p>#1 destination to find your unique festival outfit</p>
-    <%= link_to " Explore", articles_path, class: 'mainbutton' %>
+    <%= link_to " explore", articles_path, class: 'mainbutton' %>
   </div>
 </div>
-
-
-
+<div class="video-overlay"></div>
+<%= video_tag "video.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "sparkle_video" %>
+<div class="page-container">
 
 <div class="aboutus-container">
 
-<h1>Who are we?</h1>
-<p>A global community of free spirits</p>
-<p>Home to the most unique festival outfits from all over the world</p>
-<a href="#" class="readmore-button">Read more</a>
-</div>
 
+<h1>Who are we?</h1>
+<h2>A global community of free spirits</h2>
+<p>Home to the most unique festival outfits from all over the world</p>
+<a href="#" class="readmore-button">read more</a>
+</div>
+<div class="tags-container">
 <div class="tag-container">
-<% @tags.each do |tag| %>
   <div class="tag-image">
 <%= link_to tag_path(tag) do %>
-   <p><%= tag.name %></p>
+   <h3><%= @tags.first.name %></h3>
   <% end %>
   </div>
-<% end %>
 </div>
+  <div class="shop-festival">
+  <p>shop festival</p>
+  </div>
+  <div class="tags-grid">
+  <% @tags.each do |tag| %>
+    <div class="tag-grid-image">
+  <%= link_to tag_path(tag) do %>
+     <h3><%= tag.name %></h3>
+    <% end %>
+    </div>
+  <% end %>
+  </div>
 
-  <div class="sell-photo" style="background-image: url(<%= image_path ('illustration1.jpg') %>);">
+
+  <div class="sell-photo" style="background: $main">
+
   <%= link_to new_article_path, class: "sell-button" do %>
     <div class="text-sell">
     <h2>SELL ON FANCIER</h2>
@@ -35,4 +48,7 @@
     </div>
   <% end %>
 </div>
+</div>
+</div>
+
 
