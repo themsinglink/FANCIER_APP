@@ -1,10 +1,11 @@
 <div class="container">
   <div class="row py-4">
     <div class="col-md-3"><%= cl_image_tag @order.article.photo.key, width: '100%' %></div>
-    <div class="col">
-      <h1>Checkout summary</h1>
-      <p>Purchase of <strong><%= @order.article.name %></strong> for <strong><%= humanized_money_with_symbol @order.amount %></strong></p>
-      <button id="pay" class="btn btn-primary">Pay</button>
+    <div class="col" style="text-align: center; margin-top: 20px">
+      <h1 style= "font-size: 25px;">Checkout</h1>
+      <p>Purchase of <strong><%= @order.article.name %></strong> </p>
+       <p><strong><%= humanized_money_with_symbol @order.amount %></strong></p>
+      <button id="pay" class="btn coral-button">Checkout</button>
       <script src="https://js.stripe.com/v3/"></script>
       <script>
         const paymentButton = document.getElementById('pay');
@@ -14,7 +15,7 @@
             sessionId: '<%= @order.checkout_session_id %>'
           });
         });
-      </script> -->
+      </script>
     </div>
   </div>
 </div>
