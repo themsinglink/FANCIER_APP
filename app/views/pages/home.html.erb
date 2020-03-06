@@ -7,48 +7,46 @@
 </div>
 <div class="video-overlay"></div>
 <%= video_tag "video.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "sparkle_video" %>
+
 <div class="page-container">
-
-<div class="aboutus-container">
-
-
-<h1>Who are we?</h1>
-<h2>A global community of free spirits</h2>
-<p>Home to the most unique festival outfits from all over the world</p>
-<a href="#" class="readmore-button">read more</a>
-</div>
-<div class="tags-container">
-<div class="tag-container">
-  <div class="tag-image">
-<%= link_to tag_path(tag) do %>
-   <h3><%= @tags.first.name %></h3>
-  <% end %>
+  <div class="aboutus-container">
+    <h1>Who are we?</h1>
+    <h2>A global community of free spirits</h2>
+    <p>Home to the most unique festival outfits from all over the world</p>
+    <a href="#" class="readmore-button">read more</a>
   </div>
-</div>
-  <div class="shop-festival">
-  <p>shop festival</p>
-  </div>
-  <div class="tags-grid">
-  <% @tags.each do |tag| %>
-    <div class="tag-grid-image">
-  <%= link_to tag_path(tag) do %>
-     <h3><%= tag.name %></h3>
-    <% end %>
+  <div class="tags-container">
+    <div class="tag-container">
+      <div class="tag-image">
+        <%= link_to tag_path(tag) do %>
+          <h3><%= @tags.first.name %></h3>
+        <% end %>
+      </div>
     </div>
-  <% end %>
-  </div>
 
-
-  <div class="sell-photo" style="background: $main">
-
-  <%= link_to new_article_path, class: "sell-button" do %>
-    <div class="text-sell">
-    <h2>SELL ON FANCIER</h2>
-    <p>REGISTER NOW</p>
+    <div class="shop-festival">
+      <p>shop festival</p>
     </div>
-  <% end %>
-</div>
-</div>
+
+    <div class="tags-grid">
+      <% @tags.each do |tag| %>
+        <div class="tag-grid-image">
+          <%= link_to tag_path(tag) do %>
+            <h3><%= tag.name %></h3>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="sell-photo" style="background: $main">
+      <%= link_to new_article_path, class: "sell-button" do %>
+        <div class="text-sell">
+          <h2>SELL ON FANCIER</h2>
+          <p>REGISTER NOW</p>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 
