@@ -29,7 +29,7 @@ class OrdersController < ApplicationController
     @order = current_user.orders.find(params[:id])
     authorize @order
   end
-  
+
   def edit
      @order = current_user.orders.find(params[:id])
      authorize @order
@@ -46,7 +46,7 @@ class OrdersController < ApplicationController
   end
 
 private
-  
+
   def order_params
      params.require(:order).permit(:name, :street_address, :apartment_number, :city, :state_address, :country, :postal_code, :article_id)
   end
