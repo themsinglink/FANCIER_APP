@@ -81,5 +81,20 @@ article_5.save!
 
 ArticleTag.create!(tag: tag_2, article: article_5)
 
+
 puts "#{Article.count} articles created!"
+
+order_1 = Order.create!(amount_cents: 1000, article: article_3, user: user_4)
+order_2 = Order.create!(amount_cents: 6000, article: article_2, user: user_1)
+order_3 = Order.create!(amount_cents: 9000, article: article_1, user: user_2)
+order_4 = Order.create!(amount_cents: 9000, article: article_5, user: user_3)
+
+puts "#{Order.count} orders created!"
+
+review_1 = Review.create!(content: "Really reliable seller, I would recommend to anyone! I can't wait to wear this to my next festival", rating: 5, order: order_1, user: user_1)
+review_2 = Review.create!(content: "Everything good, no complaints", rating: 4, order: order_2, user: user_2)
+review_3 = Review.create!(content: "Really reliable seller, I would recommend to anyone! I can't wait to wear this to my next festival", rating: 5, order: order_3, user: user_3)
+review_3 = Review.create!(content: "I love it!!! Thank you so much!", rating: 5, order: order_4, user: user_4)
+
+puts "#{Review.count} reviews created!"
 
