@@ -5,7 +5,7 @@
     <%= link_to " explore", articles_path, class: 'mainbutton' %>
   </div>
 </div>
-
+<div class="video-overlay"></div>
 <%= video_tag "video.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "sparkle_video" %>
 <div class="page-container">
 
@@ -25,8 +25,9 @@
   <% end %>
   </div>
 </div>
-
+  <div class="shop-festival">
   <p>shop festival</p>
+  </div>
   <div class="tags-grid">
   <% @tags.each do |tag| %>
     <div class="tag-grid-image">
