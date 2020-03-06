@@ -10,7 +10,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :articles, only: [:index, :new, :create, :show, :edit, :update]
+  resources :articles, only: [:index, :new, :create, :show, :edit, :update] do
+    resources :favorites, only: [:create, :destroy]
+  end
   resources :orders, only: [:show, :create, :edit, :update] do
 
   end
