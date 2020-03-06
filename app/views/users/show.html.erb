@@ -9,11 +9,16 @@
   </div>
 <div class="profile-links">
   <div class="clothes">
-    <a href="#">clothes</a>
+    <%= link_to "clothes", user_path(@user), class: 'clothes' %>
   </div>
   <div class="likes">
     <a href="#">likes</a>
   </div>
+  <% if  @user.articles%>
+  <div class="likes">
+    <%= link_to "reviews", user_reviews_path(@user)%>
+  </div>
+  <% end %>
 </div>
 </div>
 <div class="clothing-grid">

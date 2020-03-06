@@ -36,6 +36,6 @@ class OrderPolicy < ApplicationPolicy
   end
 
   def user_is_seller?
-    record.article.user == user && record.state == "paid"
+   record.article.user == user && record.state == "paid"
   end
 end
