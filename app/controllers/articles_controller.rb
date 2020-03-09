@@ -6,19 +6,19 @@ class ArticlesController < ApplicationController
 
 
   def index
+    @articles = policy_scope(Article.available).order(created_at: :desc)
+                                               .with_attached_photo
+
     if params[:q].present?
-      @articles = Article.search_by_name_and_color_and_material_and_category(params[:q])
-    else
-      @articles = Article.all
+      @articles = @articles.search_by_name_and_color_and_material_and_category(params[:q])
     end
-    @articles = policy_scope(@articles).order(created_at: :desc)
-                                       .with_attached_photo
+
+    if current_user
+      @articles  = @articles - current_user.articles
+    end
+
     @favorite = Favorite.new
   end
-
-
-
-
 
   def show
     @order = Order.new

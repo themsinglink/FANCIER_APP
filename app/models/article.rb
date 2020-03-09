@@ -18,26 +18,29 @@ class Article < ApplicationRecord
   validates :price_cents, presence: true
   has_many :favorites, dependent: :destroy
 
-scope :favorited_by, -> (username) { joins(:favorites).where(favorites: { user: User.where(username: username) }) }
+  scope :available, -> do
+    includes(:orders).where(orders: { id: nil })
+                     .or(Article.with_cancelled_orders)
+  end
 
   scope :with_pending_orders, -> do
-    joins(:orders).where(orders: { state: 'pending' }).distinct
+    includes(:orders).where(orders: { state: 'pending' })
   end
 
   scope :with_paid_orders, -> do
-    joins(:orders).where(orders: { state: 'paid' }).distinct
+    includes(:orders).where(orders: { state: 'paid' })
   end
 
   scope :with_shipped_orders, -> do
-    joins(:orders).where(orders: { state: 'shipped' }).distinct
+    includes(:orders).where(orders: { state: 'shipped' })
   end
 
   scope :with_delivered_orders, -> do
-    joins(:orders).where(orders: { state: 'delivered' }).distinct
+    includes(:orders).where(orders: { state: 'delivered' })
   end
 
   scope :with_cancelled_orders, -> do
-    joins(:orders).where(orders: { state: 'cancelled' }).distinct
+    includes(:orders).where(orders: { state: 'cancelled' })
   end
 
   include PgSearch::Model

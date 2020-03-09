@@ -2,7 +2,7 @@ class Order < ApplicationRecord
   belongs_to :article
   belongs_to :user
 
-  has_one :review
+  has_one :review, dependent: :destroy
 
   monetize :amount_cents
 

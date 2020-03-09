@@ -6,6 +6,7 @@ class OrdersController < ApplicationController
     @order.state = :pending
     @order.user = current_user
     authorize @order
+    byebug
 
     if @order.save
       session = Stripe::Checkout::Session.create(
