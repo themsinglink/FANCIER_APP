@@ -37,11 +37,11 @@
 </div>
 <h2>You might also like...</h2>
 <div class="clothes-seller">
-  <% @article.user.articles.each do |article| %>
+  <% @user_articles.each do |article| %>
   <% unless article == @article %>
   <%= cl_image_tag article.photo.key, class: "seller-article" %>
 
-  <% end %>
+    <% end %>
   <% end %>
 </div>
 
