@@ -3,11 +3,12 @@ class ReviewsController < ApplicationController
   before_action :set_order, only: []
 
   def new
-    #@order = current_user.orders.first
+    @order = current_user.orders.first
+    #@seller = @order.article.user
     @review = Review.new
     @review.user = current_user
     @review.order = @order
-    @user = User.find(params[:user_id])
+    @user = current_user
     authorize @review
   end
 
@@ -17,11 +18,13 @@ class ReviewsController < ApplicationController
   end
 
   def create
+
     @order = current_user.orders.first
     @review = Review.new(review_params)
     @review.user = current_user
     @review.order = @order
     authorize @review
+
     if @review.save
       redirect_to dashboard_path
     else

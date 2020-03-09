@@ -24,10 +24,6 @@ Rails.application.routes.draw do
 
   resources :tags, only: [:show]
 
-
-
-
-
   get :autocomplete, to: 'pages#autocomplete'
   get "dashboard", to: 'pages#dashboard'
   get "listings", to: 'pages#listings'
