@@ -26,7 +26,7 @@
     <div class="orders">
       <% current_user.orders.each do |order| %>
         <div class="d-flex border-order">
-          <div class="order-photo" style="background-image: url(<%= image_path ('article4.jpg') %>);"></div>
+          <div class="order-photo" style="background-image: url(<%= cl_image_path order.article.photo.key %>);"></div>
           <div class="order-info">
 
 
