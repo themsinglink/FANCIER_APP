@@ -28,8 +28,6 @@
 </div>
 </div>
 
-<%= link_to "Write a review", new_user_review_path(@user) %>
-
 <div class="container mt-10 review-stars">
 <% articles = Article.where user: @user %>
 <% reviews = [] %>
