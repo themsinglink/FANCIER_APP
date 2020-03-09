@@ -40,14 +40,27 @@ scope :favorited_by, -> (username) { joins(:favorites).where(favorites: { user: 
     joins(:orders).where(orders: { state: 'cancelled' }).distinct
   end
 
+  def self.available_colors
+    all.map(&:color).uniq
+  end
+
+  def self.available_size
+    all.map(&:size).uniq
+  end
+
+  ransacker :price_money, type: :integer, formatter: proc { |dollars| dollars * 100 } do |p|
+    p.table[:price_cents]
+  end
+
   include PgSearch::Model
   pg_search_scope :search_by_name_and_color_and_material_and_category,
   # <-- I am not sure if it is OK to put category_id as it refers to another table
 
-    against: [ :name, :color, :material, :category_id],
+    against: [ :name, :color, :material],
     using: {
       tsearch: { prefix: true }     },
     associated_against: {
+      category: [:name],
       tags: [:name]
     }
 
@@ -58,6 +71,8 @@ scope :favorited_by, -> (username) { joins(:favorites).where(favorites: { user: 
     def active_order
       orders.active.first
     end
+
+
 end
 
 

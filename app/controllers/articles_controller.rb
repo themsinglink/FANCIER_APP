@@ -6,13 +6,16 @@ class ArticlesController < ApplicationController
 
 
   def index
-    if params[:q].present?
-      @articles = Article.search_by_name_and_color_and_material_and_category(params[:q])
-    else
-      @articles = Article.all
+    @q = Article.ransack(params[:q])
+    @articles = @q.result(distinct: true).includes(:category, :tags)
+
+    if params[:q_search].present?
+      @pg_result = Article.search_by_name_and_color_and_material_and_category(params[:q_search])
     end
+
     @articles = policy_scope(@articles).order(created_at: :desc)
-                                       .with_attached_photo
+                                          .with_attached_photo
+    @articles = @articles & @pg_result if @pg_result
     @favorite = Favorite.new
   end
 
