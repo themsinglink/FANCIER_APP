@@ -1,36 +1,119 @@
 <div class="page-container">
-<div class="banner-index">
-  <div class="header-index">
-    <h1>shop</h1>
-    <h1>fancier</h1>
+  <div class="banner-index">
+    <div class="header-index">
+      <h1>shop</h1>
+      <h1>fancier</h1>
+    </div>
+
   </div>
 
-</div>
-
-
-
-<div class="search-index">
-  <%= form_tag(articles_path, method: 'get', class: "form-inline") do %>
+  <div class="search-index">
+    <%= form_tag(articles_path, method: 'get', class: "form-inline") do %>
     <div id= "search-data" class="form-search search-data" data-articles="<%= @articles.to_json %>">
       <%= text_field_tag :q, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Search" %>
     </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
 
-<div class="category-name">
-  <h1>Burning man</h1>
-  <p>View all</p>
-</div>
+  <div class="category-name">
+    <h1>Burning man</h1>
+    <p>View all</p>
+  </div>
 
-<div class="article-cards-container">
-  <% @articles.each do |article| %>
+  <div class="article-cards-container">
+    <% @articles.each do |article| %>
     <%= render article %>
-  <% end %>
+    <% end %>
+  </div>
+
+
+
+  <!-- Button trigger modal -->
+  <button type="button" class="btn filter-button" data-toggle="modal" data-target="#exampleModalLong">
+   <%= image_tag "icon-filter-8.png", style: "width:14px;" %>
+   &nbsp; filter
+ </button>
+
+ <!-- Modal -->
+ <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" style="border-radius: 5px;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Looking for something specific?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <h5 class="modal-title" id="exampleModalLongTitle">Category</h5>
+      <div class="modal-body">
+        <section class="category">
+          <select id="category">
+            <option value="dress">Dress</option>
+            <option value="top">Top</option>
+            <option value="full-outfit">Full Outfit</option>
+            <option value="shoes">Shoes</option>
+            <option value="accessories">Accessories</option>
+            <option value="onesies">Onesies</option>
+            <option value="swim">Swim</option>
+          </select>
+        </section>
+      </div>
+      <h5 class="modal-title" id="exampleModalLongTitle">Color</h5>
+      <div class="modal-body">
+       <section class="colors">
+        <select id="color">
+          <option>Black</option>
+          <option>White</option>
+          <option>Red</option>
+          <option>Blue</option>
+          <option>Green</option>
+          <option>Yellow</option>
+          <option>Purple</option>
+          <option>Pink</option>
+          <option>Turquoise</option>
+          <option>Silver</option>
+          <option>Gold</option>
+          <option>Copper</option>
+          <option>Multi</option>
+          <option>Brown</option>
+          <option>Beige</option>
+          <option>Grey</option>
+        </select>
+      </section>
+    </div>
+    <h5 class="modal-title" id="exampleModalLongTitle">Size</h5>
+    <div class="modal-body">
+      <section class="size">
+        <select id="color">
+          <option>XXS</option>
+          <option>XS</option>
+          <option>S</option>
+          <option>M</option>
+          <option>L</option>
+          <option>XL</option>
+          <option>XXL</option>
+          <option>ONE SIZE</option>
+        </select>
+      </section>
+
+    </div>
+    <h5 class="modal-title" id="exampleModalLongTitle">Price</h5>
+    <div class="modal-body">
+     <span>0</span>
+     <input type="range" name="price" id="price" value="5" min="1" max="20">
+     <span>10000</span>
+   </div>
+   <h5 class="modal-title" id="exampleModalLongTitle">Tag</h5>
+   <div class="modal-body">
+    ...
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn coral-button">Search</button>
+  </div>
 </div>
-
-
-
-
+</div>
+</div>
 
 
 

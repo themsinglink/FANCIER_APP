@@ -48,8 +48,8 @@
         <% end %>
       <% end %>
     <div class="profile-tag">
-      <p><strong>katy link</strong></p>
-      <p>london, england</p>
+      <p><strong> <%= @article.user.name %> </strong></p>
+      <p>madrid, spain</p>
     </div>
     </div>
     <div class= "d-flex justify-content-between">
@@ -57,12 +57,10 @@
     <h5 style= "font-weight: bold"> <%= @article.name %>
       <%= @article.category.name %></h5>
     </div>
-    <p style= "font-weight: bold">$70</p>
+    <p style= "font-weight: bold"> $<%= @article.price_cents %> </p>
   </div>
-  <p>SIZE: M</p>
-  <p>I wore this top to last burning
-man and it’s here for its revival.
-The top is good as new!</p>
+  <p>SIZE: <%= @article.size %> </p>
+  <p> <%= @article.description %> </p>
     <button type="button" class="btn coral-button btn-lg" data-toggle="modal" data-target="#myModal2">
       add to cart
     </button>
@@ -84,15 +82,15 @@ The top is good as new!</p>
         <div class= "side-info">
         <h5 style= "font-weight: bold"><%= @article.name %>
         <%= @article.category.name %></h5>
-        <p>SIZE: M</p>
-        <p>$70</p>
+        <p>SIZE: <%= @article.size %></p>
+        <p><%= @article.price_cents %></p>
         </div>
         </div>
 
         <hr>
         <div class="d-flex justify-content-between">
           <p>SUBTOTAL</p>
-          <p>$70</p>
+          <p>$<%= @article.price_cents %></p>
         </div>
 
         <%= simple_form_for @order do |f|%>
