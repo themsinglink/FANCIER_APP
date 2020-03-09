@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   mount StripeEvent::Engine, at: '/stripe-webhooks'
   resources :users, only: [:show] do                           # member => restaurant id in URL
     resources :reviews, only: [:index, :new, :create]
+    resources :favorites, only: [:index]
   end
 
   resources :articles, only: [:index, :new, :create, :show, :edit, :update] do
@@ -22,11 +23,6 @@ Rails.application.routes.draw do
   end
 
   resources :tags, only: [:show]
-
-  resources :favorites, only: :index
-
-
-
 
   get :autocomplete, to: 'pages#autocomplete'
   get "dashboard", to: 'pages#dashboard'

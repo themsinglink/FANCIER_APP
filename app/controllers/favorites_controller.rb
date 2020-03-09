@@ -3,7 +3,8 @@ class FavoritesController < ApplicationController
   before_action :find_article, except: :index
 
   def index
-    @favorites = policy_scope(Favorite.where(user: current_user))
+    @favorites = policy_scope(Favorite.all)
+    @user = User.find(params[:user_id])
   end
 
   def create

@@ -3,17 +3,35 @@
   margin: 0 auto;
 }
 
+.dashboard-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  margin: 15px;
+}
+
+.dashboard-links a {
+  text-decoration: none;
+  color: white;
+}
+
+.add-margin h2{
+  padding-bottom: 10px;
+  padding-top: 12px;
+}
+
 .background-profile h1 {
   color: white;
   background: #C97F6A;
-  height: 50px;
+  height: 52px;
   width: 50px;
   border-radius: 50%;
   position: relative;
   text-align: center;
   font-weight: 200;
   font-size: 50px;
-  left: 800px;
+  left: 50px;
+  top: 170px;
 }
 
 .order-info {
@@ -58,7 +76,7 @@
 
 .order-info p {
   font-weight: 600;
-  font-size: 12px;
+  font-size: 13px;
   text-align: center;
   background-color: $main;
   padding: 8px 15px;
@@ -66,10 +84,20 @@
   border-radius: 3px;
 }
 
+.order-info p {
+  font-weight: 600;
+  font-size: 13px;
+  text-align: center;
+  background-color: #B23716;
+  padding: 8px 15px;
+  color: white;
+  border-radius: 3px;
+  margin-bottom: 11px;
+}
+
 .total-section {
   display: flex;
   padding-top: 20px;
-  padding-left: 15px;
   padding-right: 15px;
   padding-bottom: 20px;
 }
@@ -77,6 +105,11 @@
 .order-container {
   width: 80%;
   margin: 0 auto;
+}
+
+.dropdown-menu a:hover {
+  opacity: .7;
+  text-decoration:none;
 }
 
 // Large devices (desktops, 992px and up)

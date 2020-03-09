@@ -1,19 +1,20 @@
 <div class="background-profile">
-  <h1>+</h1>
+
 </div>
 <div class="backround-user">
 
   <div class="profile-info">
     <%= image_tag "profilephoto.png", class: "", alt: "alttext" %>
-    <h2><%=  current_user.name%></h2>
-    <p>london, england</p>
+    <div class="add-margin">
+      <h2>Order Dashboard</h2>
+    </div>
   </div>
-  <div class="profile-links">
+  <div class="dashboard-links">
     <div class="clothes">
-      <a href="/dashboard">my orders</a>
+      <a href="/dashboard">my purchases</a>
     </div>
     <div class="likes">
-      <a href="/listings">listings</a>
+      <a href="/listings">my listings</a>
     </div>
   </div>
 </div>
@@ -25,15 +26,20 @@
     <div class="orders">
       <% current_user.orders.each do |order| %>
         <div class="d-flex border-order">
-          <div class="order-photo" style="background-image: url(<%= image_path ('article4.jpg') %>);"></div>
+          <div class="order-photo" style="background-image: url(<%= cl_image_path order.article.photo.key %>);"></div>
           <div class="order-info">
 
+
             <h2><%= order.article.name.capitalize %></h2>
+
             <h3>SIZE:<%= order.article.size %></h3>
             <h4>$<%= order.article.price_cents%>.00</h4>
             <p><%= order.state%></p>
-             <% if order.state == 'shipped' %>
+
+            <% if order.state == 'shipped' %>
               <%= link_to " Mark as received", buyers_order_path(order), method: :patch, class: 'mainbutton' %>
+            <% elsif order.state == "delivered" && order.review.nil? %>
+              <%= link_to "Write a review", new_order_review_path(order) %>
             <% end %>
           </div>
         </div>

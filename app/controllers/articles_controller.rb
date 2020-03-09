@@ -16,12 +16,12 @@ class ArticlesController < ApplicationController
     @articles = policy_scope(@articles).order(created_at: :desc)
                                           .with_attached_photo
     @articles = @articles & @pg_result if @pg_result
+
+    if current_user
+      @articles  = @articles - current_user.articles
+    end
     @favorite = Favorite.new
   end
-
-
-
-
 
   def show
     @order = Order.new

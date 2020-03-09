@@ -1,3 +1,44 @@
-<% @favorites.each do |favorite| %>
-  <%= favorite.article.name %>
-<% end %>
+<div class="background-profile">
+
+</div>
+<div class="backround-user">
+  <div class="profile-info">
+  <%= image_tag "profilephoto.png", class: "", alt: "alttext" %>
+  <h2><%=  @user.name%></h2>
+   <p>
+    <% @user.rating.times do %>
+     ⭐
+    <% end %>
+  </p>
+  <p>madrid, spain</p>
+  </div>
+<div class="profile-links">
+
+  <div class= "clothes-color-2">
+    <%= link_to "clothes", user_path(@user)%>
+  </div>
+  <div class="clothes">
+    <%= link_to "likes", user_favorites_path(@user)%>
+  </div>
+  <% if  @user.articles%>
+  <div class="likes">
+    <%= link_to "reviews", user_reviews_path(@user)%>
+  </div>
+  <% end %>
+</div>
+
+</div>
+
+    <div class="clothing-grid">
+    <% @favorites.each do |favorite| %>
+    <%= link_to article_path(favorite.article) do %>
+       <%= cl_image_tag favorite.article.photo.key, class: "article-photo" %>
+    <% end %>
+  <% end %>
+  </div>
+
+
+
+
+
+

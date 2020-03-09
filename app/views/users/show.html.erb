@@ -5,7 +5,12 @@
   <div class="profile-info">
   <%= image_tag "profilephoto.png", class: "", alt: "alttext" %>
   <h2><%=  @user.name%></h2>
-  <p>london, england</p>
+   <p>
+    <% @user.rating.times do %>
+     ⭐
+    <% end %>
+  </p>
+  <p>madrid, spain</p>
   </div>
 <div class="profile-links">
 
@@ -13,7 +18,7 @@
     <%= link_to "clothes", user_path(@user), class: 'clothes' %>
   </div>
   <div class="likes">
-    <a href="#">likes</a>
+    <%= link_to "likes", user_favorites_path(@user)%>
   </div>
   <% if  @user.articles%>
   <div class="likes">
@@ -23,31 +28,19 @@
 </div>
 
 </div>
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"><div class="clothing-grid">
-  <%# @user.articles.each do |article| %>
-  <div class="article-photo" style="background-image: url(<%= image_path ('article1.jpg') %>);"></div>
-  <div class="article-photo" style="background-image: url(<%= image_path ('article2.jpg') %>);"></div>
-  <div class="article-photo" style="background-image: url(<%= image_path ('article3.jpg') %>);"></div>
-  <div class="article-photo" style="background-image: url(<%= image_path ('article4.jpg') %>);"></div>
-  <div class="article-photo" style="background-image: url(<%= image_path ('article3.jpg') %>);"></div>
-  <div class="article-photo" style="background-image: url(<%= image_path ('article2.jpg') %>);"></div>
-  <div class="article-photo" style="background-image: url(<%= image_path ('article1.jpg') %>);"></div>
-  <div class="article-photo" style="background-image: url(<%= image_path ('article4.jpg') %>);"></div>
-  <div class="article-photo" style="background-image: url(<%= image_path ('article2.jpg') %>);"></div>
-  <%#= cl_image_path article.photo.key %>
-</div></div>
-  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-    <div class="clothing-grid">
-    <% @favorites.each do |f| %>
-       <div class="article-photo" style="background-image: url(<%= image_path ('article1.jpg') %>);"></div>
-    <% end %>
-  </div>
-</div>
-</div>
 
-<%# end %>
-</div>
+
+    <div class="clothing-grid">
+      <% @user.articles.each do |article| %>
+      <%= link_to article_path(article) do %>
+      <%= cl_image_tag article.photo.key, class: "article-photo" %>
+  <% end %>
+
+  <% end %>
+  </div>
+
+
+
 
 
 
