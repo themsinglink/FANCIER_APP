@@ -1,10 +1,8 @@
 class ReviewsController < ApplicationController
 
-  before_action :set_order, only: []
+  before_action :set_order, only: [:new, :create]
 
   def new
-    @order = current_user.orders.first
-    #@seller = @order.article.user
     @review = Review.new
     @review.user = current_user
     @review.order = @order
@@ -18,12 +16,11 @@ class ReviewsController < ApplicationController
   end
 
   def create
-
-    @order = current_user.orders.first
     @review = Review.new(review_params)
     @review.user = current_user
     @review.order = @order
     authorize @review
+    byebug
 
     if @review.save
       redirect_to dashboard_path
@@ -36,7 +33,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:content, :rating)
+    params.require(:review).permit(:content, :rating, :order_id, :user_id)
   end
 
   def set_order
