@@ -35,6 +35,7 @@
             <h3>SIZE:<%= order.article.size %></h3>
             <h4>$<%= order.article.price_cents%>.00</h4>
             <p><%= order.state%></p>
+            <%= link_to "Write a review", new_order_review_path(order) %>
              <% if order.state == 'shipped' %>
               <%= link_to " Mark as received", buyers_order_path(order), method: :patch, class: 'mainbutton' %>
             <% end %>
