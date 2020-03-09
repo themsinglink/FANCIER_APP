@@ -16,7 +16,7 @@ gem 'stripe_event'
 gem 'faker'
 gem 'pundit'
 gem 'cloudinary', '~> 1.12.0'
-
+gem 'ransack'
 gem 'country_select', '~> 4.0'
 
 gem 'pg_search', '~> 2.3.0'
