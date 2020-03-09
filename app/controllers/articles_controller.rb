@@ -22,6 +22,8 @@ class ArticlesController < ApplicationController
 
   def show
     @order = Order.new
+    @tags = Tag.all
+
     authorize @article
   end
 
