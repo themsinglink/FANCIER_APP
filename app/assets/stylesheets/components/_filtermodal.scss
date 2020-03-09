@@ -1,0 +1,62 @@
+.title-style {
+  text-align: center;
+  color: $coral;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.filter-button {
+  background-color: gray;
+  opacity: 0.9;
+  position: sticky;
+  bottom: 4px;
+  z-index: 1000;
+  border-radius: 8px;
+  margin: 0 auto;
+  padding: 5px 20px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  vertical-align: center;
+  box-shadow: none;
+}
+
+.modal-body section select {
+  width: 100%;
+  text-align: center;
+  background-color: white;
+  color: $coral;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+#money-slider {
+  width: 100%;
+}
+
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: $coral;
+  cursor: pointer;
+}
