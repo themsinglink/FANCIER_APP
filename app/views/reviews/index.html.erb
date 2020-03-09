@@ -6,6 +6,11 @@
   <%= image_tag "profilephoto.png", class: "", alt: "alttext" %>
   <h2><%=  @user.name%></h2>
   <p>london, england</p>
+  <p>
+    <% @user.rating.times do %>
+     ⭐
+    <% end %>
+  </p>
   </div>
 <div class="profile-links">
   <div class="clothes clothes-color">
@@ -34,7 +39,11 @@
 <% end %>
 <% reviews.each do |review| %>
     <h4><%=review.user.name%></h4>
-   <p>⭐⭐⭐⭐⭐ </p>
+    <p>
+    <% review.user.rating.times do %>
+     ⭐
+    <% end %>
+    </p>
   <p> <%= review.content %> </p>
 
 

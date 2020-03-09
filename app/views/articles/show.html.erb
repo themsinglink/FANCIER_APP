@@ -50,6 +50,11 @@
     <div class="profile-tag">
       <p><strong> <%= @article.user.name %> </strong></p>
       <p>madrid, spain</p>
+      <p>
+        <% @article.user.rating.times do %>
+         ⭐
+        <% end %>
+      </p>
     </div>
     </div>
     <div class= "d-flex justify-content-between">
