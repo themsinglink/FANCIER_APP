@@ -5,16 +5,16 @@
 
   <div class="profile-info">
     <%= image_tag "profilephoto.png", class: "", alt: "alttext" %>
-    <h2><%=  current_user.name%></h2>
-    <p>⭐⭐⭐⭐⭐</p>
-    <p>london, england</p>
+    <div class="add-margin">
+      <h2>Order Dashboard</h2>
+    </div>
   </div>
-  <div class="profile-links">
+  <div class="dashboard-links">
     <div class="clothes">
-      <a href="/dashboard">my orders</a>
+      <a href="/dashboard">my purchases</a>
     </div>
     <div class="likes">
-      <a href="/listings">listings</a>
+      <a href="/listings">my listings</a>
     </div>
   </div>
 </div>
@@ -29,7 +29,9 @@
           <div class="order-photo" style="background-image: url(<%= image_path ('article4.jpg') %>);"></div>
           <div class="order-info">
 
+
             <h2><%= order.article.name.capitalize %></h2>
+
             <h3>SIZE:<%= order.article.size %></h3>
             <h4>$<%= order.article.price_cents%>.00</h4>
             <p><%= order.state%></p>
