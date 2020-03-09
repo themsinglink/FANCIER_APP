@@ -5,6 +5,7 @@
   <div class="profile-info">
   <%= image_tag "profilephoto.png", class: "", alt: "alttext" %>
   <h2><%=  @user.name%></h2>
+  <p>⭐⭐⭐⭐⭐</p>
   <p>london, england</p>
   </div>
 <div class="profile-links">
@@ -12,7 +13,7 @@
     <%= link_to "clothes", user_path(@user)%>
   </div>
   <div class="likes">
-    <a href="#">likes</a>
+    <%= link_to "likes", user_favorites_path(@user)%>
   </div>
   <% if  @user.articles%>
   <div class="likes-color">
