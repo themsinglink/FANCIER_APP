@@ -20,6 +20,10 @@ class ArticlesController < ApplicationController
   def show
     @order = Order.new
     authorize @article
+
+    @user_articles = @article.user
+                             .articles
+                             .with_attached_photo
   end
 
 
