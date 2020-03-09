@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @tags = Tag.all
+    @categories = Category.all
   end
 
   def about
