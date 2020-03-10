@@ -20,7 +20,7 @@ class Order < ApplicationRecord
   private
 
   def article_availability
-    return unless article.active_orders?
+    return if article.active_orders?
 
     errors.add(:article, message: 'is not available')
   end
