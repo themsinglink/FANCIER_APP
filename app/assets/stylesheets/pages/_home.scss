@@ -1,8 +1,64 @@
+strong {
+  position: relative;
+
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0.22rem;
+    left: -0.5rem;
+    right: -0.5rem;
+    height: 1rem;
+    z-index: -1;
+
+    // Position the line behind the text so that
+    // it is still easily readable
+
+    // The SVG is added as an SVG background image
+    background-image: asset-url("underline1.svg");
+    background-repeat: no-repeat;
+
+       background-size: cover;
+  }
+}
+
+
+strong {
+  position: relative;
+
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0.22rem;
+    left: -0.5rem;
+    right: -0.5rem;
+    height: 1rem;
+
+    // Position the line behind the text so that
+    // it is still easily readable
+
+    // The SVG is added as an SVG background image
+    background-image: asset-url("underline1.svg");
+    background-repeat: no-repeat;
+
+       background-size: cover;
+  }
+}
+
+.underline5 h1 {
+  z-index: 1;
+}
+
 .home-styling h2 {
 font-style: normal;
 font-weight: 500;
 font-size: 22px;
 line-height: 27px;
+}
+
+.content-text p {
+  z-index: 0;
 }
 
 .home-styling p {
@@ -66,13 +122,22 @@ letter-spacing: 0.05em;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin-right: 50px;
+  margin-right: 15px;
   margin-top: -20px;
 }
 
+.main-text {
+  margin-top: 70px;
+}
 
 .main-text h1 {
   font-size: 40px;
+}
+
+.main-text p {
+  font-size: 19px;
+  line-height: 25px;
+  font-weight: lighter;
 }
 
 .content-container-text h1 {
@@ -88,8 +153,8 @@ letter-spacing: 0.05em;
   font-size: 16px;
 }
 
-.content-container-text {
-  height: 50vh;
+.content-container-photo2 {
+  height: 45vh;
   text-align: center;
   flex-direction: column;
   align-items: center;
@@ -99,7 +164,39 @@ letter-spacing: 0.05em;
   margin-bottom: 0px;
   margin: 0;
   padding: 24px;
-  background-color: #B9A7EE;
+  background: linear-gradient(180deg, rgba(155, 122, 255, 0.36) 0%, rgba(0, 0, 0, 0) 100%), asset-url('girls.png');
+  background-size: cover;
+  background-repeat: none;
+}
+
+.content-container-photo2 a {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 108px;
+  text-align: center;
+  letter-spacing: 0.07em;
+  color: #FFFFFF;
+}
+
+.content-container-text {
+  height: 45vh;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+  margin-bottom: 0px;
+  margin: 0;
+  padding: 24px;
+  background-color: #B8A1FA;
+}
+
+.add-photo {
+  background-image: url("https://media.giphy.com/media/chzNo1ac8rxJphOp82/giphy.gif");
+  background-size: cover;
+  background-repeat: none;
 }
 
 .content-container-text-2 {
@@ -121,21 +218,22 @@ letter-spacing: 0.05em;
   font-weight: bold;
   font-family: Montserrat;
   margin-bottom: 0px;
-  padding: 24px;
 }
 
-.text-underline-1 h1:after {
-    content: '';
-    height: 2px;
-    background: black;
-    display:block;
-    margin-top: 2px;
+.change-spacing h1, strong {
+  padding: 0;
+  padding-bottom: 4px;
+  margin: 0;
+  z-index: 0;
 }
 
+.change-spacing {
+  padding-top: 30px;
+}
 
 .content-button {
   position: center;
-  background-color: #E90F36;
+  background-color: #141414;
   color: white;
   font-weight: lighter;
   border-radius: 5px;
@@ -170,7 +268,7 @@ letter-spacing: 0.05em;
   justify-content: space-around;
   display: flex;
   background-size: cover;
-  background-image: url('https://media.giphy.com/media/chzNo1ac8rxJphOp82/giphy.gif');
+  background-image: url('https://media.giphy.com/media/tNdFSAD2TieCQ/giphy.gif');
   margin: 0;
   padding: 24px;
 }
@@ -196,8 +294,11 @@ letter-spacing: 0.05em;
   font-family: Montserrat;
 }
 
+.content-text-photo {
+  margin-top: 65px;
+}
 .content-button-photo {
-  background-color: #E90F36;
+  background-color: #141414;
   color: white;
   font-weight: bold;
   border-radius: 5px;
@@ -206,12 +307,9 @@ letter-spacing: 0.05em;
   margin-top: 20px;
   font-size: 20px;
   letter-spacing: 2px;
-  opacity: 0.9;
 }
 
-.color-change {
-  background-color: #9775FF;
-}
+
 
 
 .content-button-photo:hover {
@@ -249,15 +347,20 @@ letter-spacing: 0.05em;
   font-weight: 500;
   font-size: 18px;
   letter-spacing: 0.07em;
-  margin-top: 30px;
+  margin-top: 27px;
   margin-bottom: 0;
   padding-bottom: 0;
-  line-height: 25px;
+  line-height: 28px;
 }
 
 .sell-button-2 {
   text-align: left;
 
+}
+
+.spacing-change h2 {
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .tag-image p {
@@ -306,7 +409,7 @@ letter-spacing: 0.05em;
   justify-content: space-around;
   display: flex;
   background-size: cover;
-  background-image: url('https://media.giphy.com/media/iG3YQU4MN1HIJ3ZWby/giphy.gif');
+  background-image: url('https://media.giphy.com/media/tNdFSAD2TieCQ/giphy.gif');
   margin-bottom: 12px;
   padding: 24px;
 }

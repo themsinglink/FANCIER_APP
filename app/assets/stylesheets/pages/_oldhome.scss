@@ -1,14 +1,14 @@
 // Specific CSS for your home-page
 
 .main-container {
-  height: 65vh;
+  height: 60vh;
   text-align: center;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   display: flex;
   background-size: cover;
-  background-image: url('https://media.giphy.com/media/tNdFSAD2TieCQ/giphy.gif');
+  background-image: linear-gradient(180deg, rgba(32, 3, 145, 0.33) 0%, rgba(21, 3, 82, 0.22) 100%), asset-url('background2.png');
   margin: 0;
 }
 
@@ -187,6 +187,7 @@
 .sell-button {
   width: 100%;
   text-align: center;
+  margin-top: -20px;
 }
 
 .text-sell {
