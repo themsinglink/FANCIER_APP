@@ -22,13 +22,12 @@ class Article < ApplicationRecord
     Article.joins(:tags).where(tags: { name: tag_names } )
   end
 
-scope :favorited_by, -> (username) { joins(:favorites).where(favorites: { user: User.where(username: username) }) }
+  scope :favorited_by, -> (username) { joins(:favorites).where(favorites: { user: User.where(username: username) }) }
 
   scope :available, -> do
     includes(:orders).where(orders: { id: nil })
                      .or(Article.with_cancelled_orders)
   end
-
 
   scope :with_pending_orders, -> do
     includes(:orders).where(orders: { state: 'pending' })
@@ -51,11 +50,11 @@ scope :favorited_by, -> (username) { joins(:favorites).where(favorites: { user: 
   end
 
   def self.available_colors
-    all.map(&:color).uniq
+    pluck(:color).reject(&:nil?).uniq
   end
 
   def self.available_size
-    all.map(&:size).uniq
+    pluck(:size).reject(&:nil?).uniq
   end
 
   ransacker :price_money, type: :integer, formatter: proc { |dollars| dollars * 100 } do |p|
