@@ -1,6 +1,6 @@
 .title-style {
   text-align: center;
-  color: $coral;
+  color: #171717;
   font-size: 16px;
   font-weight: bold;
   margin-top: 10px;
@@ -9,14 +9,15 @@
 }
 
 .filter-button {
-  background-color: gray;
+  background-color: $mainlight;
   opacity: 0.9;
   position: sticky;
   bottom: 4px;
   z-index: 1000;
+  color: white;
   border-radius: 8px;
   margin: 0 auto;
-  padding: 5px 20px;
+  padding: 5px 25px;
   color: black;
   display: flex;
   justify-content: center;
@@ -29,7 +30,7 @@
   width: 100%;
   text-align: center;
   background-color: white;
-  color: $coral;
+  color: #171717;
   border-radius: 5px;
   padding: 5px;
 }
@@ -56,6 +57,6 @@
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: $coral;
+  background: #171717;
   cursor: pointer;
 }

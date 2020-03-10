@@ -16,7 +16,7 @@
 </div>
 
   <div class="clothes-seller">
-    <h2>You might also like...</h2>
+  <h2>You might also like...</h2>
     <% if @article.user.articles.count > 1 %>
       <% @article.user.articles.each do |article| %>
         <% unless article == @article %>
@@ -58,7 +58,7 @@
       <% end %>
       <% end %>
       <div class="profile-tag">
-        <p><strong> <%= @article.user.name %> </strong></p>
+        <p class="bold"> <%= @article.user.name %> </p>
         <p>madrid, spain</p>
         <p>
           <% @article.user.rating.times do %>

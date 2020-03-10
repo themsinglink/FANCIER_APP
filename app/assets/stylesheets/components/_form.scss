@@ -5,6 +5,12 @@
   height: 100vh;
   width: 100%;
 }
+
+.form-header h2 {
+  font-family: Montserrat;
+  font-size: 26px;
+  text-align: left;
+}
 .form-container {
     margin-top: 30px;
     width: 70%;
@@ -28,16 +34,16 @@
   }
 .login-form-inputs {
   font-family: Montserrat;
-  color: $coral;
+  color: #171717;
   font-weight: bold;
 }
 .action-link {
-  color: $coral;
+  color: #171717;
   font-weight: bold;
 }
 .string {
    text-align: center;
-   color: $coral;
+   color: #171717;
    font-size: 16px;
    font-weight: bold;
    margin-top: 10px;
@@ -52,10 +58,10 @@
 .form-inputs{
     font-family: Montserrat;
   label{
-    text-align: center;
+    text-align: left;
     display: flex;
-    justify-content: center;
-    color: $coral;
+    justify-content: left;
+    color: #171717;
     font-size: 16px;
     font-weight: bold;
     margin-top: 10px;

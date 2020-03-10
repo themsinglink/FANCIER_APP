@@ -34,7 +34,7 @@
 
 
 <div class="content-container-text add-photo">
-  <div class="content-text-photo spacing-change change-spacing add-background">
+  <div class="content-text-photo spacing-change change-spacing">
     <h1 class="hp">made a sick outfit but got nowhere to sell it?</h1>
     <!-- <p>#1 destination to find your unique festival outfit</p> -->
     <div class="sell-button">
@@ -55,6 +55,30 @@
     </div>
   </div>
 </div>
+<div class="content-container-photo2">
+  <div class="content-text-photo">
+    <h6>GET INSPIRED</h6>
+    <h1 class="hp">Burning Man</h1>
+    <!-- <p>#1 destination to find your unique festival outfit</p> -->
+    <div class="sell-button">
+    <%= link_to "browse", tag_path(@tags.first), class: "content-button"%>
+    </div>
+  </div>
+</div>
+
+<div class="tags-container-new">
+    <div class="tag-cards-new">
+      <% @tags.each do |tag| %>
+      <%#= link_to tags_path(name: tag.name) do %>
+        <div class="tag-image-new" style="background-image: asset-url('girls.png')">
+           <p>
+            <%= tag.name.pluralize %>
+           </p>
+        </div>
+        <%# end %>
+      <% end %>
+  </div>
+
 
 <div class="content-wrapper">
   <div class="text-container">
@@ -66,16 +90,7 @@
       </div>
 </div>
 
-<div class="content-container-photo2">
-  <div class="content-text-photo">
-    <h6>GET INSPIRED</h6>
-    <h1 class="hp">Burning Man</h1>
-    <!-- <p>#1 destination to find your unique festival outfit</p> -->
-    <div class="sell-button">
-    <%= link_to "browse", articles_path, class: "content-button"%>
-    </div>
-  </div>
-</div>
+
 
 
 <div class="shop-container">
@@ -111,7 +126,7 @@
       <%= link_to articles_path(category_name_eq: cat.name) do %>
         <div class="tag-image" style="background-image: <%= cat.photo.attached? ? "url(#{url_for(cat.photo)})"  : "asset-url('article1.jpg')" %>">
            <p>
-            <%= cat.name %>
+            <%= cat.name.pluralize %>
            </p>
         </div>
         <% end %>
@@ -119,7 +134,6 @@
   </div>
 </div>
 
-</div>
 
 <!-- Begin Mailchimp Signup Form -->
 <!-- <div class="suscribe-container">

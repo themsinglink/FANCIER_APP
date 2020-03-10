@@ -60,8 +60,15 @@
 .tag-image {
   background-image: asset-url('article1.jpg');
   position:relative;
-  height: 20vh;
+  height: 15vh;
   padding: 10px;
+}
+
+.tag-image-new {
+  position:relative;
+  height: 15vh;
+  padding: 10px;
+  background-image: asset-url('article1.jpg');
 }
 
 .tag-image a:hover {
@@ -120,6 +127,15 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 12px;
   /* padding: 12px; */
+  background: white;
+}
+
+.tag-cards-new {
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 4px;
   background: white;
 }
 

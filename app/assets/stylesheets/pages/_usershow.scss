@@ -1,5 +1,5 @@
 .background-profile {
-  background: rgba(201, 127, 106, 0.7);
+  background: rgba(184, 161, 250, 0.7);
   height: 200px;
   width: 100%;
 }
@@ -20,7 +20,7 @@
 }
 
 .clothes {
-  background: #C97F6A;
+  background: $main;
   padding: 10px 15px;
   border-radius: 3px;
   text-align: center;
@@ -28,7 +28,7 @@
 }
 
 .clothes-color {
-  background: rgba(201, 127, 106, 0.6);
+  background: rgba(184, 161, 250, 0.7);
 }
 
 .likes-color {
@@ -40,7 +40,7 @@
 }
 
 .clothes-color-2 {
-  background: rgba(201, 127, 106, 0.6);
+  background: rgba(184, 161, 250, 0.7);
   padding: 10px 25px;
   border-radius: 3px;
   text-align: center;
@@ -79,7 +79,7 @@
 }
 
 .listing-clothes {
-  background: rgba(201, 127, 106, 0.6);
+  background: rgba(184, 161, 250, 0.7);
 }
 
 .listing-likes {
@@ -96,7 +96,7 @@
 }
 
 .likes {
-  background: rgba(201, 127, 106, 0.6);
+  background: rgba(184, 161, 250, 0.7);
   padding: 10px 25px;
   border-radius: 3px;
   text-align: center;

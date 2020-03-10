@@ -5,10 +5,10 @@ strong {
   &::after {
     content: '';
     position: absolute;
-    bottom: 0.22rem;
+    bottom: 0.16rem;
     left: -0.5rem;
     right: -0.5rem;
-    height: 1rem;
+    height: 1.2rem;
     z-index: -1;
 
     // Position the line behind the text so that
@@ -30,10 +30,10 @@ strong {
   &::after {
     content: '';
     position: absolute;
-    bottom: 0.22rem;
+    bottom: 0.16rem;
     left: -0.5rem;
     right: -0.5rem;
-    height: 1rem;
+    height: 1.2rem;
 
     // Position the line behind the text so that
     // it is still easily readable
@@ -103,6 +103,10 @@ letter-spacing: 0.05em;
   color: #FFFFFF;
 }
 
+.cta a:hover {
+  text-decoration: none;
+}
+
 .cta i {
   color: white;
   font-size: 22px;
@@ -150,7 +154,7 @@ letter-spacing: 0.05em;
   color: white;
   font-family: Montserrat;
   margin-top: -32px;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .content-container-photo2 {
@@ -164,7 +168,7 @@ letter-spacing: 0.05em;
   margin-bottom: 0px;
   margin: 0;
   padding: 24px;
-  background: linear-gradient(180deg, rgba(155, 122, 255, 0.36) 0%, rgba(0, 0, 0, 0) 100%), asset-url('girls.png');
+  background: linear-gradient(180deg, rgba(155, 122, 255, 0.36) 0%, rgba(0, 0, 0, 0) 100%), asset-url('burningman.jpg');
   background-size: cover;
   background-repeat: none;
 }
@@ -358,6 +362,10 @@ letter-spacing: 0.05em;
 
 }
 
+.spacing-change {
+  margin-top: 0;
+}
+
 .spacing-change h2 {
   margin-bottom: 0;
   padding-bottom: 0;
@@ -371,7 +379,18 @@ letter-spacing: 0.05em;
   letter-spacing: 0.07em;
   text-align: left;
   margin-left: 20px;
-  margin-top: 80px;
+  margin-top: 60px;
+}
+
+.tag-image-new p {
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 17px;
+  letter-spacing: 0.07em;
+  text-align: left;
+  margin-left: 20px;
+  margin-top: 60px;
 }
 
 .text-container {
