@@ -1,21 +1,67 @@
+.login-body {
+  display: flex;
+  justify-content: center;
+  background-image: url('https://res.cloudinary.com/df2entit8/image/upload/v1583762008/896b8cff-0f58-41a7-9125-5a6f7e1de3a5_ulldln.jpg');
+  height: 100vh;
+  width: 100%;
+}
 .form-container {
-
-    width: 100%;
+    margin-top: 30px;
+    width: 70%;
+    height: 75vh;
     font-family: Montserrat;
     padding: 0.375rem 0.75rem;
-
     font-weight: 400;
     line-height: 1.5;
     color: #495057;
     background-color: #fff;
-
     border: 1px solid #ced4da;
-    border-radius: 2px;
+    border-radius: 5px;
+      h2 {
+        text-align: center;
+      }
+      a {
+
+        color: $coral;
+        font-weight: bold;
+      }
   }
+.login-form-inputs {
+  font-family: Montserrat;
+  color: $coral;
+  font-weight: bold;
+}
+.action-link {
+  color: $coral;
+  font-weight: bold;
+}
+.string {
+   text-align: center;
+   color: $coral;
+   font-size: 16px;
+   font-weight: bold;
+   margin-top: 10px;
+   margin-bottom: 0;
+   padding: 0;
+}
+.text {
+  text-align: left;
+  padding-left: 4px;
+}
 
 .form-inputs{
     font-family: Montserrat;
-
+  label{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    color: $coral;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding: 0;
+  }
 }
 
 .list-submit{
@@ -25,9 +71,9 @@
 
 }
 
-
 .form-header  h2{
   margin-top: 17px;
   text-align: center;
   margin-bottom: 17px
 }
+

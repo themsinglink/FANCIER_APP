@@ -1,5 +1,10 @@
+<% if @article.photos.first.nil?  %>
+  <%= image_tag 'default-article.png', style:"width: 100%;", data: {toggle:"modal", target: "#exampleModalCenter"}%>
+<% else  %>
+  <%= cl_image_tag @article.photos.first.key, style:"width: 100%;", data: {toggle:"modal", target: "#exampleModalCenter"}%>
+<% end %>
 
-<%= cl_image_tag @article.photos.first.key, style:"width: 100%;", data: {toggle:"modal", target: "#exampleModalCenter"}%>
+
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content container">
@@ -10,15 +15,35 @@
   </div>
 </div>
 
-<h2>You might also like...</h2>
-<div class="clothes-seller">
-  <% @user_articles.each do |article| %>
-  <% unless article == @article %>
-  <%#= cl_image_tag article.photos.first.key, class: "seller-article" %>
-
+  <div class="clothes-seller">
+    <h2>You might also like...</h2>
+    <% if @article.user.articles.count > 1 %>
+      <% @article.user.articles.each do |article| %>
+        <% unless article == @article %>
+          <%= link_to article_path(article) do %>
+            <% if @article.photos.first.nil?  %>
+              <%= image_tag 'default-article.png', style:"width: 100%;" %>
+            <% else  %>
+             <%= cl_image_tag article.photos.first.key, class: "seller-article" %>
+            <% end %>
+          <% end %>
+        <% end %>
+        <% end %>
+      <% else %>
+      <% Article.with_tags(@article.tags.pluck(:name)).each do |article| %>
+        <% unless article == @article %>
+          <%= link_to article_path(article) do %>
+            <% if @article.photos.first.nil?  %>
+              <%= image_tag 'default-article.png', class: "seller-article" %>
+            <% else  %>
+              <%= cl_image_tag @article.photos.first.key, class: "seller-article" %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
+  </div>
+
 
 <div class=" info">
   <p style= "text-align: center; font-size: 12px;">Click image to view fullscreen</p>
@@ -50,7 +75,7 @@
         <p style= "font-weight: bold"> $<%= @article.price_cents %> </p>
       </div>
       <p>SIZE: <%= @article.size %> </p>
-      <p> <%= @article.description.truncate_words(15)%> </p>
+      <p> <%= @article.description&.truncate_words(15)%> </p>
       <button type="button" class="btn coral-button btn-lg" data-toggle="modal" data-target="#myModal2">
         add to cart
       </button>
@@ -68,7 +93,11 @@
 
          <div class="modal-body">
           <div class="d-flex">
-            <%= cl_image_tag @article.photos.first.key, style:"width: 30%;" %>
+            <% if @article.photos.first.nil?  %>
+              <%= image_tag 'default-article.png', style:"width: 30%;" %>
+            <% else  %>
+             <%= cl_image_tag @article.photos.first.key, style:"width: 30%;" %>
+            <% end %>
 
             <div class= "side-info">
               <h5 style= "font-weight: bold"><%= @article.name %>

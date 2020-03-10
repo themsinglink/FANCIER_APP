@@ -5,11 +5,15 @@
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-
   </ol>
+
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <%= cl_image_tag @article.photos.first.key, style:"width: 100%;" %>
+      <% if @article.photos.first.nil?  %>
+        <%= image_tag 'default-article.png', style:"width: 100%;" %>
+      <% else  %>
+       <%= cl_image_tag @article.photos.first.key, style:"width: 100%;" %>
+      <% end %>
     </div>
     <%  @article.photos.each_with_index do |photo, i| %>
       <% unless i == 0 %>
