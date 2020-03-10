@@ -1,6 +1,7 @@
 <div class="background-profile">
-  <%=  link_to " ", new_article_path %>
+  <%=  link_to new_article_path do %>
   <h1>+</h1>
+  <% end %>
 
 </div>
 <div class="backround-user">
@@ -44,16 +45,21 @@
             <div class="order-photo" style="background-image:url(<%= image_path 'default-article.png' %>);">
             </div>
           <% else  %>
+          <%= link_to article_path(article) do %>
             <div class="order-photo" style="background-image:url(<%= cl_image_path article.photos.first.key %>);">
             </div>
+            <% end %>
           <% end %>
           <div class="order-info">
-            <% if article.active_order&.state == 'purchased' %>
-            <p class= "color-change-state">purchased</p>
-            <% end %>
+
             <h2><%= article.name.capitalize %></h2>
             <h3>SIZE: <%= article.size %></h3>
             <h4>$<%= article.price_cents%>.00</h4>
+            <% if article.active_order&.state == 'pending' %>
+            <p class= "color-change-state">unsold</p>
+            <% else %>
+            <p><%= article.active_order.state%></p>
+            <% end %>
             <% if article.active_orders? && article.active_order.state == 'paid' %>
               <%= link_to " Mark as shipped", sellers_order_path(article.active_order), method: :patch, class: 'mainbutton' %>
             <% end %>

@@ -185,7 +185,7 @@ letter-spacing: 0.05em;
 }
 
 .content-container-text {
-  height: 45vh;
+  height: 46vh;
   text-align: center;
   flex-direction: column;
   align-items: center;
@@ -205,7 +205,7 @@ letter-spacing: 0.05em;
 }
 
 .down-spacing {
-  padding-top: 30px;
+  padding-top: 60px;
 }
 
 .content-container-text-2 {
@@ -340,7 +340,7 @@ letter-spacing: 0.05em;
   color: white;
   display: flex;
   flex-direction: column;
-  background: #5B29F7;
+  background: #6B29F6;
   height: 400px;
 }
 
@@ -385,7 +385,10 @@ letter-spacing: 0.05em;
   text-align: left;
   margin-left: 20px;
   margin-top: 40px;
+  transition: background-color 0.5s ease;
 }
+
+
 
 .tag-image-new p {
   color: white;
@@ -425,30 +428,5 @@ letter-spacing: 0.05em;
 }
 
 
-.content-container-photo-3 {
-  height: 60vh;
-  text-align: center;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  display: flex;
-  background-size: cover;
-  background-image: url('https://media.giphy.com/media/tNdFSAD2TieCQ/giphy.gif');
-  margin-bottom: 12px;
-  padding: 24px;
-}
 
-
-.content-container-photo-4 {
-  height: 60vh;
-  text-align: center;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  display: flex;
-  background-size: cover;
-  background-image: url('https://media.giphy.com/media/3ohs7GA9LpwWf5TtCw/giphy.gif');
-  margin-bottom: 12px;
-  padding: 24px;
-}
 

@@ -1,11 +1,11 @@
 .background-profile {
-  background: rgba(184, 161, 250, 0.7);
+  background: #B9A7EE;
   height: 200px;
   width: 100%;
 }
 
-.background-user {
-  height: 533px;
+.background-user-2 {
+  height: 200px;
   background: white;
   border-radius: 30px 30px 0px 0px;
   height: 192px;
@@ -76,6 +76,7 @@
 .profile-links a {
   text-decoration: none;
   color: white;
+  font-weight: 500;
 }
 
 .listing-clothes {

@@ -30,14 +30,17 @@
             <div class="order-photo" style="background-image:url(<%= image_path 'default-article.png' %>);">
             </div>
           <% else  %>
+
+            <%= link_to article_path(order.article) do %>
             <div class="order-photo" style="background-image:url(<%= cl_image_path order.article.photos.first.key %>);">
             </div>
+            <% end %>
           <% end %>
           <div class="order-info">
 
             <h2><%= order.article.name.capitalize %></h2>
 
-            <h3>SIZE:<%= order.article.size %></h3>
+            <h3>SIZE: <%= order.article.size %></h3>
             <h4>$<%= order.article.price_cents%>.00</h4>
             <p><%= order.state%></p>
 
