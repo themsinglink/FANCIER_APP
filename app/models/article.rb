@@ -18,10 +18,17 @@ class Article < ApplicationRecord
   validates :price_cents, presence: true
   has_many :favorites, dependent: :destroy
 
+  scope :with_tags, -> (tag_names) do
+    Article.joins(:tags).where(tags: { name: tag_names } )
+  end
+
+scope :favorited_by, -> (username) { joins(:favorites).where(favorites: { user: User.where(username: username) }) }
+
   scope :available, -> do
     includes(:orders).where(orders: { id: nil })
                      .or(Article.with_cancelled_orders)
   end
+
 
   scope :with_pending_orders, -> do
     includes(:orders).where(orders: { state: 'pending' })
