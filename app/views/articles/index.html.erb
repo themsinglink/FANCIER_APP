@@ -15,10 +15,12 @@
     <% end %>
   </div>
 
+
   <div class="category-name">
     <h1>Shop All</h1>
-    <p>View all</p>
+    <p id= "viewall"><%= link_to "view all", articles_path %></p>
   </div>
+
 
   <div class="article-cards-container">
     <% @articles.each do |article| %>
@@ -110,12 +112,10 @@
 <div class=search-footer>
 
   <% if params[:query] %>
-  <%= link_to "Back to Overview", articles_path, class: 'btn btn-primary' %>
+    <%= link_to "Back to Overview", articles_path, class: 'btn btn-primary' %>
   <% end %>
 </div>
 </div>
-
-
 
 
 

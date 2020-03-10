@@ -7,21 +7,28 @@ class Article < ApplicationRecord
   has_many :article_tags
   has_many :tags, through: :article_tags
 
-  has_one_attached :photo
+  has_many_attached :photos
 
   monetize :price_cents
 
-  validates :photo, presence: true
+  validates :photos, presence: true
 
   validates :name, presence: true
   validates :name, presence: true
   validates :price_cents, presence: true
   has_many :favorites, dependent: :destroy
 
+  scope :with_tags, -> (tag_names) do
+    Article.joins(:tags).where(tags: { name: tag_names } )
+  end
+
+scope :favorited_by, -> (username) { joins(:favorites).where(favorites: { user: User.where(username: username) }) }
+
   scope :available, -> do
     includes(:orders).where(orders: { id: nil })
                      .or(Article.with_cancelled_orders)
   end
+
 
   scope :with_pending_orders, -> do
     includes(:orders).where(orders: { state: 'pending' })
