@@ -9,8 +9,8 @@
 <%= f.input :state, label: "State", placeholder: 'Lightly worn' %>
 <%= f.input :price_cents, label: "Listing Price", placeholder: '$75.00' %>
 <%= f.association :category %>
-<%= f.input :price_cents, label: "Listing Price", placeholder: '$75.00' %>
-<%= f.input :photo, as: :file %>
+<%= f.input :description, label: "Description", placeholder: 'Leather suit' %>
+<%= f.input :photos, as: :file, input_html: { multiple: true } %>
 <%= f.input :shipping_costs, label: "Shipping Cost ", placeholder: '$10.00' %>
 <%#= f.button :submit,  "List", class: "mainbutton"%>
 
