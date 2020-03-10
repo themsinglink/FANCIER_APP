@@ -40,7 +40,13 @@
     <div class="orders">
       <% @listings.each do |article| %>
         <div class="d-flex border-order">
-          <div class="order-photo" style="background-image: url(<%= cl_image_path article.photo.key %>);"></div>
+          <% if article.photos.first.nil?  %>
+            <div class="order-photo" style="background-image:url(<%= image_path 'default-article.png' %>);">
+            </div>
+          <% else  %>
+            <div class="order-photo" style="background-image:url(<%= cl_image_path order.article.photos.first.key %>);">
+            </div>
+          <% end %>
           <div class="order-info">
             <% if article.active_order&.state == 'purchased' %>
             <p class= "color-change-state">purchased</p>

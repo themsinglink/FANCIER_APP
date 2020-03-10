@@ -1,0 +1,6 @@
+function removeFromFavorites() {
+  const star = document.getElementById(`article-${<%= @favorite.article.id %>}`);
+  star.innerHTML = `<i class="far fa-star"></i>`;
+}
+
+removeFromFavorites();

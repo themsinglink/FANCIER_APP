@@ -1,6 +1,13 @@
 <div class="container">
   <div class="row py-4">
-    <div class="col-md-3"><%= cl_image_tag @order.article.photos.first.key, width: '100%' %></div>
+
+    <div class="col-md-3">
+      <% if @order.article.photos.first.nil?  %>
+        <%= image_tag 'default-article.png',  width: '100%' %>
+      <% else  %>
+        <%= cl_image_tag @order.article.photos.first.key,  width: '100%' %>
+      <% end %>
+    </div>
     <div class="col" style="text-align: center; margin-top: 20px">
       <h1 style= "font-size: 25px;">Checkout</h1>
       <p>Purchase of <strong><%= @order.article.name %></strong> </p>

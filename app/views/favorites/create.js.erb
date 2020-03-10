@@ -1,0 +1,6 @@
+function addToFavorites() {
+  const star = document.querySelector(`#article-${<%= @favorite.article.id %>}`);
+  star.innerHTML = `<i class="fas fa-star"></i>`;
+}
+
+addToFavorites();

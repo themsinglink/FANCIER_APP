@@ -1,6 +1,13 @@
 <div class="container" style= "text-align: center">
   <div class="row py-4">
-    <div class="col-md-3"><%= cl_image_tag @order.article.photos.first.key, width: '100%' %></div>
+
+    <div class="col-md-3">
+      <% if @order.article.photos.first.nil?  %>
+        <%= image_tag 'default-article.png', style:"width: 100%;" %>
+      <% else  %>
+       <%= cl_image_tag @order.article.photos.first.key, style:"width: 100%;" %>
+      <% end %>
+    </div>
     <div class="col">
       <h1>Congrats! Order on the way. <small><span class="badge badge-primary" style= "background-color: #C97F6A;">CONFIRMED</span></small></h1>
       <ul class="list-unstyled">

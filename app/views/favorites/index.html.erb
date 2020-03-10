@@ -29,13 +29,17 @@
 
 </div>
 
-    <div class="clothing-grid">
-    <% @favorites.each do |favorite| %>
+<div class="clothing-grid">
+  <% @favorites.each do |favorite| %>
     <%= link_to article_path(favorite.article) do %>
-       <%= cl_image_tag favorite.article.photo.key, class: "article-photo" %>
+      <% if @article.photos.first.nil?  %>
+        <%= image_tag 'default-article.png', class: "article-photo" %>
+      <% else  %>
+        <%= cl_image_tag favorite.article.photos.first.key, class: "article-photo" %>
+      <% end %>
     <% end %>
   <% end %>
-  </div>
+</div>
 
 
 

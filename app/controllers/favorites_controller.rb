@@ -13,13 +13,16 @@ class FavoritesController < ApplicationController
 
     if @favorite.save
       respond_to do |format|
-        format.html { redirect_to articles_path(@article) }
+        format.html { redirect_to articles_path }
+
         format.js
       end
     else
       respond_to do |format|
-        format.html { render 'articles/show' }
-        format.js
+
+        format.html { render 'articles/index' }
+        format.js  # <-- idem
+
       end
     end
   end
@@ -28,7 +31,7 @@ class FavoritesController < ApplicationController
     @favorite = Favorite.where(user: current_user, article: @article).first
     authorize @favorite
     @favorite.destroy
-    redirect_to articles_path
+    # redirect_to articles_path
   end
 
   private
