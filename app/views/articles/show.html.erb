@@ -10,15 +10,27 @@
   </div>
 </div>
 
-<h2>You might also like...</h2>
-<div class="clothes-seller">
-  <% @user_articles.each do |article| %>
-  <% unless article == @article %>
-  <%#= cl_image_tag article.photos.first.key, class: "seller-article" %>
+  <div class="clothes-seller">
+    <h2>You might also like...</h2>
+    <% if @article.user.articles.count > 1 %>
+      <% @article.user.articles.each do |article| %>
+        <% unless article == @article %>
+          <%= link_to article_path(article) do %>
+            <%= cl_image_tag article.photos.first.key, class: "seller-article" %>
+          <% end %>
+        <% end %>
+        <% end %>
+      <% else %>
+      <% Article.with_tags(@article.tags.pluck(:name)).each do |article| %>
+        <% unless article == @article %>
+          <%= link_to article_path(article) do %>
+            <%= cl_image_tag article.photos.first.key, class: "seller-article" %>
+          <% end %>
+        <% end %>
+        <% end %>
+      <% end %>
+  </div>
 
-    <% end %>
-  <% end %>
-</div>
 
 <div class=" info">
   <p style= "text-align: center; font-size: 12px;">Click image to view fullscreen</p>
