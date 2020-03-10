@@ -72,8 +72,8 @@
 }
 
 .banner-index {
-  background-image: linear-gradient(180deg, rgba(162, 60, 60, 0.22) 0%, rgba(0, 0, 0, 0) 100%), asset-url("burningman.jpg");
-  height: 315px;
+  background-image: linear-gradient(180deg, rgba(162, 60, 60, 0.22) 0%, rgba(0, 0, 0, 0) 100%), asset-url("outfit.jpg");
+  height: 360px;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -81,7 +81,7 @@
 
 .banner-index h1 {
   font-weight: bold;
-  font-size: 38px;
+  font-size: 45px;
   color: white;
   font-family: Montserrat;
 }

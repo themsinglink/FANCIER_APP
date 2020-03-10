@@ -45,7 +45,7 @@
 
 
 <div class="content-container-text">
-  <div class="content-text change-spacing">
+  <div class="content-text down-spacing">
     <h1> <strong> fast fashion ain't</strong></h1>
     <h1> <strong> your thang? </strong></h1>
     <!-- <p>#1 destination to find your unique festival outfit</p> -->
@@ -55,6 +55,7 @@
     </div>
   </div>
 </div>
+
 <div class="content-container-photo2">
   <div class="content-text-photo">
     <h6>GET INSPIRED</h6>
@@ -66,20 +67,6 @@
   </div>
 </div>
 
-<div class="tags-container-new">
-    <div class="tag-cards-new">
-      <% @tags.each do |tag| %>
-      <%#= link_to tags_path(name: tag.name) do %>
-        <div class="tag-image-new" style="background-image: asset-url('girls.png')">
-           <p>
-            <%= tag.name.pluralize %>
-           </p>
-        </div>
-        <%# end %>
-      <% end %>
-  </div>
-
-
 <div class="content-wrapper">
   <div class="text-container">
     <h1>let's change fast fashion together</h1>
@@ -90,12 +77,19 @@
       </div>
 </div>
 
+<!-- <div class="tags-container-new">
+    <div class="tag-cards-new">
+      <#% @tags.each do |tag| %>
+      <%#= link_to tags_path(name: tag.name) do %>
+        <div class="tag-image-new" style="background-image: asset-url('girls.png')">
+           <p>
+            <%= tag.name.pluralize %>
+           </p>
+        </div>
+        <%# end %>
+      <#% end %>
+  </div> -->
 
-
-
-<div class="shop-container">
-
-</div>
 
 
 

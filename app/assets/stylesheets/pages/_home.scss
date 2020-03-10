@@ -139,9 +139,9 @@ letter-spacing: 0.05em;
 }
 
 .main-text p {
-  font-size: 19px;
+  font-size: 20px;
   line-height: 25px;
-  font-weight: lighter;
+  font-weight: 500;
 }
 
 .content-container-text h1 {
@@ -168,7 +168,7 @@ letter-spacing: 0.05em;
   margin-bottom: 0px;
   margin: 0;
   padding: 24px;
-  background: linear-gradient(180deg, rgba(155, 122, 255, 0.36) 0%, rgba(0, 0, 0, 0) 100%), asset-url('burningman.jpg');
+  background: linear-gradient(180deg, rgba(91, 41, 246, 0.39) 0%, rgba(90, 100, 225, 0.31) 100%), asset-url('outfit2.jpg');
   background-size: cover;
   background-repeat: none;
 }
@@ -195,12 +195,17 @@ letter-spacing: 0.05em;
   margin: 0;
   padding: 24px;
   background-color: #B8A1FA;
+  margin-top: -40px;
 }
 
 .add-photo {
-  background-image: url("https://media.giphy.com/media/chzNo1ac8rxJphOp82/giphy.gif");
+  background-image: linear-gradient(180deg, rgba(175, 147, 255, 0.42) 0%, rgba(158, 136, 228, 0.22) 100%), url("outfit3.jpg");
   background-size: cover;
   background-repeat: none;
+}
+
+.down-spacing {
+  padding-top: 30px;
 }
 
 .content-container-text-2 {
@@ -232,7 +237,7 @@ letter-spacing: 0.05em;
 }
 
 .change-spacing {
-  padding-top: 30px;
+
 }
 
 .content-button {
@@ -272,7 +277,7 @@ letter-spacing: 0.05em;
   justify-content: space-around;
   display: flex;
   background-size: cover;
-  background-image: url('https://media.giphy.com/media/tNdFSAD2TieCQ/giphy.gif');
+  background-image: asset-url('outfit3.jpg');
   margin: 0;
   padding: 24px;
 }
@@ -372,14 +377,14 @@ letter-spacing: 0.05em;
 }
 
 .tag-image p {
-  color: white;
+  color: #141414;
   font-weight: 600;
   font-size: 22px;
   line-height: 17px;
   letter-spacing: 0.07em;
   text-align: left;
   margin-left: 20px;
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 .tag-image-new p {
