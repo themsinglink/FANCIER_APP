@@ -1,12 +1,11 @@
 <div class="article-container">
-  <% if article.photo.nil?  %>
+  <% if article.photos.first.nil?  %>
     <div class="article-card" style="background-image:url(<%= image_path 'default-article.png' %>);">
     </div>
   <% else  %>
-    <div class="article-card" style="background-image:url(<%= cl_image_path article.photo.key %>);">
+    <div class="article-card" style="background-image:url(<%= cl_image_path article.photos.first.key %>);">
     </div>
   <% end %>
-
 
   <div class="article-card-infos">
     <h3><%= article.name%></h3>

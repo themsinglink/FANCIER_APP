@@ -7,11 +7,11 @@ class Article < ApplicationRecord
   has_many :article_tags
   has_many :tags, through: :article_tags
 
-  has_one_attached :photo
+  has_many_attached :photos
 
   monetize :price_cents
 
-  validates :photo, presence: true
+  validates :photos, presence: true
 
   validates :name, presence: true
   validates :name, presence: true

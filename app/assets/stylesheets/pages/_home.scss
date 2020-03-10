@@ -1,263 +1,57 @@
-// Specific CSS for your home-page
-.mainbutton {
-  position: center;
-  background-color: #FD9377;
-  color: white;
-  font-weight: lighter;
-  border-radius: 5px;
-  padding: 16px 50px;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  font-size: 20px;
-  letter-spacing: 2px;
+.home-styling h2 {
+font-style: normal;
+font-weight: 500;
+font-size: 22px;
+line-height: 27px;
 }
 
-.page-container {
-  background-color: white;
+.home-styling p {
+font-weight: 500;
+font-size: 14px;
+line-height: 17px;
+text-align: center;
+letter-spacing: 0.05em;
 }
 
-.video-overlay {
-  z-index: -1;
-  background: linear-gradient(180deg, rgba(175, 92, 75, 0.47) 0%, rgba(214, 153, 105, 0.4) 100%);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.home-styling p.hp {
+  font-weight:light;
+  line-height: 18px;
 }
-
-
-.sparkle_video {
- position: fixed;
- width: 100vw;
- height: 80vh;
- position: absolute;
- display: flex;
- justify-content: center;
- object-fit: cover;
- top: 0;
- z-index: -2;
- opacity: .8;
-}
-
-
-.mainbutton:hover {
-  color: white;
-  transition: all 0.2s ease-in;
-  transition-property: box-shadow;
-  text-decoration: none;
-}
-
-.mainbutton a {
-  text-align: center;
-}
-
-.mainbutton a:hover {
-  text-decoration: none;
-}
-
-.main-container{
-  height: 70vh;
-  text-align: center;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  display: flex;
-  background-size: cover;
-  background-image: url('https://media.giphy.com/media/tNdFSAD2TieCQ/giphy.gif');
-  margin: 0;
-}
-
-.shop-festival p {
-  font-size: 18px;
-}
-
-.main-text{
-  color: white;
-  font-weight: bold;
-  margin: 30px;
-  // margin-top: 70px
-}
-
-.main-text a:hover {
-  text-decoration: none;
-}
-
-.mainbutton a:hover {
-  text-decoration: none;
-}
-.main-text h1 {
-  font-size: 34.2969px;
-  font-weight: bold;
-  font-family: Montserrat;
-}
-
-.main-text p {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  font-family: Montserrat;
-  margin-top: 15px;
-  margin-bottom: 25px
-}
-
-.tag-image {
-  background-image: asset-url('article1.jpg');
-  position:relative;
-  height: 40vh;
-  padding: 10px;
-}
-
-.tag-image a:hover {
-  text-decoration: none;
-}
-
-.tags-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 12px;
-}
-
-.tags-grid h3 {
-  font-weight: 200;
-  font-size: 14px;
-  color: black;
-  background: white;
-  padding: 10px 10px;
-  font-family: Montserrat;
-  letter-spacing: 0.05em;
-}
-
-.tag-grid-image {
-  width: 100%;
-  max-height: 150px;
-  background-image: asset-url('article2.jpg');
-  display: flex;
-  text-decoration: none;
-  color: white;
-  background-repeat: none;
-  background-size: cover;
-  justify-content: center;
-  align-items: flex-end;
-  border-radius: 3px;
-}
-
-.tag-grid-image a {
-  color: white;
-}
-
-.tag-grid-image a:hover {
-  text-decoration: none;
-}
-
-
-.tags-container {
-  display: flex;
-  margin-top: 0px;
-  background-color: $lightblue;
-}
-
-.tag-cards {
-  flex-grow: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 12px;
-  padding: 12px;
-}
-
-
-.tag-image h3 {
-  text-decoration: none;
-  color: black;
-  background: white;
-  padding: 12px;
-  margin-right: 20px;
-  margin-left: 20px;
-  margin-top: 200px;
-  text-align: center;
-  font-weight: 500;
-  font-size: 25px;
-  letter-spacing: 0.1em;
-  color: #1F2023;
-  border-radius: 3px;
-}
-
-
-.readmore-button{
-  background-color: #C97F6A;
-  color: white;
-  background: #B23716;
-  border-radius: 3px;
-  padding: 10px 25px;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  letter-spacing: 0.07em;
-}
-
-.sell-container {
-  display: flex;
-  background-image: url('ilustration1.jpeg');
-  width: 100vw;
-  height: 165px;
-  margin-bottom: 24px;
-}
-
-.sign-up h2 {
-  font-family: Montserrat;
-  font-size: 18px;
-  font-weight: 400 !important;
-}
-
-.sign-up {
-
-}
-
-.sell-photo {
-  width: 100%;
-  height: 160px;
-  background-color: #FFD8C1;
-  text-align: center;
-  background-color: main;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: .8;
-}
-
-
-.sell-button {
-  width: 100%;
-  text-align: center;
-}
-
-.text-sell {
-  background-color: white;
-  color: black;
-  padding: 20px;
-  width: 80%;
-  background-color: white;
-  margin: auto;
-}
-
-
-  .home-title {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 22px;
-  line-height: 27px;
-}
-
-.hp {
-    font-weight:light;
-    line-height: 18px;
-  }
 
 .button-section h2 {
   font-weight: 500;
   font-size: 22px;
   letter-spacing: 0.1em;
   color: #1F2023;
+}
+
+.content-container-text a {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 108px;
+  text-align: center;
+  letter-spacing: 0.07em;
+  color: #FFFFFF;
+}
+
+.cta a {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 108px;
+  text-align: center;
+  letter-spacing: 0.07em;
+  color: #FFFFFF;
+}
+
+.cta i {
+  color: white;
+  font-size: 22px;
+  margin-left: 12px;
+  margin-top: 2px;
 }
 
 .button-section p {
@@ -268,20 +62,34 @@
   color: rgba(105, 97, 97, 0.76);
 }
 
-
-h1.hp {
-  font-size: 56px;
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 50px;
+  margin-top: -20px;
 }
 
-h6 {
+
+.main-text h1 {
+  font-size: 40px;
+}
+
+.content-container-text h1 {
+  font-size: 32px;
+  line-height: 50px;
+}
+
+.home-styling h6 {
   align-self: auto | flex-start | flex-end | center | baseline | stretch;
   color: white;
   font-family: Montserrat;
   margin-top: -32px;
+  font-size: 16px;
 }
 
 .content-container-text {
-  height: 60vh;
+  height: 50vh;
   text-align: center;
   flex-direction: column;
   align-items: center;
@@ -291,7 +99,7 @@ h6 {
   margin-bottom: 0px;
   margin: 0;
   padding: 24px;
-  background-color: $lightblue;
+  background-color: #B9A7EE;
 }
 
 .content-container-text-2 {
@@ -305,21 +113,29 @@ h6 {
   margin-bottom: 0px;
   margin: 0;
   padding: 24px;
-  background-color: $aero;
+  background-color: #9775FF;
 }
 
 .content-text h1 {
-  color: $jet;
+  color: white;
   font-weight: bold;
   font-family: Montserrat;
   margin-bottom: 0px;
   padding: 24px;
 }
 
+.text-underline-1 h1:after {
+    content: '';
+    height: 2px;
+    background: black;
+    display:block;
+    margin-top: 2px;
+}
+
 
 .content-button {
   position: center;
-  background-color: #6864DB;
+  background-color: #E90F36;
   color: white;
   font-weight: lighter;
   border-radius: 5px;
@@ -328,7 +144,6 @@ h6 {
   margin-top: 20px;
   font-size: 20px;
   letter-spacing: 2px;
-  opacity: 0.9;
 }
 
 .content-button:hover {
@@ -379,21 +194,23 @@ h6 {
   color: white;
   font-weight: bold;
   font-family: Montserrat;
-  margin-bottom: 32px;
 }
 
 .content-button-photo {
-  position: center;
-  background-color: #EE4266;
+  background-color: #E90F36;
   color: white;
-  font-weight: lighter;
+  font-weight: bold;
   border-radius: 5px;
-  padding: 16px 50px;
+  padding: 16px 30px;
   margin-bottom: 20px;
   margin-top: 20px;
   font-size: 20px;
   letter-spacing: 2px;
   opacity: 0.9;
+}
+
+.color-change {
+  background-color: #9775FF;
 }
 
 
@@ -412,22 +229,65 @@ h6 {
   text-decoration: none;
 }
 
-
-.shop-container {
-  height: 15vh;
-  text-align: left;
-  margin-left: 0px;
-  margin-top: 0px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+.content-wrapper {
+  color: white;
   display: flex;
-  background-size: cover;
-  margin-bottom: -8px;
-  margin: 0;
-  margin-top: 0px;
-  background-color: $lightblue;
+  flex-direction: column;
+  background: #5B29F7;
+  height: 400px;
 }
+
+.content-wrapper h1 {
+  font-weight: bold;
+  font-size: 33px;
+  line-height: 45px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.content-wrapper h3{
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.07em;
+  margin-top: 30px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  line-height: 25px;
+}
+
+.sell-button-2 {
+  text-align: left;
+
+}
+
+.tag-image p {
+  color: white;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 17px;
+  letter-spacing: 0.07em;
+  text-align: left;
+  margin-left: 20px;
+  margin-top: 80px;
+}
+
+.text-container {
+  margin-left: 40px;
+  margin-top: 60px;
+  margin-right: 40px;
+}
+
+.content-wrapper a {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 108px;
+  text-align: center;
+  letter-spacing: 0.07em;
+  color: #FFFFFF;
+}
+
 
 .shop-container-text h3 {
   color: black;

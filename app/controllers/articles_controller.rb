@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
     end
 
     @articles = policy_scope(@articles).order(created_at: :desc)
-                                          .with_attached_photo
+                                          .with_attached_photos
     @articles = @articles & @pg_result if @pg_result
 
     if current_user
@@ -31,7 +31,7 @@ class ArticlesController < ApplicationController
 
     @user_articles = @article.user
                              .articles
-                             .with_attached_photo
+                             .with_attached_photos
   end
 
 
@@ -77,7 +77,7 @@ class ArticlesController < ApplicationController
     end
 
     def article_params
-      params.require(:article).permit(:name, :category_id, :color, :size, :material, :shipping_cost, :user_id, :photo, :state, :price_cents)
+      params.require(:article).permit(:name, :category_id, :color, :size, :material, :shipping_cost, :user_id, :description, :state, :price_cents, photos: [])
     end
 
 

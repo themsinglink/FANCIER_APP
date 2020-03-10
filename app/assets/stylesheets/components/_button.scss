@@ -6,3 +6,31 @@
   border-radius: 4px;
   font-weight: bold;
 }
+
+.mainbutton {
+  position: center;
+  background-color: #FD9377;
+  color: white;
+  font-weight: lighter;
+  border-radius: 5px;
+  padding: 16px 50px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.mainbutton:hover {
+  color: white;
+  transition: all 0.2s ease-in;
+  transition-property: box-shadow;
+  text-decoration: none;
+}
+
+.mainbutton a {
+  text-align: center;
+}
+
+.mainbutton a:hover {
+  text-decoration: none;
+}
