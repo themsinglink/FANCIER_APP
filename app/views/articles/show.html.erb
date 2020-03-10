@@ -71,7 +71,7 @@
         <p style= "font-weight: bold"> $<%= @article.price_cents %> </p>
       </div>
       <p>SIZE: <%= @article.size %> </p>
-      <p> <%= @article.description.truncate_words(15)%> </p>
+      <p> <%= @article.description&.truncate_words(15)%> </p>
       <button type="button" class="btn coral-button btn-lg" data-toggle="modal" data-target="#myModal2">
         add to cart
       </button>
