@@ -1,3 +1,5 @@
+<div class="home-styling">
+
 <div class="main-container">
   <div class="main-text">
     <h1 class="hp">share the glitter, not the litter</h1>
@@ -15,85 +17,108 @@
 <div class="page-container"> -->
 
 
-<div class="content-container-text">
+<div class="content-container-text text-underline-1">
   <div class="content-text">
     <h1 class="hp">got festival tickets but nothing to wear?</h1>
     <!-- <p>#1 destination to find your unique festival outfit</p> -->
-    <%= link_to "shop", articles_path, class: 'content-button' %>
+
+    <div class="cta">
+      <%= link_to "shop", articles_path %>
+      <i class="fas fa-chevron-right"></i>
+    </div>
   </div>
 </div>
 
 
-<div class="content-container-photo">
+<div class="content-container-text">
   <div class="content-text-photo">
-    <h1 class="hp">made a sick outfit but got nowhere to stock it?</h1>
+    <h1 class="hp">made a sick outfit but got nowhere to sell it?</h1>
     <!-- <p>#1 destination to find your unique festival outfit</p> -->
-    <%= link_to "sell", new_article_path, class: 'content-button-photo' %>
+    <div class="sell-button">
+    <%= link_to "sell on fancier", new_article_path, class: 'content-button-photo' %>
+    </div>
   </div>
 </div>
 
 
-<div class="content-container-text-2">
+<div class="content-container-text color-change text-underline-2">
   <div class="content-text">
-    <h1 class="hp">fast fashion ain't your thang?</h1>
+    <h1>fast fashion ain't your thang?</h1>
     <!-- <p>#1 destination to find your unique festival outfit</p> -->
-    <%= link_to "meet us", about_path, class: 'content-button' %>
+    <div class="cta">
+        <%= link_to "about", about_path, class: '' %>
+        <i class="fas fa-chevron-right"></i>
+    </div>
   </div>
 </div>
 
+<div class="content-wrapper">
+  <div class="text-container">
+    <h1>let's change fast fashion together</h1>
+    <h3> We’re a community of movers & shakers that will change the rules etc desription katy wrote.</h3>
+      <div class="sell-button-2">
+        <%= link_to "sign up now", new_article_path, class: 'content-button-photo' %>
+        </div>
+      </div>
+</div>
 
-<div class="content-container-photo-2">
+<div class="content-container-text">
   <div class="content-text-photo">
-    <h6>Get Inspired</h6>
+    <h6>GET INSPIRED</h6>
     <h1 class="hp">Burning Man</h1>
     <!-- <p>#1 destination to find your unique festival outfit</p> -->
-    <%= link_to "browse", new_article_path, class: 'content-button-photo' %>
+    <div class="sell-button">
+    <%= link_to "browse", articles_path, class: "content-button"%>
+    </div>
   </div>
 </div>
 
 
 <div class="shop-container">
-  <h3>Shop by Category</h3>
+
 </div>
 
+
+
+<div class="content-container-text">
+  <div class="content-text-photo">
+    <h6>GET INSPIRED</h6>
+    <h1 class="hp">COSPLAY</h1>
+    <!-- <p>#1 destination to find your unique festival outfit</p> -->
+    <div class="sell-button">
+    <%= link_to "browse", articles_path, class: "content-button"%>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="content-container-photo-4">
+  <div class="content-text-photo">
+    <h6>Get Inspired</h6>
+    <h1 class="hp">Super Hero</h1>
+    <p>#1 destination to find your unique festival outfit</p>
+    <%= link_to "" , new_article_path  %>
+  </div>
+</div> -->
 
 <div class="tags-container">
     <div class="tag-cards">
       <% @categories.each do |cat| %>
       <%= link_to articles_path(category_name_eq: cat.name) do %>
         <div class="tag-image" style="background-image: <%= cat.photo.attached? ? "url(#{url_for(cat.photo)})"  : "asset-url('article1.jpg')" %>">
-           <h3>
+           <p>
             <%= cat.name %>
-           </h3>
+           </p>
         </div>
         <% end %>
       <% end %>
   </div>
 </div>
 
-<div class="content-container-photo-3">
-  <div class="content-text-photo">
-    <h6>Get Inspired</h6>
-    <h1 class="hp">Halloween</h1>
-    <!-- <p>#1 destination to find your unique festival outfit</p> -->
-    <%= link_to "browse", new_article_path, class: 'content-button-photo' %>
-  </div>
 </div>
-
-
-<div class="content-container-photo-4">
-  <div class="content-text-photo">
-    <h6>Get Inspired</h6>
-    <h1 class="hp">Super Hero</h1>
-    <!-- <p>#1 destination to find your unique festival outfit</p> -->
-    <%= link_to "browse", new_article_path, class: 'content-button-photo' %>
-  </div>
-</div>
-
-
 
 <!-- Begin Mailchimp Signup Form -->
-<div class="suscribe-container">
+<!-- <div class="suscribe-container">
 
 <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
 <style type="text/css">
@@ -129,14 +154,11 @@
 </div>  <div id="mce-responses" class="clear">
     <div class="response" id="mce-error-response" style="display:none"></div>
     <div class="response" id="mce-success-response" style="display:none"></div>
-  </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_6b359760679e61f790db5a0c7_7344d352ea" tabindex="-1" value=""></div>
+  </div>     real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+   <!--  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_6b359760679e61f790db5a0c7_7344d352ea" tabindex="-1" value=""></div>
     <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" style="background-color: #C97F6A"></div>
     </div>
 </form>
 </div>
 <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
 </div>
-<!--End mc_embed_signup-->
-
-
