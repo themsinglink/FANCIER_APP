@@ -9,10 +9,10 @@
 <%= f.input :state, label: "State", placeholder: 'Lightly worn' %>
 <%= f.input :price_cents, label: "Listing Price", placeholder: '$75.00' %>
 <%= f.association :category %>
+<%= f.input :price_cents, label: "Listing Price", placeholder: '$75.00' %>
 <%= f.input :photo, as: :file %>
 <%= f.input :shipping_costs, label: "Shipping Cost ", placeholder: '$10.00' %>
-<%= f.button :submit,  "List", class: "mainbutton"%>
-<% end %>
+<%#= f.button :submit,  "List", class: "mainbutton"%>
 
 </div>
 
@@ -22,6 +22,7 @@
     border-radius: 4px;
     color: white;
     margin-top: 10px;' %>
+
 <% end %>
 </div>
 
