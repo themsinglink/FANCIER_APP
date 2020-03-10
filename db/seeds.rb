@@ -40,7 +40,12 @@ tag_3 = Tag.create!(name: "Cosplay")
 
 puts "#{Tag.count} tags created!"
 
+cat_photo_1 = URI.open('https://www.opposuits.eu/media/catalog/product/cache/10/image/550x/925f46717e92fbc24a8e2d03b22927e1/o/s/osui-0048_festival_suit_the_fresh_prince_1.jpg')
 cat_1 = Category.create!(name: "Suit")
+cat_1.photo.attach(io: cat_photo_1, filename: 'cat_photo_1.jpg', content_type: 'image/jpg')
+cat_1.save!
+
+
 cat_2 = Category.create!(name: "Top")
 cat_3 = Category.create!(name: "Dress")
 

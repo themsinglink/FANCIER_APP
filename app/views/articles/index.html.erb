@@ -10,13 +10,13 @@
   <div class="search-index">
     <%= form_tag(articles_path, method: 'get', class: "form-inline") do %>
     <div id= "search-data" class="form-search search-data" data-articles="<%= @articles.to_json %>">
-      <%= text_field_tag :q, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Search" %>
+      <%= text_field_tag :q_search, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Search" %>
     </div>
     <% end %>
   </div>
 
   <div class="category-name">
-    <h1>Burning man</h1>
+    <h1>Shop All</h1>
     <p>View all</p>
   </div>
 
@@ -39,78 +39,64 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Looking for something specific?</h5>
+        <h5 class="modal-title title-style" id="exampleModalLongTitle" style= "font-weight: bold;">Filter</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <h5 class="modal-title" id="exampleModalLongTitle">Category</h5>
+      <%= search_form_for @q do |f| %>
+      <h5 class="modal-title title-style" id="exampleModalLongTitle">Choose a Category</h5>
       <div class="modal-body">
         <section class="category">
-          <select id="category">
-            <option value="dress">Dress</option>
-            <option value="top">Top</option>
-            <option value="full-outfit">Full Outfit</option>
-            <option value="shoes">Shoes</option>
-            <option value="accessories">Accessories</option>
-            <option value="onesies">Onesies</option>
-            <option value="swim">Swim</option>
-          </select>
+        <%= f.select :category_name_eq,
+          options_for_select(Category.all.map{|x| x.name}),
+          {include_blank: "Category", class: 'filter-select'}
+        %>
         </section>
       </div>
-      <h5 class="modal-title" id="exampleModalLongTitle">Color</h5>
+      <h5 class="modal-title title-style" id="exampleModalLongTitle">What Color?</h5>
       <div class="modal-body">
        <section class="colors">
-        <select id="color">
-          <option>Black</option>
-          <option>White</option>
-          <option>Red</option>
-          <option>Blue</option>
-          <option>Green</option>
-          <option>Yellow</option>
-          <option>Purple</option>
-          <option>Pink</option>
-          <option>Turquoise</option>
-          <option>Silver</option>
-          <option>Gold</option>
-          <option>Copper</option>
-          <option>Multi</option>
-          <option>Brown</option>
-          <option>Beige</option>
-          <option>Grey</option>
-        </select>
-      </section>
-    </div>
-    <h5 class="modal-title" id="exampleModalLongTitle">Size</h5>
+          <%= f.select :color_eq,
+          options_for_select(Article.available_colors.map{|a| [a.capitalize, a]}),
+          {include_blank: "Color", class: 'filter-select'} %>
+        </section>
+      </div>
+    <h5 class="modal-title title-style" id="exampleModalLongTitle">What Size?</h5>
     <div class="modal-body">
       <section class="size">
-        <select id="color">
-          <option>XXS</option>
-          <option>XS</option>
-          <option>S</option>
-          <option>M</option>
-          <option>L</option>
-          <option>XL</option>
-          <option>XXL</option>
-          <option>ONE SIZE</option>
-        </select>
+        <%= f.select :size_eq, options_for_select(Article.available_size.map{|a| [a.upcase, a]}), {include_blank: "Size", class: 'filter-select'} %>
       </section>
 
     </div>
-    <h5 class="modal-title" id="exampleModalLongTitle">Price</h5>
+    <h5 class="modal-title title-style" id="exampleModalLongTitle">Price</h5>
     <div class="modal-body">
-     <span>0</span>
-     <input type="range" name="price" id="price" value="5" min="1" max="20">
-     <span>10000</span>
+
+      <%= f.number_field :price_money_lteq, class: "outside-view" %>
+      <div class="d-flex justify-content-between">
+         <p style= "font-size: 12px; color: #C97F6A; margin-right: 4px;"> $0 </p>
+       <input type ="range" max="1000" min="0"
+        oninput="document.getElementById('rangeValLabel').innerHTML = this.value;"
+        step="1" name="rangeVal" id="money-slider" class= "slider" value="500">
+        </input> <p style= "font-size: 12px; color: #C97F6A; margin-left: 4px">$1000</p>
+      </div>
+
+      <div class="d-flex justify-content-center">
+      <p style= "font-size: 12px; color: #C97F6A;">$</p>
+      <em id="rangeValLabel" style="font-style: normal; color: #C97F6A; display: flex; justify-content: center;">500</em>
+      </div>
    </div>
-   <h5 class="modal-title" id="exampleModalLongTitle">Tag</h5>
+   <h5 class="modal-title title-style" id="exampleModalLongTitle">Looking for a specific event?</h5>
    <div class="modal-body">
-    ...
+    <section>
+    <%= f.select :tags_name, options_for_select(Tag.all.map(&:name)), {include_blank: "Choose an Occasion"} %>
+    </section>
   </div>
 
   <div class="modal-footer">
-    <button type="button" class="btn coral-button">Search</button>
+<%= f.submit "search", class: "btn coral-button" %>
   </div>
+  <% end %>
 </div>
 </div>
 </div>

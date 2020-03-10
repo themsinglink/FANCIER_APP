@@ -24,34 +24,53 @@ class Article < ApplicationRecord
 
 scope :favorited_by, -> (username) { joins(:favorites).where(favorites: { user: User.where(username: username) }) }
 
+  scope :available, -> do
+    includes(:orders).where(orders: { id: nil })
+                     .or(Article.with_cancelled_orders)
+  end
+
+
   scope :with_pending_orders, -> do
-    joins(:orders).where(orders: { state: 'pending' }).distinct
+    includes(:orders).where(orders: { state: 'pending' })
   end
 
   scope :with_paid_orders, -> do
-    joins(:orders).where(orders: { state: 'paid' }).distinct
+    includes(:orders).where(orders: { state: 'paid' })
   end
 
   scope :with_shipped_orders, -> do
-    joins(:orders).where(orders: { state: 'shipped' }).distinct
+    includes(:orders).where(orders: { state: 'shipped' })
   end
 
   scope :with_delivered_orders, -> do
-    joins(:orders).where(orders: { state: 'delivered' }).distinct
+    includes(:orders).where(orders: { state: 'delivered' })
   end
 
   scope :with_cancelled_orders, -> do
-    joins(:orders).where(orders: { state: 'cancelled' }).distinct
+    includes(:orders).where(orders: { state: 'cancelled' })
+  end
+
+  def self.available_colors
+    all.map(&:color).uniq
+  end
+
+  def self.available_size
+    all.map(&:size).uniq
+  end
+
+  ransacker :price_money, type: :integer, formatter: proc { |dollars| dollars * 100 } do |p|
+    p.table[:price_cents]
   end
 
   include PgSearch::Model
   pg_search_scope :search_by_name_and_color_and_material_and_category,
   # <-- I am not sure if it is OK to put category_id as it refers to another table
 
-    against: [ :name, :color, :material, :category_id],
+    against: [ :name, :color, :material],
     using: {
       tsearch: { prefix: true }     },
     associated_against: {
+      category: [:name],
       tags: [:name]
     }
 
@@ -62,6 +81,8 @@ scope :favorited_by, -> (username) { joins(:favorites).where(favorites: { user: 
     def active_order
       orders.active.first
     end
+
+
 end
 
 

@@ -1,6 +1,6 @@
 class Category < ApplicationRecord
   has_many :articles
-
+  has_one_attached :photo
   # TODO: Figure out a way to only get categories with results
   # scope :with_articles_for_tag, -> (name) do
   # end

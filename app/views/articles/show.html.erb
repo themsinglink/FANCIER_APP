@@ -1,147 +1,134 @@
 
-
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval= "false" data-touch= "true">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-    <%= cl_image_tag @article.photo.key, style:"width: 100%;", data: {toggle:"modal", target: "#exampleModalCenter"}%>
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<%= cl_image_tag @article.photo.key, style:"width: 100%;", data: {toggle:"modal", target: "#exampleModalCenter"}%>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content container">
       <div class="modal-body">
-        <%= cl_image_tag @article.photo.key, style:"width: 100%;" %>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval= "false" data-touch= "true">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <%= cl_image_tag @article.photo.key, style:"width: 100%;" %>
+            </div>
+            <div class="carousel-item">
+              <%= cl_image_tag @article.photo.key, style:"width: 100%;" %>
+
+            </div>
+            <div class="carousel-item">
+              <%= cl_image_tag @article.photo.key, style:"width: 100%;" %>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
 </div>
-    </div>
-    <div class="carousel-item">
-    <%= cl_image_tag @article.photo.key, style:"width: 100%;" %>
 
-    </div>
-    <div class="carousel-item">
-    <%= cl_image_tag @article.photo.key, style:"width: 100%;" %>
+<h2>You might also like...</h2>
+<div class="clothes-seller">
+  <% @user_articles.each do |article| %>
+  <% unless article == @article %>
+  <%= cl_image_tag article.photo.key, class: "seller-article" %>
 
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+    <% end %>
+  <% end %>
 </div>
-  <h2>You might also like...</h2>
-  <div class="clothes-seller">
-    <% if @article.user.articles.count > 1 %>
-      <% @article.user.articles.each do |article| %>
-        <% unless article == @article %>
-          <%= link_to article_path(article) do %>
-            <%= cl_image_tag article.photo.key, class: "seller-article" %>
-          <% end %>
-        <% end %>
-        <% end %>
-      <% else %>
-      <% Article.with_tags(@article.tags.pluck(:name)).each do |article| %>
-        <% unless article == @article %>
-          <%= link_to article_path(article) do %>
-            <%= cl_image_tag article.photo.key, class: "seller-article" %>
-          <% end %>
-        <% end %>
-        <% end %>
-      <% end %>
-  </div>
 
 <div class=" info">
-   <%= link_to edit_article_path do %>
-    <i class="far fa-edit edit"></i>
-    <% end %>
+  <p style= "text-align: center; font-size: 12px;">Click image to view fullscreen</p>
+  <%= link_to edit_article_path do %>
+  <i class="far fa-edit edit"></i>
+  <% end %>
   <div>
     <div class="d-flex justify-content-start" style="margin: 10px">
       <% if user_signed_in? %>
-        <%= link_to user_path(@article.user) do %>
-          <%= image_tag "profilephoto.png", class: "avatar" %>
-        <% end %>
+      <%= link_to user_path(@article.user) do %>
+      <%= image_tag "profilephoto.png", class: "avatar" %>
       <% end %>
-    <div class="profile-tag">
-      <p><strong> <%= @article.user.name %> </strong></p>
-      <p>madrid, spain</p>
-      <p>
-        <% @article.user.rating.times do %>
-         ⭐
-        <% end %>
-      </p>
-    </div>
+      <% end %>
+      <div class="profile-tag">
+        <p><strong> <%= @article.user.name %> </strong></p>
+        <p>madrid, spain</p>
+        <p>
+          <% @article.user.rating.times do %>
+          ⭐
+          <% end %>
+        </p>
+      </div>
     </div>
     <div class= "d-flex justify-content-between">
-    <div>
-    <h5 style= "font-weight: bold"> <%= @article.name %>
-      <%= @article.category.name %></h5>
+      <div>
+        <h5 style= "font-weight: bold"> <%= @article.name %>
+          <%= @article.category.name %></h5>
+        </div>
+        <p style= "font-weight: bold"> $<%= @article.price_cents %> </p>
+      </div>
+      <p>SIZE: <%= @article.size %> </p>
+      <p> <%= @article.description.truncate_words(15)%> </p>
+      <button type="button" class="btn coral-button btn-lg" data-toggle="modal" data-target="#myModal2">
+        add to cart
+      </button>
     </div>
-    <p style= "font-weight: bold"> $<%= @article.price_cents %> </p>
-  </div>
-  <p>SIZE: <%= @article.size %> </p>
-  <% if @article.description %>
-  <p> <%= @article.description.truncate_words(15)%> </p>
-  <% end %>
 
-  <button type="button" class="btn coral-button btn-lg" data-toggle="modal" data-target="#myModal2">
-      add to cart
-    </button>
-  </div>
-  <!-- Modal -->
-  <div class="modal right fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
+    <!-- Modal -->
+    <div class="modal right fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
 
-        <div class="modal-header">
+          <div class="modal-header">
            <h4 class="modal-title" id="myModalLabel2">BAG</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        </div>
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+         </div>
 
-        <div class="modal-body">
-        <div class="d-flex">
-        <%= cl_image_tag @article.photo.key, style:"width: 30%;" %>
+         <div class="modal-body">
+          <div class="d-flex">
+            <%= cl_image_tag @article.photo.key, style:"width: 30%;" %>
 
-        <div class= "side-info">
-        <h5 style= "font-weight: bold"><%= @article.name %>
-        <%= @article.category.name %></h5>
-        <p>SIZE: <%= @article.size %></p>
-        <p><%= @article.price_cents %></p>
-        </div>
-        </div>
+            <div class= "side-info">
+              <h5 style= "font-weight: bold"><%= @article.name %>
+                <%= @article.category.name %></h5>
+                <p>SIZE: <%= @article.size %></p>
+                <p><%= @article.price_cents %></p>
+              </div>
+            </div>
 
-        <hr>
-        <div class="d-flex justify-content-between">
-          <p>SUBTOTAL</p>
-          <p>$<%= @article.price_cents %></p>
-        </div>
+            <hr>
+            <div class="d-flex justify-content-between">
+              <p>SUBTOTAL</p>
+              <p>$<%= @article.price_cents %></p>
+            </div>
 
-        <%= simple_form_for @order do |f|%>
-          <%= f.input :name %>
-          <%= f.input :street_address %>
-          <%= f.input :apartment_number %>
-          <%= f.input :city %>
-          <%= f.input :state_address %>
-          <%= f.input :postal_code %>
-          <%= f.country_select :country, {include_blank: 'Select a country'}, {class: 'form-control'}%>
-          <%= f.input :article_id, :as => :hidden, :input_html => { :value => @article.id } %>
-          <%= f.submit 'checkout', class: 'btn coral-button btn-lg' %>
-        <% end %>
+            <%= simple_form_for @order do |f|%>
+            <%= f.input :name %>
+            <%= f.input :street_address %>
+            <%= f.input :apartment_number %>
+            <%= f.input :city %>
+            <%= f.input :state_address %>
+            <%= f.input :postal_code %>
+            <%= f.country_select :country, {include_blank: 'Select a country'}, {class: 'form-control'}%>
+            <%= f.input :article_id, :as => :hidden, :input_html => { :value => @article.id } %>
+            <%= f.submit 'checkout', class: 'btn coral-button btn-lg' %>
+            <% end %>
 
-        </div>
+          </div>
 
-      </div><!-- modal-content -->
-    </div><!-- modal-dialog -->
-  </div><!-- modal -->
+        </div><!-- modal-content -->
+      </div><!-- modal-dialog -->
+    </div><!-- modal -->
 
 
-</div><!-- container -->
+  </div><!-- container -->
 
 
