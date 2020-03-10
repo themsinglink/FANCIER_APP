@@ -7,10 +7,36 @@ class FavoritesController < ApplicationController
     @user = User.find(params[:user_id])
   end
 
+  def toggle
+    @favorite = Favorite.where(user: current_user, article: @article).first
+    if @favorite
+      @favorite.destroy
+      @destroyed = true
+    else
+      @destroyed = false
+      @favorite = Favorite.new(user: current_user, article: @article)
+      if @favorite.save
+        respond_to do |format|
+          format.html { redirect_to articles_path }
+
+          format.js
+        end
+      else
+        respond_to do |format|
+
+          format.html { render 'articles/index' }
+          format.js  # <-- idem
+
+        end
+      end
+    end
+    authorize @favorite
+  end
+
   def create
     @favorite = Favorite.new(user: current_user, article: @article)
     authorize @favorite
-
+    binding.pry
     if @favorite.save
       respond_to do |format|
         format.html { redirect_to articles_path }
@@ -29,6 +55,7 @@ class FavoritesController < ApplicationController
 
   def destroy
     @favorite = Favorite.where(user: current_user, article: @article).first
+
     authorize @favorite
     @favorite.destroy
     # redirect_to articles_path

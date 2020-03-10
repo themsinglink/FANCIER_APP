@@ -1,0 +1,11 @@
+
+function toggleFavorite(){
+  var star = document.querySelector(`#article-${<%= @favorite.article.id %>}`);
+  <% if @destroyed %>
+    star.innerHTML = `<i class="far fa-star"></i>`;
+  <% else %>
+    star.innerHTML = `<i class="fas fa-star"></i>`;
+  <% end %>
+}
+
+toggleFavorite()
