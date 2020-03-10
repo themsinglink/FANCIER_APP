@@ -1,5 +1,5 @@
 <div class="background-profile">
-  <h1>+</h1>
+
 </div>
 <div class="backround-user">
 
@@ -26,7 +26,7 @@
     <div class="orders">
       <% current_user.orders.each do |order| %>
         <div class="d-flex border-order">
-          <div class="order-photo" style="background-image: url(<%= image_path ('article4.jpg') %>);"></div>
+          <div class="order-photo" style="background-image: url(<%= cl_image_path order.article.photo.key %>);"></div>
           <div class="order-info">
 
 
@@ -35,8 +35,11 @@
             <h3>SIZE:<%= order.article.size %></h3>
             <h4>$<%= order.article.price_cents%>.00</h4>
             <p><%= order.state%></p>
-             <% if order.state == 'shipped' %>
+
+            <% if order.state == 'shipped' %>
               <%= link_to " Mark as received", buyers_order_path(order), method: :patch, class: 'mainbutton' %>
+            <% elsif order.state == "delivered" && order.review.nil? %>
+              <%= link_to "Write a review", new_order_review_path(order) %>
             <% end %>
           </div>
         </div>

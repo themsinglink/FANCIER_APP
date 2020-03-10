@@ -2,6 +2,15 @@
   position: relative;
 }
 
+#viewall {
+  color: $gray;
+  text-decoration:none;
+  a {
+      color: $gray;
+      text-decoration:none;
+  }
+}
+
 .article-card-link {
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
@@ -58,6 +67,14 @@
   background-repeat: no-repeat;
 }
 
+.banner-index {
+  background-image: linear-gradient(180deg, rgba(162, 60, 60, 0.22) 0%, rgba(0, 0, 0, 0) 100%), asset-url("halloween.jpg");
+  height: 315px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .banner-index h1 {
   font-weight: bold;
   font-size: 38px;
@@ -81,7 +98,7 @@
 
 .category-name h1 {
   font-weight: bold;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 22px;
   letter-spacing: 0.05em;
   color: #1F2023;
@@ -90,6 +107,20 @@
 
 .article-cards-container a:hover {
   text-decoration:none;
+}
+
+.margin-category {
+  margin-left: 28px;
+}
+
+.margin-top-category {
+  margin-top: 25px;
+}
+.margin-top-category h5 {
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
 .category-name p {
@@ -164,4 +195,9 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     margin: 10px 50px;
   }
+}
+
+.outside-view{
+  position: absolute;
+  top: -10000px
 }

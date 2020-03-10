@@ -5,13 +5,13 @@
   <div class="profile-info">
   <%= image_tag "profilephoto.png", class: "", alt: "alttext" %>
   <h2><%=  @user.name%></h2>
-  <p>⭐⭐⭐⭐⭐</p>
-  <p>london, england</p>
   <p>
     <% @user.rating.times do %>
      ⭐
     <% end %>
   </p>
+  <p>madrid, spain</p>
+
   </div>
 <div class="profile-links">
   <div class="clothes clothes-color">
@@ -38,6 +38,11 @@
     <% end %>
   <% end %>
 <% end %>
+
+<%# if current_user.orders.active? %>
+
+
+<%# end %>
 <% reviews.each do |review| %>
     <h4><%=review.user.name%></h4>
     <p>
@@ -52,7 +57,7 @@
 
 </div>
 
-</div>
+
 
 
 

@@ -16,3 +16,29 @@
 .side-info {
   margin: 10px;
 }
+
+.clothes-seller{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 5px;
+  margin: 20px 0px;
+}
+
+.seller-article{
+  height: 150px;
+  width: 100%;
+  background: no-repeat;
+  background-size: cover;
+}
+
+.clothes-seller h2{
+  font-size: 18px;
+  margin-top: 70px;
+  margin-left: 26px;
+  font-family: Montserrat;
+
+}
+.clothes-seller img{
+  margin-top: -30px;
+  padding-top: 0px;
+}

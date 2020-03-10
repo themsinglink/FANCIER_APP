@@ -23,14 +23,15 @@
 .background-profile h1 {
   color: white;
   background: #C97F6A;
-  height: 50px;
+  height: 52px;
   width: 50px;
   border-radius: 50%;
   position: relative;
   text-align: center;
   font-weight: 200;
   font-size: 50px;
-  left: 800px;
+  left: 50px;
+  top: 170px;
 }
 
 .order-info {
@@ -97,7 +98,6 @@
 .total-section {
   display: flex;
   padding-top: 20px;
-  padding-left: 15px;
   padding-right: 15px;
   padding-bottom: 20px;
 }
@@ -105,6 +105,11 @@
 .order-container {
   width: 80%;
   margin: 0 auto;
+}
+
+.dropdown-menu a:hover {
+  opacity: .7;
+  text-decoration:none;
 }
 
 // Large devices (desktops, 992px and up)
