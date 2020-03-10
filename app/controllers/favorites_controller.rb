@@ -9,18 +9,19 @@ class FavoritesController < ApplicationController
 
   def create
     @favorite = Favorite.new(user: current_user, article: @article)
+    authorize @favorite
+
     if @favorite.save
-    respond_to do |format|
+      respond_to do |format|
         format.html { redirect_to articles_path(@article) }
         format.js
       end
     else
+      respond_to do |format|
         format.html { render 'articles/show' }
         format.js
       end
     end
-    authorize @favorite
-
   end
 
   def destroy
