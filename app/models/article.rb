@@ -73,15 +73,13 @@ class Article < ApplicationRecord
       tags: [:name]
     }
 
-    def active_orders?
-      orders.active.any?
-    end
+  def active_orders?
+    orders.active.any?
+  end
 
-    def active_order
-      orders.active.first
-    end
-
-
+  def active_order
+    orders.active.first
+  end
 end
 
 
