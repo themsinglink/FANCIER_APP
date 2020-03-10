@@ -3,25 +3,19 @@
 <%= simple_form_for(article) do |f| %>
 
 <div class="form-inputs">
-<%= f.input :name, label: "Title", placeholder: 'Cute top' %>
-<%= f.input :size, label: "Size ", placeholder: 'S/M/L'  %>
-<%= f.input :material, label: "Fabric ", placeholder: 'Fabric' %>
-<%= f.input :state, label: "State", placeholder: 'Lightly worn' %>
-<%= f.input :price_cents, label: "Listing Price", placeholder: '$75.00' %>
+<%= f.input :name, label: "Title", placeholder: 'Cute top', :input_html => { :class => "text" } %>
+<%= f.input :size, label: "Size ", placeholder: 'S/M/L' , :input_html => { :class => "text" } %>
+<%= f.input :material, label: "Fabric ", placeholder: 'Fabric', :input_html => { :class => "text" } %>
+<%= f.input :state, label: "State", placeholder: 'Lightly worn', :input_html => { :class => "text" } %>
+<%= f.input :price_cents, label: "List Price", placeholder: '$75.00', :input_html => { :class => "text" } %>
 <%= f.association :category %>
-<%= f.input :description, label: "Description", placeholder: 'Leather suit' %>
+<%= f.input :description, label: "Description", placeholder: 'Leather suit', :input_html => { :class => "text" } %>
 <%= f.input :photos, as: :file, input_html: { multiple: true } %>
 <%= f.input :shipping_costs, label: "Shipping Cost ", placeholder: '$10.00' %>
 <%#= f.button :submit,  "List", class: "mainbutton"%>
-
 </div>
 
-<%= f.button :submit,  "List", style:'width: 100%;
-    padding: 15px;
-    background-color: #C97F6A;
-    border-radius: 4px;
-    color: white;
-    margin-top: 10px;' %>
+<%= f.button :submit,  "List", class: "btn coral-button" %>
 
 <% end %>
 </div>
