@@ -56,7 +56,7 @@
     <% if review.user.photo.attached? %>
       <%= cl_image_tag review.user.photo.key, class: "avatar-small" %>
     <% else %>
-      <%= image_tag "avatar.png", class: "avatar-xl" %>
+      <%= image_tag "avatar.png", class: "avatar-small" %>
     <% end %>
     <h4><%=review.user&.name%></h4>
     </div>
