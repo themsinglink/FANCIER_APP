@@ -10,6 +10,7 @@
   background-size: cover;
   background-image: linear-gradient(180deg, rgba(233, 172, 255, 0.3) 18.3%, rgba(101, 5, 224, 0.54) 100%), asset-url('glitter.gif');
   margin: 0;
+  margin-top: -40px !important;
 }
 
 .shop-container-old {
@@ -35,7 +36,7 @@
 .main-text {
   color: white;
   font-weight: bold;
-  margin: 30px;
+  margin-top: 95px;
 }
 
 .main-text a:hover {
