@@ -15,34 +15,6 @@
   </div>
 </div>
 
-  <div class="clothes-seller">
-  <h2>You might also like...</h2>
-    <% if @article.user.articles.count > 1 %>
-      <% @article.user.articles.each do |article| %>
-        <% unless article == @article %>
-          <%= link_to article_path(article) do %>
-            <% if @article.photos.first.nil?  %>
-              <%= image_tag 'default-article.png', style:"width: 100%;" %>
-            <% else  %>
-             <%= cl_image_tag article.photos.first.key, class: "seller-article" %>
-            <% end %>
-          <% end %>
-        <% end %>
-        <% end %>
-      <% else %>
-      <% Article.with_tags(@article.tags.pluck(:name)).each do |article| %>
-        <% unless article == @article %>
-          <%= link_to article_path(article) do %>
-            <% if @article.photos.first.nil?  %>
-              <%= image_tag 'default-article.png', class: "seller-article" %>
-            <% else  %>
-              <%= cl_image_tag @article.photos.first.key, class: "seller-article" %>
-            <% end %>
-          <% end %>
-        <% end %>
-      <% end %>
-    <% end %>
-  </div>
 
 
 <div class=" info">
@@ -54,7 +26,7 @@
     <div class="d-flex justify-content-start" style="margin: 10px">
       <%# if user_signed_in? %>
       <%= link_to user_path(@article.user) do %>
-      <%= cl_image_tag @article.user.photo.key, class: "avatar" %>
+      <%#= cl_image_tag @article.user.photo.key, class: "avatar" %>
       <% end %>
       <%# end %>
       <div class="profile-tag">
@@ -134,4 +106,32 @@
 
   </div><!-- container -->
 
+  <div class="container clothes-seller">
+  <h2>You might also like...</h2>
+    <% if @article.user.articles.count > 1 %>
+      <% @article.user.articles.each do |article| %>
+        <% unless article == @article %>
+          <%= link_to article_path(article) do %>
+            <% if @article.photos.first.nil?  %>
+              <%= image_tag 'default-article.png', style:" seller-article" %>
+            <% else  %>
+             <%= cl_image_tag article.photos.first.key, class: "seller-article" %>
+            <% end %>
+          <% end %>
+        <% end %>
+        <% end %>
+      <% else %>
+      <% Article.with_tags(@article.tags.pluck(:name)).each do |article| %>
+        <% unless article == @article %>
+          <%= link_to article_path(article) do %>
+            <% if @article.photos.first.nil?  %>
+              <%= image_tag 'default-article.png', class: " seller-article" %>
+            <% else  %>
+              <%= cl_image_tag @article.photos.first.key, class: " seller-article" %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
 
