@@ -3,10 +3,14 @@
 
 <div class="background-user">
   <div class="profile-info">
-    <% if @user.photo.key.nil? %>
-        <%= image_tag "avatar.png", class: "avatar-xl" %>
-    <% else %>
+    <% if @user.photo.attached? %>
       <%= cl_image_tag @user.photo.key, class: "avatar-xl", alt: "profile picture" %>
+    <% elsif @user == current_user %>
+      <%= link_to edit_user_path(current_user) do %>
+        <%= image_tag "avatar.png", class: "avatar-xl" %>
+      <% end %>
+    <% else %>
+      <%= image_tag "avatar.png", class: "avatar-xl" %>
     <% end %>
     <h2><%=  @user.name%></h2>
     <p>

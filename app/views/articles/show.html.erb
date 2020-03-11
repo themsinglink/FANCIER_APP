@@ -54,7 +54,11 @@
     <div class="d-flex justify-content-start" style="margin: 10px">
       <%# if user_signed_in? %>
       <%= link_to user_path(@article.user) do %>
-      <%= cl_image_tag @article.user.photo.key, class: "avatar" %>
+      <% if @article.user.photo.attached? %>
+      <%= cl_image_tag @article.user.photo.key, class: "avatar", alt: "profile picture" %>
+    <% else %>
+      <%= image_tag "avatar.png", class: "avatar-xl" %>
+    <% end %>
       <% end %>
       <%# end %>
       <div class="profile-tag">
