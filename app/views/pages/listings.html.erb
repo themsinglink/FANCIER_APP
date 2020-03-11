@@ -6,7 +6,7 @@
 </div>
 <div class="backround-user">
   <div class="profile-info">
-    <%= image_tag "profilephoto.png", class: "", alt: "alttext" %>
+    <%= cl_image_tag current_user.photo.key, class: "avatar-xl", alt: "profile picture" %>
     <div class="add-margin">
     <h2>Order Dashboard</h2>
   </div>

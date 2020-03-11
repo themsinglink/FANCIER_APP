@@ -11,24 +11,24 @@ User.destroy_all
 Category.destroy_all
 
 
-# userphoto_1 = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1578927204/z37gkiugtzu0smpt6jpf.jpg')
+userphoto_1 = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1578927204/z37gkiugtzu0smpt6jpf.jpg')
 user_1 = User.new(name: "Katy", email: "katy@gmail.com", password: "123456")
-# user_1.photos.attach(io: userphoto_1, filename: 'userphoto_1.jpg', content_type: 'image/jpg')
+user_1.photo.attach(io: userphoto_1, filename: 'userphoto_1.jpg', content_type: 'image/jpg')
 user_1.save!
 
-# userphoto_2 = URI.open('https://avatars2.githubusercontent.com/u/58662021?v=4')
+userphoto_2 = URI.open('https://avatars2.githubusercontent.com/u/58662021?v=4')
 user_2 = User.new(name: "Laura", email: "laura@gmail.com", password: "123456")
-# user_2.photos.attach(io: userphoto_2, filename: 'userphoto_2.jpeg', content_type: 'image/jpeg' )
+user_2.photo.attach(io: userphoto_2, filename: 'userphoto_2.jpeg', content_type: 'image/jpeg' )
 user_2.save!
 
-# userphoto_3 = URI.open('https://avatars1.githubusercontent.com/u/59030202?v=4')
+userphoto_3 = URI.open('https://avatars1.githubusercontent.com/u/59030202?v=4')
 user_3 = User.new(name: "Meghan", email: "meghan@gmail.com", password: "123456")
-# user_3.photos.attach(io: userphoto_3, filename: 'userphoto_3.jpeg', content_type: 'image/jpeg' )
+user_3.photo.attach(io: userphoto_3, filename: 'userphoto_3.jpeg', content_type: 'image/jpeg' )
 user_3.save!
 
-# userphoto_4 = URI.open('https://www.biography.com/.image/t_share/MTU0OTkwNDUxOTQ5MDUzNDQ3/kanye-west-attends-the-christian-dior-show-as-part-of-the-paris-fashion-week-womenswear-fall-winter-2015-2016-on-march-6-2015-in-paris-france-photo-by-dominique-charriau-wireimage-square.jpg')
+userphoto_4 = URI.open('https://www.biography.com/.image/t_share/MTU0OTkwNDUxOTQ5MDUzNDQ3/kanye-west-attends-the-christian-dior-show-as-part-of-the-paris-fashion-week-womenswear-fall-winter-2015-2016-on-march-6-2015-in-paris-france-photo-by-dominique-charriau-wireimage-square.jpg')
 user_4 = User.new(name: "Kendrikc", email: "kendrikc@gmail.com", password: "123456")
-# user_4.photos.attach(io: userphoto_4, filename: 'userphoto_4.jpg', content_type: 'image/jpg')
+user_4.photo.attach(io: userphoto_4, filename: 'userphoto_4.jpg', content_type: 'image/jpg')
 user_4.save!
 
 
