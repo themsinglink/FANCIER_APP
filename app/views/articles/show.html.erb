@@ -39,7 +39,7 @@
       <% end %>
       <%# end %>
       <div class="profile-tag">
-        <p class="bold"> <%= @article.user.name %> </p>
+        <p class="bold"> <%= @article.user&.name %> </p>
         <!-- <p>madrid, spain</p> -->
         <p>
           <% @article.user.rating.times do %>
@@ -77,9 +77,9 @@
          <div class="modal-body">
           <div class="d-flex">
             <% if @article.photos.first.nil?  %>
-              <%= image_tag 'default-article.png', style:"width: 30%;" %>
+              <%= image_tag 'default-article.png', style:"width: 120px;" %>
             <% else  %>
-             <%= cl_image_tag @article.photos.first.key, style:"width: 30%;" %>
+             <%= cl_image_tag @article.photos.first.key, style:"width: 120px;" %>
             <% end %>
 
             <div class= "side-info">
