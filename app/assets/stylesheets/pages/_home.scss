@@ -194,7 +194,7 @@ letter-spacing: 0.05em;
   margin-bottom: 0px;
   margin: 0;
   padding: 24px;
-  background-color: #D3C1FF;
+  background-color: #6B29F6;
   margin-top: -40px;
 }
 
@@ -234,16 +234,17 @@ letter-spacing: 0.05em;
   padding-bottom: 4px;
   margin: 0;
   z-index: 0;
-  color: black;
+  color: white;
 }
 
-.change-spacing {
 
+.margin-change {
+  margin-top: 20px !important;
 }
 
 .content-button {
   position: center;
-  background-color: #141414;
+  background-color: #210461;
   color: white;
   font-weight: lighter;
   border-radius: 5px;
