@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   def home
     @tags = Tag.all
     @categories = Category.all
+                          .with_attached_photo
   end
 
   def about
