@@ -1,3 +1,8 @@
+<% content_for :meta_title, "Buy #{@article.name} on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @article.description %>
+<%# content_for :meta_image, cl_image_path(@article.photo.path) %>
+
+
 <% if @article.photos.first.nil?  %>
   <%= image_tag 'default-article.png', style:"width: 100%;", data: {toggle:"modal", target: "#exampleModalCenter"}%>
 <% else  %>
