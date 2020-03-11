@@ -85,7 +85,7 @@
             <div class= "side-info">
               <h5 style= "font-weight: bold"><%= @article.name %>
                 </h5>
-                <p>SIZE: <%= @article.size.upcase %></p>
+                <p>SIZE: <%= @article.size&.upcase %></p>
                 <p>$<%= @article.price_cents %></p>
               </div>
             </div>
