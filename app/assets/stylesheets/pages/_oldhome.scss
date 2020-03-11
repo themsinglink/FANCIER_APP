@@ -1,14 +1,14 @@
 // Specific CSS for your home-page
 
 .main-container {
-  height: 60vh;
+  height: 80vh;
   text-align: center;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   display: flex;
   background-size: cover;
-  background-image: linear-gradient(180deg, rgba(152, 124, 240, 0.168) 0%, rgba(65, 32, 168, 0.504) 59.09%),   asset-url('3background.png');
+  background-image: linear-gradient(180deg, rgba(185, 167, 238, 0.3) 0%, rgba(140, 101, 255, 0.38) 100%), asset-url('homepage.gif');
   margin: 0;
 }
 
