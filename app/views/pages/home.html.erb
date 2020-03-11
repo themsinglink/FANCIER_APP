@@ -38,7 +38,7 @@
     <h1 class="hp">made a sick outfit but got nowhere to sell it?</h1>
     <!-- <p>#1 destination to find your unique festival outfit</p> -->
     <div class="sell-button">
-    <%= link_to "sell on fancier", new_article_path, class: 'content-button-photo' %>
+      <%= link_to "sell on fancier", new_article_path, class: 'content-button-photo' %>
     </div>
   </div>
 </div>
@@ -62,7 +62,7 @@
     <h1 class="hp">Burning Man</h1>
     <!-- <p>#1 destination to find your unique festival outfit</p> -->
     <div class="sell-button">
-    <%= link_to "browse", tag_path(@tags.first), class: "content-button"%>
+      <%= link_to "browse", tag_path(@tags.first), class: "content-button"%>
     </div>
   </div>
 </div>
@@ -71,6 +71,7 @@
   <div class="text-container">
     <h1>let's change fast fashion together</h1>
     <h3> We’re a community of movers & shakers that will change the rules etc desription katy wrote.</h3>
+
       <div class="sell-button-2">
         <%= link_to "sign up now", new_user_session_path, class: 'content-button-photo' %>
         </div>
@@ -83,7 +84,7 @@
       <%#= link_to tags_path(name: tag.name) do %>
         <div class="tag-image-new" style="background-image: asset-url('girls.png')">
            <p>
-            <%= tag.name.pluralize %>
+            <%#= tag.name.pluralize %>
            </p>
         </div>
         <%# end %>
@@ -99,7 +100,7 @@
     <h1 class="hp">EDC</h1>
     <p>#1 destination to find your unique festival outfit</p>
     <div class="sell-button">
-    <%= link_to "browse", articles_path, class: "content-button"%>
+    <%#= link_to "browse", articles_path, class: "content-button"%>
     </div>
   </div>
 </div> -->
@@ -115,16 +116,16 @@
 </div> -->
 
 <div class="tags-container">
-    <div class="tag-cards">
-      <% @categories.each do |cat| %>
+  <div class="tag-cards">
+    <% @categories.each do |cat| %>
       <%= link_to articles_path(category_name_eq: cat.name) do %>
         <div class="tag-image" style="background-image: <%= cat.photo.attached? ? "url(#{url_for(cat.photo)})"  : "asset-url('article1.jpg')" %>">
            <p>
-            <%= cat.name.pluralize %>
+              <%= cat.name.pluralize %>
            </p>
         </div>
-        <% end %>
       <% end %>
+    <% end %>
   </div>
 </div>
 
@@ -174,3 +175,4 @@
 </div>
 <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
 </div>
+--->
