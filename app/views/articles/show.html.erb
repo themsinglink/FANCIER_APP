@@ -39,7 +39,7 @@
       <% end %>
       <%# end %>
       <div class="profile-tag">
-        <p class="bold"> <%= @article.user.name %> </p>
+        <p class="bold"> <%= @article.user&.name %> </p>
         <!-- <p>madrid, spain</p> -->
         <p>
           <% @article.user.rating.times do %>
