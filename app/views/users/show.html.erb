@@ -3,7 +3,11 @@
 
 <div class="background-user">
   <div class="profile-info">
-    <%= cl_image_tag @user.photo.key, class: "avatar-xl", alt: "profile picture" %>
+    <% if @user.photo.key.nil? %>
+        <%= image_tag "avatar.png", class: "avatar-xl" %>
+    <% else %>
+      <%= cl_image_tag @user.photo.key, class: "avatar-xl", alt: "profile picture" %>
+    <% end %>
     <h2><%=  @user.name%></h2>
     <p>
       <% @user.rating.times do %>
