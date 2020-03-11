@@ -8,10 +8,6 @@ class FavoritePolicy < ApplicationPolicy
       return true
     end
 
-    def toggle
-      true
-    end
-
     def destroy?
       record.user == user
     end
