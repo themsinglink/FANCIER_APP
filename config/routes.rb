@@ -24,11 +24,18 @@ Rails.application.routes.draw do
 
   resources :tags, only: [:show]
 
+  namespace :sellers do
+    resources :orders, only: :update
+  end
+
+  namespace :buyers do
+    resources :orders, only: :update
+  end
+
   get :autocomplete, to: 'pages#autocomplete'
   get "dashboard", to: 'pages#dashboard'
   get "listings", to: 'pages#listings'
   get "about", to: 'pages#about'
   get "shop", to: 'articles#index'
-
 
 end

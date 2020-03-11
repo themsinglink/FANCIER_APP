@@ -61,11 +61,15 @@
             <h4>$<%= article.price_cents%>.00</h4>
             <% if article.active_order&.state == 'pending' %>
             <p class= "color-change-state">unsold</p>
+
+            <% elsif article.active_order&.state == "paid" %>
             <% else %>
             <p><%= article.active_order.state%></p>
             <% end %>
             <% if article.active_orders? && article.active_order.state == 'paid' %>
-              <%= link_to " Mark as shipped", sellers_order_path(article.active_order), method: :patch, class: 'mainbutton' %>
+            <div class="margin-button">
+              <%= link_to " Mark as shipped", sellers_order_path(article.active_order), method: :patch, class: 'received' %>
+            </div>
             <% end %>
           </div>
         </div>

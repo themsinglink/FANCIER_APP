@@ -20,7 +20,6 @@ class ReviewsController < ApplicationController
     @review.user = current_user
     @review.order = @order
     authorize @review
-    byebug
 
     if @review.save
       redirect_to dashboard_path

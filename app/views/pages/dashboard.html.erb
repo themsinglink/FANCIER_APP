@@ -47,12 +47,16 @@
 
             <h3>SIZE: <%= order.article.size %></h3>
             <h4>$<%= order.article.price_cents%>.00</h4>
+            <% if order.state != 'shipped' %>
             <p><%= order.state%></p>
+            <% end %>
 
             <% if order.state == 'shipped' %>
-              <%= link_to " Mark as received", buyers_order_path(order), method: :patch, class: 'mainbutton' %>
+              <div class="margin-button">
+                <%= link_to " Mark as received", buyers_order_path(order), method: :patch, class: 'received' %>
+             </div>
             <% elsif order.state == "delivered" && order.review.nil? %>
-              <%= link_to "Write a review", new_order_review_path(order) %>
+              <%= link_to "Review the seller", new_order_review_path(order), class: "review-button" %>
             <% end %>
           </div>
         </div>

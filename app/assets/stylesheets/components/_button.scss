@@ -7,6 +7,45 @@
   font-weight: bold;
 }
 
+.submit-button {
+  background-color: white;
+  color: #A388F3;
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.received {
+  color: white;
+  background-color: $black;
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 13px;
+}
+
+.margin-button a:hover {
+  text-decoration: none;
+}
+
+.margin-button {
+  margin-top: 15px;
+}
+
+.review-button {
+  color: #4504FF;
+  font-weight: 500;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.review-button:hover {
+  text-decoration: none;
+  opacity: .9;
+}
+
 .mainbutton {
   position: center;
   background-color: $main;

@@ -54,7 +54,7 @@
 <% reviews.each do |review| %>
     <h4><%=review.user.name%></h4>
     <p>
-    <% review.user.rating.times do %>
+    <% review.rating.times do %>
      ⭐
     <% end %>
     </p>
