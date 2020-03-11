@@ -10,7 +10,6 @@ class FavoritesController < ApplicationController
   def create
     @favorite = Favorite.new(user: current_user, article: @article)
     authorize @favorite
-
     if @favorite.save
       respond_to do |format|
         format.html { redirect_to articles_path }
@@ -29,6 +28,7 @@ class FavoritesController < ApplicationController
 
   def destroy
     @favorite = Favorite.where(user: current_user, article: @article).first
+
     authorize @favorite
     @favorite.destroy
     # redirect_to articles_path
