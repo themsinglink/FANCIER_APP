@@ -9,7 +9,6 @@ class User < ApplicationRecord
   has_many :reviews
   has_one_attached :photo
 
-  has_many :favorites
   has_many :favorites, dependent: :destroy
 
   def favorite(article)
@@ -33,7 +32,13 @@ class User < ApplicationRecord
     return rating
   end
 
+  def has_favorited?(article)
+    get_favorite(article) != nil
+  end
 
+  def get_favorite(article)
+    favorites.find_by(article: article)
+  end
 end
 
 

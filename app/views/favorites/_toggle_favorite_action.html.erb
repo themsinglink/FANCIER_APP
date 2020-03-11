@@ -1,0 +1,9 @@
+<% if user&.has_favorited?(article) %>
+  <%= link_to article_favorite_path(article, user.get_favorite(article)), method: :delete,  remote: true, class: 'article-star', id: "article-#{article.id}" do %>
+    <i class="fas fa-star white fa-lg"></i>
+  <% end %>
+<% elsif policy(Favorite).create? %>
+  <%= link_to article_favorites_path(article), method: :post,  remote: true, id: "article-#{article.id}", class: 'article-star' do %>
+    <i class="far fa-star white fa-lg"></i>
+  <% end %>
+<% end %>

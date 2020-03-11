@@ -1,6 +1,6 @@
 function removeFromFavorites() {
-  const star = document.getElementById(`article-${<%= @favorite.article.id %>}`);
-  star.innerHTML = `<i class="far fa-star"></i>`;
+  var star = document.querySelector(`#action-article-<%= @favorite.article.id %>`);
+  star.innerHTML = '<%= j render "toggle_favorite_action", article: @favorite.article, user: current_user %>';
 }
 
 removeFromFavorites();
