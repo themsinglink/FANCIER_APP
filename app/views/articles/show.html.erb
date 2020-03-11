@@ -10,7 +10,7 @@
 <% end %>
 
 
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content container">
       <div class="modal-body">
@@ -31,11 +31,7 @@
     <div class="d-flex justify-content-start" style="margin: 10px">
       <%# if user_signed_in? %>
       <%= link_to user_path(@article.user) do %>
-      <% if @article.user.photo.attached? %>
-      <%= cl_image_tag @article.user.photo.key, class: "avatar", alt: "profile picture" %>
-    <% else %>
-      <%= image_tag "avatar.png", class: "avatar-xl" %>
-    <% end %>
+      <%= cl_image_tag @article.user.photo.key, class: "avatar" %>
       <% end %>
       <%# end %>
       <div class="profile-tag">
@@ -63,7 +59,7 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal right fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+    <div class="modal right fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" data-backdrop="false">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
 
@@ -112,7 +108,6 @@
       </div><!-- modal-dialog -->
     </div><!-- modal -->
 
-
   </div><!-- container -->
 
   <div class="container clothes-seller change-font">
@@ -143,4 +138,3 @@
       <% end %>
     <% end %>
   </div>
-
