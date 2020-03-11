@@ -80,3 +80,37 @@
   margin-bottom: 17px
 }
 
+.form-control textarea {
+  width: 300px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.review-container {
+  text-align: center;
+  font-family: Montserrat;
+  background-color: #A395FA;
+  padding: 40px 0;
+  color: white;
+}
+
+.review-container h4 {
+  font-weight: bold;
+}
+
+.review-page {
+  background-color: $main;
+}
+
+.text-container-review {
+  padding-top: 40px;
+  padding-bottom: 300px;
+}
+
