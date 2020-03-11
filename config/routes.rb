@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   mount StripeEvent::Engine, at: '/stripe-webhooks'
-  resources :users, only: [:show] do                           # member => restaurant id in URL
+  resources :users, only: [:show, :edit, :update] do                           # member => restaurant id in URL
     resources :reviews, only: [:index, :new, :create]
     resources :favorites, only: [:index]
   end

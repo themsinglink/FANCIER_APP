@@ -1,0 +1,11 @@
+<div class="form-container">
+<%= simple_form_for(@user) do |f| %>
+
+<div class="form-inputs">
+<%= f.input :photo, as: :file %>
+</div>
+
+<%= f.button :submit,  "Upload", class: "btn coral-button" %>
+
+<% end %>
+</div>
