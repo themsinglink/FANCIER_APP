@@ -15,7 +15,7 @@ strong {
     // it is still easily readable
 
     // The SVG is added as an SVG background image
-    background-image: asset-url("underline1.svg");
+    background-image: asset-url("rec.svg");
     background-repeat: no-repeat;
 
        background-size: cover;
@@ -39,7 +39,7 @@ strong {
     // it is still easily readable
 
     // The SVG is added as an SVG background image
-    background-image: asset-url("underline1.svg");
+    background-image: asset-url("rec.svg");
     background-repeat: no-repeat;
 
        background-size: cover;
@@ -194,12 +194,12 @@ letter-spacing: 0.05em;
   margin-bottom: 0px;
   margin: 0;
   padding: 24px;
-  background-color: #B8A1FA;
+  background-color: #D3C1FF;
   margin-top: -40px;
 }
 
 .add-photo {
-  background-image: linear-gradient(180deg, rgba(175, 147, 255, 0.42) 0%, rgba(158, 136, 228, 0.22) 100%), url("outfit3.jpg");
+  background-image: linear-gradient(180deg, rgba(175, 147, 255, 0.42) 0%, rgba(158, 136, 228, 0.22) 100%), asset-url("outfit3.jpg");
   background-size: cover;
   background-repeat: none;
 }
@@ -234,6 +234,7 @@ letter-spacing: 0.05em;
   padding-bottom: 4px;
   margin: 0;
   z-index: 0;
+  color: black;
 }
 
 .change-spacing {
@@ -307,7 +308,7 @@ letter-spacing: 0.05em;
   margin-top: 65px;
 }
 .content-button-photo {
-  background-color: #141414;
+  background-color: #210461;
   color: white;
   font-weight: bold;
   border-radius: 5px;
@@ -378,13 +379,11 @@ letter-spacing: 0.05em;
 
 .tag-image p {
   color: #141414;
+  font-family: Montserrat;
   font-weight: 600;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 17px;
   letter-spacing: 0.07em;
-  text-align: left;
-  margin-left: 20px;
-  margin-top: 40px;
   transition: background-color 0.5s ease;
 }
 
