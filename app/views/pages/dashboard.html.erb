@@ -4,7 +4,7 @@
 <div class="backround-user">
 
   <div class="profile-info">
-    <%= image_tag "profilephoto.png", class: "", alt: "alttext" %>
+    <%= cl_image_tag current_user.photo.key, class: "avatar-xl", alt: "profile picture" %>
     <div class="add-margin">
       <h2>Order Dashboard</h2>
     </div>
@@ -26,18 +26,21 @@
     <div class="orders">
       <% current_user.orders.each do |order| %>
         <div class="d-flex border-order">
-          <% if article.photos.first.nil?  %>
+          <% if order.article.photos.first.nil?  %>
             <div class="order-photo" style="background-image:url(<%= image_path 'default-article.png' %>);">
             </div>
           <% else  %>
+
+            <%= link_to article_path(order.article) do %>
             <div class="order-photo" style="background-image:url(<%= cl_image_path order.article.photos.first.key %>);">
             </div>
+            <% end %>
           <% end %>
           <div class="order-info">
 
             <h2><%= order.article.name.capitalize %></h2>
 
-            <h3>SIZE:<%= order.article.size %></h3>
+            <h3>SIZE: <%= order.article.size %></h3>
             <h4>$<%= order.article.price_cents%>.00</h4>
             <p><%= order.state%></p>
 

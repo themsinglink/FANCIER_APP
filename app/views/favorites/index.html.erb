@@ -3,7 +3,7 @@
 </div>
 <div class="backround-user">
   <div class="profile-info">
-  <%= image_tag "profilephoto.png", class: "", alt: "alttext" %>
+  <%= cl_image_tag @user.photo.key, class: "avatar-xl", alt: "profile picture" %>
   <h2><%=  @user.name%></h2>
    <p>
     <% @user.rating.times do %>
@@ -32,11 +32,11 @@
 <div class="clothing-grid">
   <% @favorites.each do |favorite| %>
     <%= link_to article_path(favorite.article) do %>
-      <% if @article.photos.first.nil?  %>
-        <%= image_tag 'default-article.png', class: "article-photo" %>
-      <% else  %>
+      <%# if @favorite.article.photos.first.nil?  %>
+        <%#= image_tag 'default-article.png', class: "article-photo" %>
+      <%# else  %>
         <%= cl_image_tag favorite.article.photos.first.key, class: "article-photo" %>
-      <% end %>
+      <%# end %>
     <% end %>
   <% end %>
 </div>

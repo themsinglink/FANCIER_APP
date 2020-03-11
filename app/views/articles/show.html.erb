@@ -16,7 +16,7 @@
 </div>
 
   <div class="clothes-seller">
-    <h2>You might also like...</h2>
+  <h2>You might also like...</h2>
     <% if @article.user.articles.count > 1 %>
       <% @article.user.articles.each do |article| %>
         <% unless article == @article %>
@@ -52,14 +52,14 @@
   <% end %>
   <div>
     <div class="d-flex justify-content-start" style="margin: 10px">
-      <% if user_signed_in? %>
+      <%# if user_signed_in? %>
       <%= link_to user_path(@article.user) do %>
-      <%= image_tag "profilephoto.png", class: "avatar" %>
+      <%= cl_image_tag @article.user.photo.key, class: "avatar" %>
       <% end %>
-      <% end %>
+      <%# end %>
       <div class="profile-tag">
-        <p><strong> <%= @article.user.name %> </strong></p>
-        <p>madrid, spain</p>
+        <p class="bold"> <%= @article.user.name %> </p>
+        <!-- <p>madrid, spain</p> -->
         <p>
           <% @article.user.rating.times do %>
           ⭐
@@ -103,7 +103,7 @@
               <h5 style= "font-weight: bold"><%= @article.name %>
                 <%= @article.category.name %></h5>
                 <p>SIZE: <%= @article.size %></p>
-                <p><%= @article.price_cents %></p>
+                <p>$<%= @article.price_cents %></p>
               </div>
             </div>
 

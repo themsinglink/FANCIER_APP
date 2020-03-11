@@ -1,11 +1,11 @@
 .background-profile {
-  background: rgba(201, 127, 106, 0.7);
+  background: #B9A7EE;
   height: 200px;
   width: 100%;
 }
 
-.background-user {
-  height: 533px;
+.background-user-2 {
+  height: 200px;
   background: white;
   border-radius: 30px 30px 0px 0px;
   height: 192px;
@@ -20,7 +20,7 @@
 }
 
 .clothes {
-  background: #C97F6A;
+  background: $main;
   padding: 10px 15px;
   border-radius: 3px;
   text-align: center;
@@ -28,7 +28,7 @@
 }
 
 .clothes-color {
-  background: rgba(201, 127, 106, 0.6);
+  background: rgba(184, 161, 250, 0.7);
 }
 
 .likes-color {
@@ -40,7 +40,7 @@
 }
 
 .clothes-color-2 {
-  background: rgba(201, 127, 106, 0.6);
+  background: rgba(184, 161, 250, 0.7);
   padding: 10px 25px;
   border-radius: 3px;
   text-align: center;
@@ -56,11 +56,11 @@
 .review-stars h4 {
   font-size: 19px;
   font-weight: bold;
-  margin-left: 3px;
+  margin-left: 7px;
 }
 
 .review-stars {
-  margin-top: 10px;
+  margin-top: 25px;
 }
 
 .clothes:hover {
@@ -76,10 +76,11 @@
 .profile-links a {
   text-decoration: none;
   color: white;
+  font-weight: 500;
 }
 
 .listing-clothes {
-  background: rgba(201, 127, 106, 0.6);
+  background: rgba(184, 161, 250, 0.7);
 }
 
 .listing-likes {
@@ -96,7 +97,7 @@
 }
 
 .likes {
-  background: rgba(201, 127, 106, 0.6);
+  background: rgba(184, 161, 250, 0.7);
   padding: 10px 25px;
   border-radius: 3px;
   text-align: center;
@@ -108,6 +109,13 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 5px;
   margin: 20px 0px;
+}
+
+.clothing-grid img {
+  height: 150px;
+  width: 100%;
+  background: no-repeat;
+  background-size: cover;
 }
 .profile-info {
   text-align: center;
