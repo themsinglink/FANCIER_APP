@@ -1,7 +1,6 @@
-<%= render "toggle_favorite"%>
-
 function removeFromFavorites() {
-  toggleFavorite()
+  var star = document.querySelector(`#action-article-<%= @favorite.article.id %>`);
+  star.innerHTML = '<%= j render "toggle_favorite_action", article: @favorite.article, user: current_user %>';
 }
 
 removeFromFavorites();

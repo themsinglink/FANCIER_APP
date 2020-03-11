@@ -10,17 +10,9 @@
   <div class="article-card-infos">
     <h3><%= article.name%></h3>
     <h4>$<%= article.price%></h4>
-  </div>.
+  </div>
   <div id="action-<%= "article-#{article.id}" %>">
-    <% if Favorite.where(user: current_user, article: article).size != 0 %>
-    <%= link_to article_toggle_favorite_path(article), method: :post,  remote: true, class: 'article-star', id: "article-#{article.id}" do %>
-      <i class="fas fa-star"></i>
-    <% end %>
-  <% elsif policy(Favorite).create? %>
-    <%= link_to article_toggle_favorite_path(article), method: :post,  remote: true, id: "article-#{article.id}", class: 'article-star' do %>
-      <i class="far fa-star"></i>
-    <% end %>
-  <% end %>
+    <%= render "favorites/toggle_favorite_action", user: current_user, article: article %>
   </div>
   <%= link_to '', article_path(article), class: 'article-card-link' %>
 </div>

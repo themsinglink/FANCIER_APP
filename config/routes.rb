@@ -11,7 +11,6 @@ Rails.application.routes.draw do
 
   resources :articles, only: [:index, :new, :create, :show, :edit, :update] do
     resources :favorites, only: [:create, :destroy]
-    post "/toggle-favorite", to: "favorites#toggle"
   end
   resources :orders, only: [:show, :create, :edit, :update] do
 
