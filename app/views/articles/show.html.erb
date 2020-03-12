@@ -51,9 +51,9 @@
     <div class= "d-flex justify-content-between">
       <div>
         <h5 style= "font-weight: bold"> <%= @article.name %>
-          <%= @article.category.name %></h5>
+          <%#= @article.category.name %></h5>
         </div>
-        <p style= "font-weight: bold"> $<%= @article.price_cents %> </p>
+        <p style= "font-weight: bold"> $<%= @article.price_cents / 100 %>.00 </p>
       </div>
       <p>SIZE: <%= @article.size %> </p>
       <p> <%= @article.description&.truncate_words(15)%> </p>
