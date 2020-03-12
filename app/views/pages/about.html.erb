@@ -1,15 +1,22 @@
 <div class="home-styling">
 
 
-<div class="content-container-text">
+<div class="content-container-about">
   <div class="content-text change-spacing">
-    <h1> <strong>WHAT IS</strong> </h1>
-    <h1> <strong>FANCIER?</strong> </h1>
+    <h1><strong>WHAT IS FANCIER?</strong> </h1>
+    <div class="about-container-1">
+      <h5 class="about">Fancier is a global community of creative people who like to shine and express themselves.</h5>
+      <h5>We are the first online marketplace specialized in vintage festival outfits, custom-made disguises, and original cosplay styles.</h5>
+      <h5>From Burning Man to Coachella, Tomorrow Land or your very own Halloween Party - we've got you covered.</h5>
+      <div class="cta">
+      <%= link_to "shop", articles_path %>
+      <i class="fas fa-chevron-right"></i>
+    </div>
+    </div>
 </div>
 </div>
 
-
-<div class="content-container-text add-photo">
+<div class="about-container-text about-photo-1">
   <div class="content-text-photo spacing-change change-spacing">
     <h1> <strong>WHY</strong> </h1>
     <h1> <strong>FANCIER?</strong> </h1>
@@ -17,34 +24,50 @@
 </div>
 
 
-<div class="content-container-text">
-  <div class="content-text down-spacing">
-    <h1> <strong>JOIN THE CREW</strong></h1>
-    <!-- <p>#1 destination to find your unique festival outfit</p> -->
-    <div class="cta">
-        <%= link_to "about", about_path, class: '' %>
-        <i class="fas fa-chevron-right"></i>
+<div class="content-container-about-2">
+  <div class="content-text change-spacing">
+    <div class="about-container">
+      <h5 class="about">We believe that looking fancy doesn't have to involve big budgets or shopping fast fashion.</h5>
+      <h5 class="about">The fashion industry is one of the biggest threads to the global climate.</h5>
+      <h5 class="about">Reducing, reducing and recycling by buying vintage is a solid way to make a positive impact.</h5>
+      <h5>Sharing is caring. At Fancier, we help you find the best outfits as well as selling it when the party is over.</h5>
     </div>
-  </div>
+</div>
 </div>
 
 
-  <div class="content-container-photo2">
-    <div class="content-text-photo">
-      <h1> <strong>HOW DOES</strong> </h1>
-      <h1> <strong>IT WORK?</strong> </h1>
-      <p>#1 destination to find your unique festival outfit</p>
-      <div class="sell-button">
-      <%= link_to "browse", articles_path, class: "content-button"%>
+<div class="about-container-text about-photo-2">
+  <div class="content-text-photo spacing-change change-spacing">
+    <h1> <strong>HOW DOES</strong> </h1>
+    <h1> <strong>IT WORK?</strong> </h1>
+    </div>
+</div>
+
+
+<div class="content-container-about-2">
+  <div class="content-text change-spacing">
+    <div class="about-container">
+      <h5 class="about">Let's face it - creating or curating your outfit is more than half the fun when attending a festival.</h5>
+      <h5 class="about">Getting something new for every occasion can quickly become expensive, time consuming, and leave a negative impact on the environment.</h5>
+      <h5 class="about">On the flipside, your custom creations often take up a lot of space yet you grew too much to it to just throw it away.</h5>
+      <h5 class="about">Fancier offers the solution for both sides!</h5>
+       <div class="cta">
+      <%= link_to "sell on Fancier", new_article_path %>
+      <i class="fas fa-chevron-right"></i>
+    </div>
+    </div>
+</div>
+</div>
+
+
+<div class="content-wrapper">
+  <div class="text-container">
+    <h1>Join the crew</h1>
+    <h3> We’re a global community of movers, shakers and self-expressers who change the ways of fashion.</h3>
+      <div class="sell-button-2">
+        <%= link_to "sign up now", new_article_path, class: 'content-button-photo' %>
+        </div>
       </div>
-    </div>
-  </div>
-
-  </div>
 </div>
 
-<p>Fancier is a global community of creative people who like to shine and express themselves.</p>
-      <p>We are the first online marketplace specialized in original festival outfits, custom-made disguises, and cosplay styles.</p>
-      <p>We believe that looking fancy doesn't have to involve big budgets or shopping fast fashion.</p>
-      <p>Sharing is caring, therefore we help you find the best outfits as well as selling it when the party is over.</p>
-      <p>Curated costumes, hand-made accessories, flashy frills and lots of sparkles - you name it, we got it.</p>
+
