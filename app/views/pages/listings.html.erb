@@ -58,7 +58,7 @@
 
             <h2><%= article.name.capitalize %></h2>
             <h3>SIZE: <%= article.size %></h3>
-            <h4>$<%= article.price_cents%>.00</h4>
+            <h4><%= humanized_money_with_symbol article.price %></h4>
             <% if article.active_order.nil? %>
             <p class= "color-change-state">unsold</p>
 
@@ -75,7 +75,7 @@
         </div>
         <div class="total-section justify-content-between">
           <div class="subtotal">SUBTOTAL</div>
-          <div class="price">$<%= article.price_cents%>.00</div>
+          <div class="price"><%= humanized_money_with_symbol article.price %></div>
         </div>
       <% end %>
     </div>

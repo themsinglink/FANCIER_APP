@@ -1,3 +1,49 @@
+.page-about-container {
+  color: white;
+  font-family: Montserrat;
+  padding-top: 50px;
+  background-color: $main;
+  text-align: center;
+
+}
+
+.body-container {
+  margin: 0 20px;
+}
+#header-section {
+  background-color: $main;
+  display: flex;
+  text-align: left;
+  margin-top: 40px;
+  margin-bottom: 25px;
+
+}
+
+#header-section h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.image-background {
+  background-size: cover;
+  background-repeat: none;
+  height: 250px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-image: linear-gradient(180deg, rgba(175, 147, 255, 0.42) 0%, rgba(158, 136, 228, 0.22) 100%), url("https://media.giphy.com/media/XG6twGsWvPM7d5JfDu/giphy.gif");
+}
+
+.image-background h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 20px;
+  line-height: 25px;
+}
+
+
 .content-container-about {
   height: 60vh;
   text-align: center;
