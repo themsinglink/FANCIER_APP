@@ -101,7 +101,7 @@
             <%= f.input :street_address %>
             <%= f.input :apartment_number %>
             <%= f.input :city %>
-            <%= f.input :state_address %>
+            <%= f.input :state_address, label: "State" %>
             <%= f.input :postal_code %>
             <%= f.country_select :country, {include_blank: 'Select a country'}, {class: 'form-control'}%>
             <%= f.input :article_id, :as => :hidden, :input_html => { :value => @article.id } %>
