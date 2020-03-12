@@ -1,18 +1,27 @@
-.logo {
+#logo a {
   text-align: center;
   letter-spacing: 4px;
   margin: 0;
-  //font-family: Apercu;
+  font-family: Apercu !important;
+  color: $maindark;
+  font-size: 30px;
+
 
   :visited {
     color: $maindark;
     text-decoration: none;
-    //font-family: Apercu;
   }
   :hover {
     color: $maindark;
     text-decoration: none;
-    //font-family: Apercu;
   }
+}
+
+#logo {
+  margin-top: 10.5px;
+}
+
+#logo a:hover {
+  text-decoration: none;
 }
 

@@ -120,7 +120,7 @@
 <div class="tags-container">
   <div class="tag-cards">
     <% @categories.each do |cat| %>
-      <%= link_to articles_path(category_name_eq: cat.name) do %>
+      <%= link_to articles_path(q: {category_name_eq: cat.name}) do %>
         <div class="tag-image" style="background-image: <%= cat.photo.attached? ? "url(#{url_for(cat.photo)})"  : "asset-url('article1.jpg')" %>">
            <p>
               <%= cat.name.pluralize %>
