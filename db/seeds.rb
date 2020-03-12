@@ -257,6 +257,16 @@ article_5.save!
 
 ArticleTag.create!(tag: tag_1, article: article_5)
 
+articlephoto_6 = URI.open('https://i.pinimg.com/564x/07/30/ee/0730ee9a0cd033e70b0419dc1cfb21ef.jpg')
+article_6 = Article.new(name: "Rainbow Tassel Cape", color: "rainbow", size: "L", material: "sequins", price_cents: "10000", state: "Lightly worn", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", user: user_4, category: cat_3)
+article_6.photos.attach(io: articlephoto_6, filename: 'articlephoto_6.jpg', content_type: 'image/jpeg')
+article_6.save!
+
+
+
+ArticleTag.create!(tag: tag_1, article: article_6)
+
+
 
 
 puts "#{Article.count} articles created!"
