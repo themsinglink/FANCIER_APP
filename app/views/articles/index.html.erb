@@ -95,7 +95,7 @@
    <h5 class="modal-title title-style" id="exampleModalLongTitle">Choose a vibe</h5>
    <div class="modal-body">
     <section>
-    <%= f.select :tags_name, options_for_select(Tag.all.map(&:name)), {include_blank: "Burning Man"} %>
+    <%= f.select :tags_name, options_for_select(Tag.all.map(&:name)), {include_blank: "Vibes"} %>
     </section>
   </div>
 
