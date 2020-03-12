@@ -2,14 +2,17 @@
   text-align: center;
   letter-spacing: 4px;
   margin: 0;
-  font-family: montserrat;
+  //font-family: Apercu;
+
   :visited {
-    color: #210461;
+    color: $maindark;
     text-decoration: none;
+    //font-family: Apercu;
   }
   :hover {
-    color: #210461;
+    color: $maindark;
     text-decoration: none;
+    //font-family: Apercu;
   }
 }
 
