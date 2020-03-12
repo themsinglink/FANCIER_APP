@@ -9,11 +9,14 @@
        <%= cl_image_tag @order.article.photos.first.key, style:"width: 100%;  border-radius: 5px;" %>
       <% end %>
     </div>
+  </div>
+</div>
+      <hr>
     <div class="col">
-      <h2> Order is on the way!c <small><span class="badge badge-primary" style= "background-color: #5B29F6;">CONFIRMED</span></small></h2>
+      <h2> Your order is on the way! <small><span class="badge badge-primary" style= "background-color: #210461;">CONFIRMED</span></small></h2>
       <ul class="list-unstyled">
         <li><span style="font-weight: bold;">Issued On:</span> <%= @order.created_at.to_date %></li>
-        <li><span style="font-weight: bold;">Clothing Item</span style="font-weight: bold;"> <%= @order.article.name %></li>
+        <li><span style="font-weight: bold;"> Item</span style="font-weight: bold;"> <%= @order.article.name %></li>
         <li><span style="font-weight: bold;">TOTAL</span style="font-weight: bold;"> <%= humanized_money_with_symbol @order.amount %></li>
         </li>
       </ul>
