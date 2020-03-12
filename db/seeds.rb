@@ -37,6 +37,9 @@ puts "#{User.count} users created!"
 tag_1 = Tag.create!(name: "Burning Man")
 tag_2 = Tag.create!(name: "Sequins")
 tag_3 = Tag.create!(name: "Cosplay")
+tag_4 = Tag.create!(name: "Boho Chic")
+tag_5 = Tag.create!(name: "Edgy")
+tag_6 = Tag.create!(name: "Rave")
 
 puts "#{Tag.count} tags created!"
 
@@ -49,11 +52,12 @@ puts "#{Tag.count} tags created!"
 cat_1 = Category.create!(name: "Tops")
 cat_2 = Category.create!(name: "Dresses")
 cat_3 = Category.create!(name: "Bottoms")
-cat_4 = Category.create!(name: "Full Outfits")
+cat_4 = Category.create!(name: "Sets")
 cat_5 = Category.create!(name: "Shoes")
 cat_6 = Category.create!(name: "Accessories")
 cat_7 = Category.create!(name: "Onesies")
-cat_8 = Category.create!(name: "Swim")
+cat_8 = Category.create!(name: "Full Outfits")
+cat_9 = Category.create!(name: "Jackets")
 
 
 puts "#{Category.count} categories created!"
@@ -65,41 +69,50 @@ puts "#{Category.count} categories created!"
 #   article_1.photos.attach(io: articlephoto_1, filename: "article_photo_#{index}", content_type: 'image/jpeg')
 # end
 
-articlephoto_1 = URI.open('https://images.unsplash.com/photo-1579891482727-f2f7212c9932?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80')
-article_1 = Article.new(name: "Supergirl Costume", color: "red", size: "M", material: "leather", price_cents: "5000", state: "new", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." , user: user_1, category: cat_2)
+articlephoto_1 = URI.open('https://i.pinimg.com/564x/46/13/22/461322f5c0c2bbdb953406d33c401d90.jpg')
+article_1 = Article.new(name: "Silver Beaded Set", color: "silver", size: "M", material: "beads", price_cents: "5000", state: "new", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." , user: user_1, category: cat_4)
 article_1.photos.attach(io: articlephoto_1, filename: 'articlephoto_1.jpg', content_type: 'image/jpeg')
 article_1.save!
 
 ArticleTag.create!(tag: tag_1, article: article_1)
 
-articlephoto_2 = URI.open('https://images.unsplash.com/flagged/photo-1563831175532-76e760e1d291?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80')
-article_2 = Article.new(name: "Space Cowboy", color: "silver", size: "M", material: "aluminium foil", price_cents: "7000", state: "new", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", user: user_2, category: cat_1)
+
+
+articlephoto_2 = URI.open('https://i.pinimg.com/564x/97/b1/19/97b119e196eaa813002479a106ab35f4.jpg')
+article_2 = Article.new(name: "Rainbow Sequin Romper", color: "rainbow", size: "S", material: "sequins", price_cents: "7000", state: "lightly worn", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", user: user_2, category: cat_2)
 article_2.photos.attach(io: articlephoto_2, filename: 'articlephoto_2.jpg', content_type: 'image/jpeg')
 article_2.save!
 
-ArticleTag.create!(tag: tag_1, article: article_2)
 ArticleTag.create!(tag: tag_2, article: article_2)
 
-articlephoto_3 = URI.open('https://images.unsplash.com/photo-1516637507947-8b085d127dbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80')
-article_3 = Article.new(name: "Burner Suit", color: "multi", size: "XS", material: "multi", price_cents: "1000", state: "worn once", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", user: user_3, category: cat_1)
+articlephoto_3 = URI.open('https://i.pinimg.com/564x/c0/6d/4b/c06d4b90a8880feb9a7bab46965e236b.jpg')
+article_3 = Article.new(name: "Tinsel Jacket", color: "multi", size: "L", material: "tinsel", price_cents: "10000", state: "worn once", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", user: user_3, category: cat_9)
 article_3.photos.attach(io: articlephoto_3, filename: 'articlephoto_3.jpg', content_type: 'image/jpeg')
 article_3.save!
 
 ArticleTag.create!(tag: tag_1, article: article_3)
 
-articlephoto_4 = URI.open('https://images.unsplash.com/photo-1515214959832-bf85f5724df1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=694&q=80')
-article_4 = Article.new(name: "Sequin Catsuit", color: "black", size: "S", material: "sequins", price_cents: "20000", state: "worn once", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", user: user_1, category: cat_2)
+articlephoto_4 = URI.open('https://i.pinimg.com/564x/68/ac/fc/68acfce13772fd483559f6b786ae6263.jpg')
+article_4 = Article.new(name: "Rainbow Crochet Set", color: "rainbow", size: "S", material: "crochet", price_cents: "20000", state: "worn once", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", user: user_1, category: cat_2)
 article_4.photos.attach(io: articlephoto_4, filename: 'articlephoto_4.jpg', content_type: 'image/jpeg')
 article_4.save!
 
-ArticleTag.create!(tag: tag_3, article: article_4)
+ArticleTag.create!(tag: tag_1, article: article_4)
 
-articlephoto_5 = URI.open('https://images.unsplash.com/photo-1529143732233-da7fb74682a3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80')
-article_5 = Article.new(name: "Pikachu", color: "yellow", size: "XL", material: "cotton", price_cents: "1000", state: "worn once", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", user: user_4, category: cat_3)
+articlephoto_5 = URI.open('https://i.pinimg.com/564x/e5/9d/a6/e59da6d20751e3c41d5d961ebf444ebf.jpg')
+article_5 = Article.new(name: "Jewel Sunglasses", color: "multi", size: "S", material: "jewels", price_cents: "10000", state: "New", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", user: user_4, category: cat_3)
 article_5.photos.attach(io: articlephoto_5, filename: 'articlephoto_5.jpg', content_type: 'image/jpeg')
 article_5.save!
 
-ArticleTag.create!(tag: tag_2, article: article_5)
+ArticleTag.create!(tag: tag_1, article: article_5)
+
+articlephoto_6 = URI.open('https://i.pinimg.com/564x/07/30/ee/0730ee9a0cd033e70b0419dc1cfb21ef.jpg')
+article_6 = Article.new(name: "Rainbow Tassel Cape", color: "rainbow", size: "L", material: "sequins", price_cents: "10000", state: "Lightly worn", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", user: user_4, category: cat_3)
+article_6.photos.attach(io: articlephoto_6, filename: 'articlephoto_6.jpg', content_type: 'image/jpeg')
+article_6.save!
+
+ArticleTag.create!(tag: tag_1, article: article_6)
+
 
 
 puts "#{Article.count} articles created!"
