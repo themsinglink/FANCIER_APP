@@ -1,0 +1,67 @@
+.content-container-about {
+  height: 60vh;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+  margin-bottom: 0px;
+  margin: 0;
+  padding: 24px;
+  background-color: #B8A1FA;
+  margin-top: -50px;
+}
+
+.content-container-about-2 {
+  height: 60vh;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+  margin-bottom: 0px;
+  margin: 0;
+  padding: 24px;
+  background-color: #B8A1FA;
+}
+
+.about-container-1 {
+  font-size: 22px;
+  color: white;
+  font-family: Montserrat;
+  margin-top: 24px;
+}
+
+
+.about-container {
+  font-size: 22px;
+  color: white;
+  font-family: Montserrat;
+}
+
+
+.about-container-text {
+  height: 46vh;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+  margin-bottom: 0px;
+  margin: 0;
+  padding: 24px;
+  background-color: #B8A1FA;
+  margin-top: -40px;
+}
+
+.about-photo-1 {
+  background-image: linear-gradient(180deg, rgba(175, 147, 255, 0.42) 0%, rgba(158, 136, 228, 0.22) 100%), url("https://res.cloudinary.com/df2entit8/image/upload/v1583999591/c72defe3-d6a0-4718-8dc3-42da9c116bd2_nup4dl.jpg");
+  background-size: cover;
+  background-repeat: none;
+}
+
+.about-photo-2 {
+  background-image: linear-gradient(180deg, rgba(175, 147, 255, 0.42) 0%, rgba(158, 136, 228, 0.22) 100%), url("https://media.giphy.com/media/XG6twGsWvPM7d5JfDu/giphy.gif");
+  background-size: cover;
+  background-repeat: none;
+}
