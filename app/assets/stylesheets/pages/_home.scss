@@ -379,12 +379,15 @@ letter-spacing: 0.05em;
 }
 
 .tag-image p {
-  color: #141414;
+  color: $black;
+  background: white;
+  padding: 10px 10px;
   font-family: Montserrat;
   font-weight: 600;
   font-size: 18px;
   line-height: 17px;
   letter-spacing: 0.07em;
+  margin-top: 15px;
   transition: background-color 0.5s ease;
 }
 
