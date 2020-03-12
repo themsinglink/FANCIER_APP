@@ -132,21 +132,21 @@ ArticleTag.create!(tag: tag_1, article: article_39)
 
 
 articlephoto_27 = URI.open('https://res.cloudinary.com/df2entit8/image/upload/v1584001658/il_fullxfull.1994930771_g26f_oipv9s.jpg')
-article_27 = Article.new(name: "Fringe Top", color: "cream", size: "L", material: "fringe", price_cents: "5500", state: "Lightly worn", description: "I am selling this fringe top I made for Burning Man last year. It's unique and there's only one made in the world. Really nice soft material.", user: user_1, category: cat_1)
+article_27 = Article.new(name: "Fringe Top", color: "white", size: "L", material: "fringe", price_cents: "5500", state: "Lightly worn", description: "I am selling this fringe top I made for Burning Man last year. It's unique and there's only one made in the world. Really nice soft material.", user: user_1, category: cat_1)
 article_27.photos.attach(io: articlephoto_27, filename: 'articlephoto_27.jpg', content_type: 'image/jpeg')
 article_27.save!
 
 ArticleTag.create!(tag: tag_1, article: article_27)
 
 articlephoto_13 = URI.open('https://i.pinimg.com/564x/e4/77/05/e477057d2889abc2b6cdc8ced64f31f9.jpg')
-article_13 = Article.new(name: "Shroom Bralette", color: "Black", size: "S", material: "embroidery", price_cents: "3600", state: "Lightly worn", description: "Really cute themed bralette I embroidered! This piece is new and never worn!", user: user_4, category: cat_1)
+article_13 = Article.new(name: "Shroom Bralette", color: "black", size: "S", material: "embroidery", price_cents: "3600", state: "Lightly worn", description: "Really cute themed bralette I embroidered! This piece is new and never worn!", user: user_4, category: cat_1)
 article_13.photos.attach(io: articlephoto_13, filename: 'articlephoto_13.jpg', content_type: 'image/jpeg')
 article_13.save!
 
 ArticleTag.create!(tag: tag_1, article: article_13)
 
 articlephoto_22 = URI.open('https://i.pinimg.com/564x/fd/be/9a/fdbe9a32c5f1f4af36550f4f0a9101b9.jpg')
-article_22 = Article.new(name: "Tassel Set", color: "Black", size: "M", material: "velvet", price_cents: "5500", state: "Lightly worn", description: "Matching tassel set that is SO fun to dance in! So great for outdoor events and concerts.", user: user_3, category: cat_4)
+article_22 = Article.new(name: "Tassel Set", color: "black", size: "M", material: "velvet", price_cents: "5500", state: "Lightly worn", description: "Matching tassel set that is SO fun to dance in! So great for outdoor events and concerts.", user: user_3, category: cat_4)
 article_22.photos.attach(io: articlephoto_22, filename: 'articlephoto_22.jpg', content_type: 'image/jpeg')
 article_22.save!
 
@@ -162,7 +162,7 @@ ArticleTag.create!(tag: tag_1, article: article_14)
 
 
 articlephoto_15 = URI.open('https://i.pinimg.com/564x/b8/66/d3/b866d39e2d0101b93327f3a46827858a.jpg')
-article_15 = Article.new(name: "Jelly Boots", color: "pink", size: "38", material: "transparent", price_cents: "8900", state: "Lightly worn", description: "Really sick jelly boots that are actually comfortable. Match super well with a lot of outfits.", user: user_4, category: cat_6)
+article_15 = Article.new(name: "Jelly Boots", color: "pink", size: "S", material: "transparent", price_cents: "8900", state: "Lightly worn", description: "Really sick jelly boots that are actually comfortable. Match super well with a lot of outfits.", user: user_4, category: cat_6)
 article_15.photos.attach(io: articlephoto_15, filename: 'articlephoto_15.jpg', content_type: 'image/jpeg')
 article_15.save!
 
@@ -176,7 +176,7 @@ article_17.save!
 ArticleTag.create!(tag: tag_1, article: article_17)
 
 articlephoto_18 = URI.open('https://i.pinimg.com/564x/d5/69/eb/d569eb53ebf9de86c22d900973c5c32e.jpg')
-article_18 = Article.new(name: "Quartz Military Hat", color: "silver", size: "N/A", material: "jewels", price_cents: "8800", state: "Lightly worn", description: "Beautiful jeweled burning man style hat. Glows in the sun it's such a vibe.", user: user_2, category: cat_6)
+article_18 = Article.new(name: "Quartz Military Hat", color: "silver", size: "Fits all", material: "jewels", price_cents: "8800", state: "Lightly worn", description: "Beautiful jeweled burning man style hat. Glows in the sun it's such a vibe.", user: user_2, category: cat_6)
 article_18.photos.attach(io: articlephoto_18, filename: 'articlephoto_18.jpg', content_type: 'image/jpeg')
 article_18.save!
 
@@ -204,21 +204,21 @@ article_6.save!
 ArticleTag.create!(tag: tag_1, article: article_6)
 
 articlephoto_21 = URI.open('https://i.pinimg.com/564x/e1/27/f7/e127f758b2400c72b6cfc47d10bfec49.jpg')
-article_21 = Article.new(name: "Kaleidescope Sunglasses", color: "pink", size: "N/A", material: "plastic", price_cents: "2200", state: "New", description: "Really fun rave sunglasses that give a cool effect during the concert. A must-have!", user: user_2, category: cat_6)
+article_21 = Article.new(name: "Kaleidescope Sunglasses", color: "pink", size: "Fits all", material: "plastic", price_cents: "2200", state: "New", description: "Really fun rave sunglasses that give a cool effect during the concert. A must-have!", user: user_2, category: cat_6)
 article_21.photos.attach(io: articlephoto_21, filename: 'articlephoto_21.jpg', content_type: 'image/jpeg')
 article_21.save!
 
 ArticleTag.create!(tag: tag_1, article: article_21)
 
 articlephoto_25 = URI.open('https://res.cloudinary.com/df2entit8/image/upload/v1584001291/WhatsApp_Image_2020-03-10_at_20.18.48_ebtfml.jpg')
-article_25 = Article.new(name: "Fringe Skirt", color: "Orange", size: "S", material: "fringe", price_cents: "4500", state: "worn once", description: "Really cute bright orange fringe skirt that is as good as new! It's so fun to dance in and to wear to summer festivals and concerts.", user: user_4, category: cat_3)
+article_25 = Article.new(name: "Fringe Skirt", color: "orange", size: "S", material: "fringe", price_cents: "4500", state: "worn once", description: "Really cute bright orange fringe skirt that is as good as new! It's so fun to dance in and to wear to summer festivals and concerts.", user: user_4, category: cat_3)
 article_25.photos.attach(io: articlephoto_25, filename: 'articlephoto_25.jpg', content_type: 'image/jpeg')
 article_25.save!
 
 ArticleTag.create!(tag: tag_1, article: article_25)
 
 articlephoto_35 = URI.open('https://i.pinimg.com/564x/cf/bf/47/cfbf47908eeec77ed0950fb3aee4ffa7.jpg')
-article_35 = Article.new(name: "Cateye Sunglasses", color: "Purple", size: "N/A", material: "plastic", price_cents: "2000", state: "worn once", description: "Bright and fun cat eye sunglasses for your next event! They actually work well for the sun also and are in great condition.", user: user_1, category: cat_6)
+article_35 = Article.new(name: "Cateye Sunglasses", color: "purple", size: "Fits all", material: "plastic", price_cents: "2000", state: "worn once", description: "Bright and fun cat eye sunglasses for your next event! They actually work well for the sun also and are in great condition.", user: user_1, category: cat_6)
 article_35.photos.attach(io: articlephoto_35, filename: 'articlephoto_25.jpg', content_type: 'image/jpeg')
 article_35.save!
 
@@ -227,7 +227,7 @@ ArticleTag.create!(tag: tag_1, article: article_25)
 
 
 articlephoto_23 = URI.open('https://i.pinimg.com/564x/40/79/1c/40791c76d3d658476162b239bc8cfbaa.jpg')
-article_23 = Article.new(name: "Fringed Jean Shorts", color: "blue", size: "N/A", material: "denim", price_cents: "2200", state: "New", description: "Cute jean shorts that are high waisted with small chains. Only lightly worn and in really good condition.", user: user_2, category: cat_3)
+article_23 = Article.new(name: "Fringed Jean Shorts", color: "blue", size: "M", material: "denim", price_cents: "2200", state: "New", description: "Cute jean shorts that are high waisted with small chains. Only lightly worn and in really good condition.", user: user_2, category: cat_3)
 article_23.photos.attach(io: articlephoto_23, filename: 'articlephoto_23.jpg', content_type: 'image/jpeg')
 article_23.save!
 
@@ -248,7 +248,7 @@ article_4.save!
 ArticleTag.create!(tag: tag_1, article: article_4)
 
 articlephoto_32 = URI.open('https://i.pinimg.com/564x/23/ee/7d/23ee7d3078d9c895aa707b9e6873389f.jpg')
-article_32 = Article.new(name: "Custom Sequin Bodysuit", color: "multi", size: "Any", material: "sequins", price_cents: "30000", state: "handmade", description: "This body suit is completely handmade and crafted by me. It takes one month to create so please contact me in advance!" , user: user_3, category: cat_1)
+article_32 = Article.new(name: "Custom Sequin Bodysuit", color: "silver", size: "Fits all", material: "sequins", price_cents: "30000", state: "handmade", description: "This body suit is completely handmade and crafted by me. It takes one month to create so please contact me in advance!" , user: user_3, category: cat_1)
 article_32.photos.attach(io: articlephoto_32, filename: 'articlephoto_32.jpg', content_type: 'image/jpeg')
 article_32.save!
 
@@ -269,7 +269,7 @@ article_2.save!
 ArticleTag.create!(tag: tag_2, article: article_2)
 
 articlephoto_30 = URI.open('https://res.cloudinary.com/df2entit8/image/upload/v1584001265/outfit-3-2_gbcb2u.jpg')
-article_30 = Article.new(name: "Butterfly Cape", color: "Multi", size: "L", material: "satin", price_cents: "8000", state: "worn once", description: "Really light, beautiful and versatile cape that you can wear to any event or festival. In perfect condition.", user: user_4, category: cat_1)
+article_30 = Article.new(name: "Butterfly Cape", color: "brown", size: "L", material: "satin", price_cents: "8000", state: "worn once", description: "Really light, beautiful and versatile cape that you can wear to any event or festival. In perfect condition.", user: user_4, category: cat_1)
 article_30.photos.attach(io: articlephoto_30, filename: 'articlephoto_25.jpg', content_type: 'image/jpeg')
 article_30.save!
 
@@ -277,7 +277,7 @@ ArticleTag.create!(tag: tag_1, article: article_30)
 
 
 articlephoto_31 = URI.open('https://i.pinimg.com/564x/67/54/64/675464b0d75dc72bc7e32f6b1523afda.jpg')
-article_31 = Article.new(name: "Studded Tassel Shoulder Pads", color: "multi", size: "N/A", material: "gold", price_cents: "7000", state: "worn once", description: "Power statement studded tassel shoulder pads with gold sequins and spikes. Never worn.", user: user_4, category: cat_1)
+article_31 = Article.new(name: "Studded Tassel Shoulder Pads", color: "gold", size: "N/A", material: "gold", price_cents: "7000", state: "worn once", description: "Power statement studded tassel shoulder pads with gold sequins and spikes. Never worn.", user: user_4, category: cat_1)
 article_31.photos.attach(io: articlephoto_31, filename: 'articlephoto_31.jpg', content_type: 'image/jpeg')
 article_31.save!
 
@@ -291,7 +291,7 @@ article_10.save!
 ArticleTag.create!(tag: tag_1, article: article_10)
 
 articlephoto_9 = URI.open('https://i.pinimg.com/564x/5d/3f/20/5d3f20f62015c74df7eb32751ac81c44.jpg')
-article_9 = Article.new(name: "Fire Harness Set", color: "multi", size: "S", material: "sequins", price_cents: "8800", state: "Lightly worn", description: "Really cute sequin set with fire appliques! It's as good as new, you will love it!", user: user_3, category: cat_4)
+article_9 = Article.new(name: "Fire Harness Set", color: "red", size: "S", material: "sequins", price_cents: "8800", state: "Lightly worn", description: "Really cute sequin set with fire appliques! It's as good as new, you will love it!", user: user_3, category: cat_4)
 article_9.photos.attach(io: articlephoto_9, filename: 'articlephoto_9.jpg', content_type: 'image/jpeg')
 article_9.save!
 
@@ -332,7 +332,7 @@ ArticleTag.create!(tag: tag_1, article: article_16)
 
 
 articlephoto_24 = URI.open('https://res.cloudinary.com/df2entit8/image/upload/v1584001266/outfit-1-2_aar8ax.jpg')
-article_24 = Article.new(name: "Black//Gold Armour", color: "multi", size: "M", material: "multi", price_cents: "8500", state: "worn once", description: "I am selling the rose gold armour and black jumpsuit I wore to Burning Man last year! Everything is only worn once and in perfect condition.", user: user_1, category: cat_1)
+article_24 = Article.new(name: "Black//Gold Armour", color: "black", size: "M", material: "multi", price_cents: "8500", state: "worn once", description: "I am selling the rose gold armour and black jumpsuit I wore to Burning Man last year! Everything is only worn once and in perfect condition.", user: user_1, category: cat_1)
 article_24.photos.attach(io: articlephoto_24, filename: 'articlephoto_24.jpg', content_type: 'image/jpeg')
 article_24.save!
 
@@ -343,7 +343,7 @@ ArticleTag.create!(tag: tag_1, article: article_24)
 
 
 articlephoto_5 = URI.open('https://i.pinimg.com/564x/e5/9d/a6/e59da6d20751e3c41d5d961ebf444ebf.jpg')
-article_5 = Article.new(name: "Jewel Sunglasses", color: "multi", size: "S", material: "jewels", price_cents: "2800", state: "New", description: "Really fun sunglasses for concerts! I wore them a few times but they've been sitting in the back of my drawers forever.", user: user_2, category: cat_6)
+article_5 = Article.new(name: "Jewel Sunglasses", color: "silver", size: "S", material: "jewels", price_cents: "2800", state: "New", description: "Really fun sunglasses for concerts! I wore them a few times but they've been sitting in the back of my drawers forever.", user: user_2, category: cat_6)
 article_5.photos.attach(io: articlephoto_5, filename: 'articlephoto_5.jpg', content_type: 'image/jpeg')
 article_5.save!
 
@@ -352,7 +352,7 @@ ArticleTag.create!(tag: tag_1, article: article_5)
 
 
 articlephoto_3 = URI.open('https://i.pinimg.com/564x/c0/6d/4b/c06d4b90a8880feb9a7bab46965e236b.jpg')
-article_3 = Article.new(name: "Tinsel Jacket", color: "multi", size: "L", material: "tinsel", price_cents: "13500", state: "worn once", description: "This rainbow jacket is made from scratch from colorful tinsel and never worn. Only one exists like this in the world!", user: user_3, category: cat_9)
+article_3 = Article.new(name: "Tinsel Jacket", color: "rainbow", size: "L", material: "tinsel", price_cents: "13500", state: "worn once", description: "This rainbow jacket is made from scratch from colorful tinsel and never worn. Only one exists like this in the world!", user: user_3, category: cat_9)
 article_3.photos.attach(io: articlephoto_3, filename: 'articlephoto_3.jpg', content_type: 'image/jpeg')
 article_3.save!
 

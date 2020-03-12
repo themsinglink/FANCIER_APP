@@ -92,10 +92,10 @@
       <em id="rangeValLabel" style="font-style: normal; color: #171717; display: flex; justify-content: center;">150</em>
       </div>
    </div>
-   <h5 class="modal-title title-style" id="exampleModalLongTitle">Looking for a specific event?</h5>
+   <h5 class="modal-title title-style" id="exampleModalLongTitle">Choose a vibe</h5>
    <div class="modal-body">
     <section>
-    <%= f.select :tags_name, options_for_select(Tag.all.map(&:name)), {include_blank: "Choose an Occasion"} %>
+    <%= f.select :tags_name, options_for_select(Tag.all.map(&:name)), {include_blank: "Burning Man"} %>
     </section>
   </div>
 
