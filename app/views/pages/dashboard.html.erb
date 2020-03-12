@@ -46,7 +46,7 @@
             <h2><%= order.article.name.capitalize %></h2>
 
             <h3>SIZE: <%= order.article.size %></h3>
-            <h4>$<%= order.article.price_cents%>.00</h4>
+            <h4><%= humanized_money_with_symbol order.article.price %></h4>
             <% if order.state != 'shipped' %>
             <p><%= order.state%></p>
             <% end %>
@@ -62,7 +62,7 @@
         </div>
         <div class="total-section justify-content-between">
           <div class="subtotal">SUBTOTAL</div>
-          <div class="price">$<%= order.article.price_cents%>.00</div>
+          <div class="price"><%= humanized_money_with_symbol order.article.price %></div>
         </div>
       <% end %>
     </div>
