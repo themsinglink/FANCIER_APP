@@ -42,11 +42,16 @@
   padding: 10px 10px;
   text-align: center;
   color: white;
+  text-decoration: none;
 }
 
 .orderbutton:hover {
   text-decoration: none;
   opacity: .7;
+}
+
+.orderbutton:active {
+  text-decoration: none;
 }
 
 

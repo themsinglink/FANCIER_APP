@@ -74,6 +74,19 @@ letter-spacing: 0.05em;
   line-height: 18px;
 }
 
+.footer-home {
+
+}
+
+
+.footer-home p {
+  font-weight: light;
+  font-size: 11px;
+  text-align: center;
+  color: $maindark;
+  margin-bottom: 17px;
+  margin-top: -3px;
+}
 .button-section h2 {
   font-weight: 500;
   font-size: 22px;
@@ -122,6 +135,25 @@ letter-spacing: 0.05em;
   color: rgba(105, 97, 97, 0.76);
 }
 
+.form-center-home h2{
+  text-align: center !important;
+  color: $maindark;
+  margin-top: 20px;
+  font-size: 24px !important;
+}
+
+.form-center-home {
+  margin: 10px;
+}
+
+.form-center-home label {
+  color: $black;
+}
+
+.clear {
+  text-align: center;
+}
+
 .cta {
   display: flex;
   align-items: center;
@@ -132,6 +164,8 @@ letter-spacing: 0.05em;
 
 .main-text {
   margin-top: 50px;
+  margin-right: 3.5%;
+  margin-left: 3.5%;
 }
 
 .main-text h1 {
@@ -142,7 +176,7 @@ letter-spacing: 0.05em;
   font-size: 20px;
   line-height: 25px;
   font-weight: 500;
-  margin-bottom: 27px;
+  margin-bottom: 29px;
 }
 
 .content-container-text h1 {
@@ -345,6 +379,8 @@ letter-spacing: 0.05em;
   color: white;
   display: flex;
   flex-direction: column;
+  align-content: center;
+  text-align: center;
   background: #6B29F6;
   height: 400px;
 }
@@ -368,7 +404,6 @@ letter-spacing: 0.05em;
 }
 
 .sell-button-2 {
-  text-align: left;
 
 }
 
@@ -409,7 +444,7 @@ letter-spacing: 0.05em;
 
 .text-container {
   margin-left: 40px;
-  margin-top: 60px;
+  margin-top: 65px;
   margin-right: 40px;
 }
 
