@@ -56,7 +56,7 @@
         <p style= "font-weight: bold"> <%= humanized_money_with_symbol @article.price %> </p>
       </div>
       <p>SIZE: <%= @article.size %> </p>
-      <p> <%= @article.description&.truncate_words(15)%> </p>
+      <p> <%= @article.description&.truncate_words(25)%> </p>
       <% unless @article.user == current_user %>
       <button type="button" class="btn coral-button btn-lg" data-toggle="modal" data-target="#myModal2">
         add to cart
