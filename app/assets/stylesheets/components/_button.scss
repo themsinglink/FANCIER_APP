@@ -7,6 +7,13 @@
   font-weight: bold;
 }
 
+.coral-button:hover {
+  text-decoration: none;
+}
+
+.coral-button:active {
+  text-decoration: none;
+}
 .submit-button {
   background-color: white;
   color: #A388F3;
@@ -16,6 +23,15 @@
   font-weight: 500;
 }
 
+.submit-button:hover {
+  text-decoration: none;
+}
+
+.submit-button:active {
+  text-decoration: none;
+}
+
+
 .received {
   color: white;
   background-color: #210461;
@@ -24,6 +40,14 @@
   text-decoration: none;
   padding: 10px 20px;
   font-size: 13px;
+}
+
+.received:hover {
+  text-decoration: none;
+}
+
+.received:active {
+  text-decoration: none;
 }
 
 .margin-button a:hover {
@@ -44,6 +68,10 @@
 .review-button:hover {
   text-decoration: none;
   opacity: .9;
+}
+
+.review-button:active {
+  text-decoration: none;
 }
 
 .mainbutton {
