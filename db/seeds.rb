@@ -55,11 +55,6 @@ cat_1 = Category.new(name: "Tops")
 cat_1.photo.attach(io: catphoto_1, filename: 'catphoto_1.jpg', content_type: 'image/jpg')
 cat_1.save!
 
-catphoto_2 = URI.open('https://i.pinimg.com/564x/da/ec/27/daec277d460fccb9cec340b897208bfb.jpg')
-cat_2 = Category.new(name: "Dresses")
-cat_2.photo.attach(io: catphoto_2, filename: 'catphoto_2.jpg', content_type: 'image/jpg')
-cat_2.save!
-
 catphoto_3 = URI.open('https://i.pinimg.com/564x/7f/75/fb/7f75fb2b64d64c1d26f2e27a2b2d482a.jpg')
 cat_3 = Category.new(name: "Bottoms")
 cat_3.photo.attach(io: catphoto_3, filename: 'catphoto_3.jpg', content_type: 'image/jpg')
@@ -70,15 +65,22 @@ cat_4 = Category.new(name: "Sets")
 cat_4.photo.attach(io: catphoto_4, filename: 'catphoto_4.jpg', content_type: 'image/jpg')
 cat_4.save!
 
-catphoto_6 = URI.open('https://i.pinimg.com/564x/98/91/5b/98915b65008e60af7eb3f5424c8a8bdd.jpg')
-cat_6 = Category.new(name: "Accessories")
-cat_6.photo.attach(io: catphoto_6, filename: 'catphoto_6.jpg', content_type: 'image/jpg')
-cat_6.save!
+catphoto_2 = URI.open('https://i.pinimg.com/564x/da/ec/27/daec277d460fccb9cec340b897208bfb.jpg')
+cat_2 = Category.new(name: "Dresses")
+cat_2.photo.attach(io: catphoto_2, filename: 'catphoto_2.jpg', content_type: 'image/jpg')
+cat_2.save!
 
 catphoto_9 = URI.open('https://i.pinimg.com/564x/f6/57/02/f657029bada596f2b3c1a67a65de5e5f.jpg')
 cat_9 = Category.new(name: "Jackets")
 cat_9.photo.attach(io: catphoto_9, filename: 'catphoto_9.jpg', content_type: 'image/jpg')
 cat_9.save!
+
+catphoto_6 = URI.open('https://i.pinimg.com/564x/98/91/5b/98915b65008e60af7eb3f5424c8a8bdd.jpg')
+cat_6 = Category.new(name: "Accessories")
+cat_6.photo.attach(io: catphoto_6, filename: 'catphoto_6.jpg', content_type: 'image/jpg')
+cat_6.save!
+
+
 
 
 puts "#{Category.count} categories created!"
