@@ -277,7 +277,7 @@ ArticleTag.create!(tag: tag_1, article: article_30)
 
 
 articlephoto_31 = URI.open('https://i.pinimg.com/564x/67/54/64/675464b0d75dc72bc7e32f6b1523afda.jpg')
-article_31 = Article.new(name: "Studded Tassel Shoulder Pads", color: "gold", size: "N/A", material: "gold", price_cents: "7000", state: "worn once", description: "Power statement studded tassel shoulder pads with gold sequins and spikes. Never worn.", user: user_4, category: cat_1)
+article_31 = Article.new(name: "Studded Tassel Shoulder Pads", color: "gold", size: "Fits all", material: "gold", price_cents: "7000", state: "worn once", description: "Power statement studded tassel shoulder pads with gold sequins and spikes. Never worn.", user: user_4, category: cat_1)
 article_31.photos.attach(io: articlephoto_31, filename: 'articlephoto_31.jpg', content_type: 'image/jpeg')
 article_31.save!
 
