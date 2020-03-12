@@ -111,6 +111,8 @@ article_6 = Article.new(name: "Rainbow Tassel Cape", color: "rainbow", size: "L"
 article_6.photos.attach(io: articlephoto_6, filename: 'articlephoto_6.jpg', content_type: 'image/jpeg')
 article_6.save!
 
+
+
 ArticleTag.create!(tag: tag_1, article: article_6)
 
 

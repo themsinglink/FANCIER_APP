@@ -1,6 +1,8 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  position: sticky;
+
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -12,9 +14,11 @@
 }
 
 .nav-toggle{
+  position: sticky;
   height: 20px;
   width: 20px;
   background-color: transparent;
+
   i {
     color: #210461;
   }
