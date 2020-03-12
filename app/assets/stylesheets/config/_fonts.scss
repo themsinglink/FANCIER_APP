@@ -5,12 +5,12 @@
 // Define fonts for body and headers
 //$headers-font: "Montserrat";
 
-// @font-face {
- // font-family: "Apercu";
- // src: url(/assets/fonts/Apercu-Bold-Italic.otf) format("truetype");
-//}
+ @font-face {
+  font-family: "Apercu";
+  src: url('/assets/fonts/Apercu-Bold-Italic.otf');
+}
 
-h1, h2, h3, p, a, {
+h1, h2, h3, p, a {
   font-family: Montserrat;
 }
 

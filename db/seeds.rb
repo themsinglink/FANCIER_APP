@@ -92,7 +92,7 @@ puts "#{Category.count} categories created!"
 
 
 articlephoto_8 = URI.open('https://i.pinimg.com/564x/c7/db/47/c7db47b20429e6b2c9172572927ad07f.jpg')
-article_8 = Article.new(name: "Pink Coachella Outfit", color: "pink", size: "M", material: "multi", price_cents: "10000", state: "New", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", user: user_4, category: cat_4)
+article_8 = Article.new(name: "Pink Coachella Outfit", color: "pink", size: "M", material: "multi", price_cents: "10000", state: "New", description: "I am selling this entire outfit I wore last year to a music festival! It's only been worn once, really comfy and I got so many compliments!", user: user_4, category: cat_4)
 article_8.photos.attach(io: articlephoto_8, filename: 'articlephoto_8.jpg', content_type: 'image/jpeg')
 article_8.save!
 
