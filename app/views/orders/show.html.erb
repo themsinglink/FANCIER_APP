@@ -1,26 +1,35 @@
-<div id="confetti-container">
-</div>
-<div class="container" style= "text-align: center">
-  <div class="row py-4">
-    <div class="col-md-3">
+
+ <div class="order-wrapper">
+
+ <h2 id="font-order"> Your order is on the way! </h2>
+
+<div class=" order-container">
+
+
+
+  <div class="photo-section-order">
       <% if @order.article.photos.first.nil?  %>
         <%= image_tag 'default-article.png', style:"width: 100%; border-radius: 5px;" %>
       <% else  %>
        <%= cl_image_tag @order.article.photos.first.key, style:"width: 100%;  border-radius: 5px;" %>
       <% end %>
-    </div>
   </div>
+
+
+  <div class="info-section">
+
+    <div class="move-p">
+
+        <p class="badge badge-primary" style= "background-color: #210461;">CONFIRMED</p>
+      </div>
+        <p><span style="font-weight: bold;">Issued On: </span>Friday, March 13th, 2020</p>
+        <p> <span style="font-weight: bold;">Item: </span><%= @order.article.name %> </p>
+        <p> <span style="font-weight: bold;">TOTAL: </span><%= humanized_money_with_symbol @order.amount %>,00</p>
+
+  </div>
+  <%= link_to "orders", dashboard_path, class: "orderbutton", style: "font-weight: bold" %>
 </div>
-      <hr>
-    <div class="col">
-      <h2> Your order is on the way! <small><span class="badge badge-primary" style= "background-color: #210461;">CONFIRMED</span></small></h2>
-      <ul class="list-unstyled">
-        <li><span style="font-weight: bold;">Issued On:</span> <%= @order.created_at.to_date %></li>
-        <li><span style="font-weight: bold;"> Item</span style="font-weight: bold;"> <%= @order.article.name %></li>
-        <li><span style="font-weight: bold;">TOTAL</span style="font-weight: bold;"> <%= humanized_money_with_symbol @order.amount %></li>
-        </li>
-      </ul>
-      <p>Estimated delivery in <span style="font-weight: bold;">2 business days</span style="font-weight: bold;"></p>
-    </div>
-  </div>
+
+
+
 </div>
