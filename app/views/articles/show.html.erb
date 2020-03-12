@@ -53,7 +53,7 @@
         <h5 style= "font-weight: bold"> <%= @article.name %>
           <%#= @article.category.name %></h5>
         </div>
-        <p style= "font-weight: bold"> $<%= @article.price_cents / 100 %>.00 </p>
+        <p style= "font-weight: bold"> <%= humanized_money_with_symbol @article.price %> </p>
       </div>
       <p>SIZE: <%= @article.size %> </p>
       <p> <%= @article.description&.truncate_words(15)%> </p>
@@ -86,14 +86,14 @@
               <h5 style= "font-weight: bold"><%= @article.name %>
                 </h5>
                 <p>SIZE: <%= @article.size&.upcase %></p>
-                <p>$<%= @article.price_cents %></p>
+                <p><%= humanized_money_with_symbol @article.price %></p>
               </div>
             </div>
 
             <hr>
             <div class="d-flex justify-content-between">
               <p>SUBTOTAL</p>
-              <p>$<%= @article.price_cents %></p>
+              <p><%= humanized_money_with_symbol @article.price %></p>
             </div>
 
             <%= simple_form_for @order do |f|%>
@@ -126,19 +126,23 @@
               <% if @article.photos.first.nil?  %>
                 <%= image_tag 'default-article.png', style:" seller-article" %>
               <% else  %>
+
                <%= cl_image_tag article.photos.first.key, class: "seller-article" %>
               <% end %>
             <% end %>
           <% end %>
           <% end %>
+
         <% else %>
+
+
         <% Article.with_tags(@article.tags.pluck(:name)).each do |article| %>
           <% unless article == @article %>
             <%= link_to article_path(article) do %>
               <% if @article.photos.first.nil?  %>
                 <%= image_tag 'default-article.png', class: " seller-article" %>
               <% else  %>
-                <%= cl_image_tag @article.photos.first.key, class: " seller-article" %>
+                <%= cl_image_tag article.photos.first.key, class: " seller-article" %>
               <% end %>
             <% end %>
           <% end %>
