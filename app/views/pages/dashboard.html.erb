@@ -55,6 +55,20 @@
               <div class="margin-button">
                 <%= link_to " Mark as received", buyers_order_path(order), method: :patch, class: 'received' %>
              </div>
+
+
+             <div class="d-flex photo-change margin-top-dash mt-20">
+              <% if order.article.user.photo.attached? %>
+                <%= cl_image_tag order.article.user.photo.key, class: "avatar-xsmall" %>
+
+              <% else %>
+                <%= image_tag "avatar.png", class: "avatar-xsmall" %>
+              <% end %>
+              <h4 class="" style= "font-weight: 400; "><%=  order.article.user&.name %> has shipped this item!</h4>
+            </div>
+
+
+
             <% elsif order.state == "delivered" && order.review.nil? %>
               <%= link_to "Review the seller", new_order_review_path(order), class: "review-button" %>
             <% end %>
