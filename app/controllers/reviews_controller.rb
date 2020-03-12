@@ -20,10 +20,10 @@ class ReviewsController < ApplicationController
     @review.user = current_user
     @review.order = @order
     authorize @review
-    byebug
+    user = @order.article.user
 
     if @review.save
-      redirect_to dashboard_path
+      redirect_to user_reviews_path(user)
     else
       flash[:alert] = "Something went wrong."
       render :new

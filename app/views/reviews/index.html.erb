@@ -3,12 +3,16 @@
 </div>
 <div class="backround-user">
   <div class="profile-info">
-  <% if @user.photo.key.nil? %>
+  <% if @user.photo.attached? %>
+      <%= cl_image_tag @user.photo.key, class: "avatar-xl", alt: "profile picture" %>
+    <% elsif @user == current_user %>
+      <%= link_to edit_user_path(current_user) do %>
+        <%= image_tag "avatar.png", class: "avatar-xl" %>
+      <% end %>
+    <% else %>
       <%= image_tag "avatar.png", class: "avatar-xl" %>
-  <% else %>
-    <%= cl_image_tag @user.photo.key, class: "avatar-xl", alt: "profile picture" %>
-  <% end %>
-  <h2><%=  @user.name%></h2>
+    <% end %>
+  <h2><%=  @user&.name%></h2>
   <p>
     <% @user.rating.times do %>
      ⭐
@@ -48,13 +52,21 @@
 
 <%# end %>
 <% reviews.each do |review| %>
-    <h4><%=review.user.name%></h4>
+    <div class="d-flex photo-change">
+    <% if review.user.photo.attached? %>
+      <%= cl_image_tag review.user.photo.key, class: "avatar-small" %>
+    <% else %>
+      <%= image_tag "avatar.png", class: "avatar-small" %>
+    <% end %>
+    <h4><%=review.user&.name%></h4>
+    </div>
     <p>
-    <% review.user.rating.times do %>
+    <% review.rating.times do %>
      ⭐
     <% end %>
     </p>
   <p> <%= review.content %> </p>
+
 
 
 <% end %>

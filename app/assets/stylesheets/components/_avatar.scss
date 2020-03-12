@@ -2,6 +2,11 @@
   width: 50px;
   border-radius: 50%;
 }
+
+.avatar-small {
+  width: 40px;
+  border-radius: 50%;
+}
 .avatar-large {
   width: 56px;
   border-radius: 50%;
@@ -22,4 +27,13 @@
   border-radius: 0px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
+}
+
+.photo-change h4{
+  margin-top: 8px;
+  margin-left: 4px;
+}
+
+.photo-change {
+  margin-left: 6px;
 }

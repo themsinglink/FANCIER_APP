@@ -28,7 +28,7 @@
 }
 
 .clothes-color {
-  background: rgba(184, 161, 250, 0.7);
+  background: $mainlight;
 }
 
 .likes-color {
@@ -40,7 +40,7 @@
 }
 
 .clothes-color-2 {
-  background: rgba(184, 161, 250, 0.7);
+  background: $mainlight;
   padding: 10px 25px;
   border-radius: 3px;
   text-align: center;
@@ -80,7 +80,7 @@
 }
 
 .listing-clothes {
-  background: rgba(184, 161, 250, 0.7);
+  background: $mainlight;
 }
 
 .listing-likes {
@@ -97,7 +97,7 @@
 }
 
 .likes {
-  background: rgba(184, 161, 250, 0.7);
+  background: $mainlight;
   padding: 10px 25px;
   border-radius: 3px;
   text-align: center;

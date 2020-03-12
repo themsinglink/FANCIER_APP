@@ -1,15 +1,16 @@
 // Specific CSS for your home-page
 
 .main-container {
-  height: 60vh;
+  height: 80vh;
   text-align: center;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   display: flex;
   background-size: cover;
-  background-image: linear-gradient(180deg, rgba(152, 124, 240, 0.168) 0%, rgba(65, 32, 168, 0.504) 59.09%),   asset-url('3background.png');
+  background-image: linear-gradient(180deg, rgba(233, 172, 255, 0.3) 18.3%, rgba(101, 5, 224, 0.54) 100%), asset-url('glitter.gif');
   margin: 0;
+  margin-top: -40px !important;
 }
 
 .shop-container-old {
@@ -35,7 +36,7 @@
 .main-text {
   color: white;
   font-weight: bold;
-  margin: 30px;
+  margin-top: 95px;
 }
 
 .main-text a:hover {
@@ -60,9 +61,14 @@
 .tag-image {
   background-image: asset-url('article.jpg');
   position:relative;
-  height: 90%;
+  max-width:100%;
+  height: 140px;
   padding: 10px;
   background-repeat: none;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .tag-image-new {
@@ -125,10 +131,9 @@
 .tag-cards {
   -webkit-box-flex: 1;
   flex-grow: 1;
-  /* display: grid; */
+  display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 12px;
-  /* padding: 12px; */
+  grid-gap: 3px;
   background: white;
 }
 

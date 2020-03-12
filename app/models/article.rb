@@ -1,4 +1,5 @@
 class Article < ApplicationRecord
+   include Rails.application.routes.url_helpers
   belongs_to :category
   belongs_to :user
 
@@ -80,7 +81,14 @@ class Article < ApplicationRecord
   def active_order
     orders.active.first
   end
+
+  def image_url
+    return nil unless photos.any?
+
+    rails_blob_url(photos.first, Rails.application.config.action_mailer.default_url_options)
+  end
 end
+
 
 
 

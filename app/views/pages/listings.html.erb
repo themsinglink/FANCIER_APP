@@ -6,7 +6,11 @@
 </div>
 <div class="backround-user">
   <div class="profile-info">
-    <%= cl_image_tag current_user.photo.key, class: "avatar-xl", alt: "profile picture" %>
+    <% if current_user.photo.attached? %>
+      <%= cl_image_tag current_user.photo.key, class: "avatar-xl", alt: "profile picture" %>
+    <% else %>
+      <%= image_tag "avatar.png", class: "avatar-xl" %>
+    <% end %>
     <div class="add-margin">
     <h2>Order Dashboard</h2>
   </div>
@@ -55,13 +59,17 @@
             <h2><%= article.name.capitalize %></h2>
             <h3>SIZE: <%= article.size %></h3>
             <h4>$<%= article.price_cents%>.00</h4>
-            <% if article.active_order&.state == 'pending' %>
+            <% if article.active_order.nil? %>
             <p class= "color-change-state">unsold</p>
+
+            <% elsif article.active_order&.state == "paid" %>
             <% else %>
-            <p><%= article.active_order.state%></p>
+            <p><%= article.active_order&.state%></p>
             <% end %>
-            <% if article.active_orders? && article.active_order.state == 'paid' %>
-              <%= link_to " Mark as shipped", sellers_order_path(article.active_order), method: :patch, class: 'mainbutton' %>
+            <% if article.active_orders? && article.active_order&.state == 'paid' %>
+            <div class="margin-button">
+              <%= link_to " Mark as shipped", sellers_order_path(article.active_order), method: :patch, class: 'received' %>
+            </div>
             <% end %>
           </div>
         </div>

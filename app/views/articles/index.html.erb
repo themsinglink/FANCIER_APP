@@ -21,7 +21,7 @@
 
   <div class="category-name">
     <h1>Shop All</h1>
-    <!-- <p id= "viewall"><%= link_to "view all", articles_path %></p> -->
+    <p id= "viewall"><%= link_to "view all", articles_path %></p>
   </div>
 
 
@@ -35,7 +35,8 @@
 
   <!-- Button trigger modal -->
   <button type="button" class="btn filter-button" data-toggle="modal" data-target="#exampleModalLong">
-   <%= image_tag "icon-filter-8.png", style: "width:14px;" %>
+    <i class="fas fa-filter"></i>
+   <%#= image_tag "icon-filter-8.png", style: "width:14px;" %>
    &nbsp; filter
  </button>
 
@@ -59,7 +60,7 @@
         %>
         </section>
       </div>
-      <h5 class="modal-title title-style" id="exampleModalLongTitle">What Color?</h5>
+      <h5 class="modal-title title-style" id="exampleModalLongTitle">Color</h5>
       <div class="modal-body">
        <section class="colors">
           <%= f.select :color_eq,
@@ -67,7 +68,7 @@
           {include_blank: "Color", class: 'filter-select'} %>
         </section>
       </div>
-    <h5 class="modal-title title-style" id="exampleModalLongTitle">What Size?</h5>
+    <h5 class="modal-title title-style" id="exampleModalLongTitle">Size</h5>
     <div class="modal-body">
       <section class="size">
         <%= f.select :size_eq, options_for_select(Article.available_size.map{|a| [a.upcase, a]}), {include_blank: "Size", class: 'filter-select'} %>

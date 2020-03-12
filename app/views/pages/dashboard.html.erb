@@ -4,7 +4,12 @@
 <div class="backround-user">
 
   <div class="profile-info">
-    <%= cl_image_tag current_user.photo.key, class: "avatar-xl", alt: "profile picture" %>
+    <% if current_user.photo.attached? %>
+      <%= cl_image_tag current_user.photo.key, class: "avatar-xl", alt: "profile picture" %>
+    <% else %>
+      <%= image_tag "avatar.png", class: "avatar-xl" %>
+    <% end %>
+
     <div class="add-margin">
       <h2>Order Dashboard</h2>
     </div>
@@ -42,12 +47,16 @@
 
             <h3>SIZE: <%= order.article.size %></h3>
             <h4>$<%= order.article.price_cents%>.00</h4>
+            <% if order.state != 'shipped' %>
             <p><%= order.state%></p>
+            <% end %>
 
             <% if order.state == 'shipped' %>
-              <%= link_to " Mark as received", buyers_order_path(order), method: :patch, class: 'mainbutton' %>
+              <div class="margin-button">
+                <%= link_to " Mark as received", buyers_order_path(order), method: :patch, class: 'received' %>
+             </div>
             <% elsif order.state == "delivered" && order.review.nil? %>
-              <%= link_to "Write a review", new_order_review_path(order) %>
+              <%= link_to "Review the seller", new_order_review_path(order), class: "review-button" %>
             <% end %>
           </div>
         </div>

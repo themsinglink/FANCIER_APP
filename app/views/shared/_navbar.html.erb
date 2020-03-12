@@ -1,16 +1,13 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-    <% if current_page?("/") || current_page?("/articles") || current_page?("/dashboard") || current_page?("/listings")%>
+    <% if controller_name == "articles" && action_name == "show" %>
+      <%= link_to :back do  %>
+        <i class="fas fa-chevron-left"></i>
+      <% end %>
+    <% else %>
       <div class="nav-toggle">
         <i class="fas fa-bars"></i>
       </div>
-    <% else %>
-    <%= link_to :back do  %>
-      <i class="fas fa-chevron-left"></i>
-    <% end %>
   <% end %>
-
-
-
 
   <h3 class="logo"> <%= link_to "FANCIER", root_path %> </h3>
   <%= link_to articles_path do %>

@@ -2,15 +2,15 @@
   <div class="row py-4">
     <div class="col-md-3">
       <% if @order.article.photos.first.nil?  %>
-        <%= image_tag 'default-article.png',  width: '100%' %>
+        <%= image_tag 'default-article.png',  width: '100%', style: "border-radius: 5px;" %>
       <% else  %>
-        <%= cl_image_tag @order.article.photos.first.key,  width: '100%' %>
+        <%= cl_image_tag @order.article.photos.first.key,  width: '100%', style: "border-radius: 5px;" %>
       <% end %>
     </div>
     <div class="col" style="text-align: center; margin-top: 20px">
       <h1 style= "font-size: 25px;">Checkout</h1>
-      <p>Purchase of <strong><%= @order.article.name %></strong> </p>
-       <p><strong><%= humanized_money_with_symbol @order.amount %></strong></p>
+      <p>Purchase of <span style="font-weight: bold;"><%= @order.article.name %></span> </p>
+       <p><span style="font-weight: bold;"><%= humanized_money_with_symbol @order.amount %></span></p>
       <button id="pay" class="btn coral-button">Checkout</button>
       <script src="https://js.stripe.com/v3/"></script>
       <script>
