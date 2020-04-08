@@ -1,3 +1,86 @@
+@media (min-width: 900px) {
+
+  .home-styling {
+    display: none;
+  }
+
+  .fas {
+    display: none;
+  }
+
+  .mobile-header {
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0px 4px 15px rgba(175, 166, 237, 0.3);
+    border-radius: 8px;
+    color: #1A1B1C;
+    font-family: Montserrat;
+    margin: 0 0 0 50px;
+    height: 466px;
+    width: 518px;
+  }
+
+  .mobile-header h1 {
+    font-weight: bold;
+    font-size: 32.9097px;
+    line-height: 140%;
+    letter-spacing: 0.03em;
+    margin-bottom: 18px;
+  }
+
+  .mobile-header p {
+    font-style: italic;
+    font-weight: 300;
+    font-size: 19px;
+    line-height: 160%;
+    letter-spacing: 0.03em;
+    margin-bottom: 30px;
+  }
+
+  .mobile-header img {
+    padding: 0 105px;
+  }
+
+  .iphone {
+    width: 288px;
+    height: 100%;
+  }
+
+  .background-mobile {
+    height: 93vh;
+    background: linear-gradient(180deg, rgba(125, 0, 255, 0.86) 0%, #E4CBFF 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 175px;
+  }
+
+}
+
+@media (max-width: 900px) {
+
+  .iphone {
+    display: none;
+  }
+
+  .welcome {
+    display: none;
+  }
+
+  .qr {
+    display: none;
+  }
+
+  .background-mobile {
+    display: none;
+  }
+
+  .mobile-header {
+    display: none;
+  }
+
+}
+
 strong {
   position: relative;
 
